@@ -121,7 +121,7 @@ def admin():
     messages = Message.query.order_by(Message.created_at.desc()).all()
     return render_template('admin.html', messages=messages)
 
-@app.route('/admin/delete/<int:id>')
+@app.route('/admin/delete/<int:id>', methods=['POST'])
 @requires_auth
 def delete_message(id):
     msg = Message.query.get_or_404(id)

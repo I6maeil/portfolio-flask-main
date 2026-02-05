@@ -281,55 +281,110 @@
   </nav>
 
   <!-- HERO -->
-  <header id="accueil" class="hero pt-24" role="banner">
-    <div class="container mx-auto grid md:grid-cols-2 gap-8 items-center">
-      <!-- left -->
-      <div class="space-y-6">
-        <div class="hero-card">
-          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Web <span
-              style="background:var(--glow);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Développeur</span>
-          </h1>
-          <p class="text-gray-300 mt-3 max-w-xl">Salut, je suis <strong>Ismail</strong> — développeur web full-stack. Je
-            transforme des idées en produits numériques robustes et accessibles. Techs : Python, JavaScript, React,
-            Node, Docker, AWS.</p>
+  <header id="accueil" class="hero relative py-20 lg:py-32 overflow-hidden" role="banner">
+    <!-- Decorative background elements -->
+    <div
+      class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full -z-10 animate-pulse">
+    </div>
+    <div
+      class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-600/10 blur-[100px] rounded-full -z-10 animate-pulse"
+      style="animation-delay: 2s"></div>
 
-          <div class="mt-6 flex flex-wrap gap-4">
+    <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left content -->
+      <div class="relative z-10 reveal">
+        <div
+          class="p-8 md:p-10 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
+          <!-- Glass streak -->
+          <div
+            class="absolute -inset-full h-full w-1/2 z-20 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:animate-[shine_3s_ease-in-out_infinite]">
+          </div>
+
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-bold mb-6 tracking-wider uppercase">
+            <span class="relative flex h-2 w-2">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            </span>
+            Disponible pour nouveaux projets
+          </div>
+
+          <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">
+            Web <span
+              class="bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent animate-gradient-x">Développeur</span>
+          </h1>
+
+          <p class="text-gray-300 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
+            Salut, je suis <span class="text-white font-bold border-b-2 border-indigo-500/50">Ismail</span> — architecte
+            web full-stack spécialisé dans la création d'expériences numériques immersives et performantes.
+          </p>
+
+          <div class="flex flex-wrap gap-5 mb-10">
             <a href="#portfolio"
-              class="inline-flex items-center gap-3 px-5 py-3 rounded-lg bg-gradient-to-r from-[#6a11cb] to-[#2575fc] shadow-lg hover:scale-105 transition-transform"
-              aria-label="Voir mon portfolio">
-              <i class="fas fa-folder-open" aria-hidden="true"></i> Voir mon travail
+              class="group relative px-8 py-4 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold shadow-xl shadow-indigo-500/20 hover:scale-105 transition-all overflow-hidden">
+              <span class="relative z-10 flex items-center gap-3">
+                <i class="fas fa-folder-open"></i> Voir mon travail
+              </span>
             </a>
             <a href="#contact"
-              class="inline-flex items-center gap-3 px-5 py-3 rounded-lg border border-white/10 hover:bg-white/6 transition-colors"
-              aria-label="Me contacter">
-              <i class="fas fa-paper-plane" aria-hidden="true"></i> Me contacter
+              class="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md text-white font-bold hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-3">
+              <i class="fas fa-paper-plane"></i> Me contacter
             </a>
           </div>
 
-          <div class="mt-5 flex items-center gap-4" aria-hidden="true">
-            <div class="badge">React</div>
-            <div class="badge">Node.js</div>
-            <div class="badge">Docker</div>
-            <div class="badge">AWS</div>
+          <div class="flex items-center gap-6 pt-6 border-t border-white/5">
+            <div class="flex -space-x-3">
+              <div
+                class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs font-bold"
+                title="React">R</div>
+              <div
+                class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs font-bold"
+                title="Node.js">N</div>
+              <div
+                class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs font-bold"
+                title="Python">P</div>
+              <div
+                class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs font-bold"
+                title="Docker">D</div>
+            </div>
+            <span class="text-sm text-gray-400 font-medium">Expertise multi-stack</span>
           </div>
-        </div>
-
-        <!-- quick about -->
-        <div class="mt-6 reveal" id="about-blurb">
-          <h3 class="text-xl font-semibold">À propos</h3>
-          <p class="text-gray-400 max-w-xl">Basé à Rabat — +2ans d'expérience : interfaces modernes, APIs performantes,
-            et déploiement cloud. Disponible pour missions freelance et CDI.</p>
         </div>
       </div>
 
-      <!-- right: avatar -->
-      <div class="flex justify-center md:justify-end relative">
-        <div class="avatar-outer card-tilt" aria-hidden="true">
-          <div class="blob b1" aria-hidden="true"></div>
-          <div class="blob b2" aria-hidden="true"></div>
+      <!-- Right: Avatar -->
+      <div class="relative flex justify-center lg:justify-end reveal" style="transition-delay: 200ms">
+        <div class="relative z-10">
+          <!-- Animated rings -->
+          <div
+            class="absolute inset-0 animate-[spin_15s_linear_infinite] rounded-full border-2 border-dashed border-indigo-500/20">
+          </div>
+          <div
+            class="absolute -inset-8 animate-[spin_25s_linear_infinite_reverse] rounded-full border border-purple-500/10">
+          </div>
 
-          <img src="static/images/ca9383dc-ee3d-4ef7-9828-fe418baaed3e.jpg" alt="Portrait d'Ismail" loading="lazy"
-            width="400" height="400" />
+          <div class="avatar-outer card-tilt group !w-72 !h-72 md:!w-96 md:!h-96">
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-indigo-600/20 to-purple-600/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-700">
+            </div>
+            <img src="static/images/ca9383dc-ee3d-4ef7-9828-fe418baaed3e.jpg" alt="Portrait d'Ismail"
+              class="relative z-10 w-full h-full object-cover rounded-full border-8 border-white/5 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]"
+              loading="lazy" />
+          </div>
+
+          <!-- Floating badges -->
+          <div
+            class="absolute -right-4 top-1/4 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl reveal"
+            style="transition-delay: 600ms">
+            <i class="fas fa-check-circle text-indigo-400 text-2xl"></i>
+          </div>
+          <div
+            class="absolute -left-8 bottom-1/4 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl reveal"
+            style="transition-delay: 800ms">
+            <div class="text-xs text-gray-400 font-bold uppercase mb-1">Expérience</div>
+            <div class="text-xl font-black text-white">+2 Ans</div>
+          </div>
         </div>
       </div>
     </div>
@@ -337,66 +392,119 @@
 
   <!-- COMPETENCES -->
   <main>
-    <section id="competences" class="py-14" aria-labelledby="h-competences">
-      <div class="container mx-auto">
-        <h2 id="h-competences" class="text-3xl font-bold reveal">Compétences</h2>
-        <p class="text-gray-400 mt-2 max-w-2xl reveal">Stack technique : HTML/CSS, JavaScript, React, Vue, Node, Django,
-          Laravel, PostgreSQL, MongoDB, Docker, CI/CD, AWS.</p>
+    <section id="competences" class="py-24 relative overflow-hidden" aria-labelledby="h-competences">
+      <!-- Background glow -->
+      <div class="absolute top-1/2 left-0 w-[300px] h-[300px] bg-indigo-500/5 blur-[100px] rounded-full -z-10"></div>
 
-        <div class="grid md:grid-cols-2 gap-8 mt-8">
-          <div class="bg-[rgba(255,255,255,0.02)] p-6 rounded-xl card-tilt reveal" aria-labelledby="h-frontend">
-            <h3 id="h-frontend" class="text-xl font-semibold mb-4">Frontend</h3>
-            <div class="space-y-4">
-              <div>
-                <div class="flex justify-between mb-1"><span>HTML / CSS</span><span
-                    class="text-sm text-gray-400">95%</span></div>
-                <div class="skill-bg">
-                  <div class="skill-fill" data-percent="95%"></div>
+      <div class="container mx-auto px-4">
+        <div class="mb-16">
+          <h2 id="h-competences" class="text-4xl md:text-5xl font-bold reveal tracking-tight">Compétences</h2>
+          <div class="w-20 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 mt-4 rounded-full reveal"></div>
+          <p class="text-gray-400 mt-6 text-lg max-w-2xl reveal">Maîtrise technologique étendue pour des solutions web
+            performantes, scalables et centrées sur l'utilisateur.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 mt-12">
+          <!-- Frontend Card -->
+          <div
+            class="group p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl card-tilt reveal transition-all duration-500 hover:border-indigo-500/50 hover:bg-white/10"
+            aria-labelledby="h-frontend">
+            <div class="flex items-center gap-4 mb-8">
+              <div
+                class="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl group-hover:scale-110 transition-transform">
+                <i class="fas fa-desktop"></i>
+              </div>
+              <h3 id="h-frontend" class="text-2xl font-extrabold group-hover:text-indigo-300 transition-colors">Frontend
+              </h3>
+            </div>
+
+            <div class="space-y-8">
+              <!-- Skill Item -->
+              <div class="group/skill">
+                <div class="flex justify-between items-end mb-3">
+                  <span class="text-gray-200 font-bold tracking-wide">React / Next.js</span>
+                  <span class="text-xs font-black text-indigo-400 bg-indigo-500/10 px-2 py-1 rounded-md">92%</span>
+                </div>
+                <div class="h-3 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
+                  <div
+                    class="skill-fill h-full bg-gradient-to-r from-indigo-600 via-purple-500 to-indigo-600 rounded-full transition-all duration-1000 shadow-[0_0_15px_rgba(79,70,229,0.4)]"
+                    data-percent="92%"></div>
                 </div>
               </div>
 
-              <div>
-                <div class="flex justify-between mb-1"><span>JavaScript</span><span
-                    class="text-sm text-gray-400">90%</span></div>
-                <div class="skill-bg">
-                  <div class="skill-fill" data-percent="90%"></div>
+              <div class="group/skill">
+                <div class="flex justify-between items-end mb-3">
+                  <span class="text-gray-200 font-bold tracking-wide">TypeScript / JS (ES6+)</span>
+                  <span class="text-xs font-black text-blue-400 bg-blue-500/10 px-2 py-1 rounded-md">90%</span>
+                </div>
+                <div class="h-3 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
+                  <div
+                    class="skill-fill h-full bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-600 rounded-full transition-all duration-1000 shadow-[0_0_15px_rgba(37,99,235,0.4)]"
+                    data-percent="90%"></div>
                 </div>
               </div>
 
-              <div>
-                <div class="flex justify-between mb-1"><span>React</span><span class="text-sm text-gray-400">88%</span>
+              <div class="group/skill">
+                <div class="flex justify-between items-end mb-3">
+                  <span class="text-gray-200 font-bold tracking-wide">Tailwind CSS / Sass</span>
+                  <span class="text-xs font-black text-teal-400 bg-teal-500/10 px-2 py-1 rounded-md">95%</span>
                 </div>
-                <div class="skill-bg">
-                  <div class="skill-fill" data-percent="88%"></div>
+                <div class="h-3 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
+                  <div
+                    class="skill-fill h-full bg-gradient-to-r from-teal-500 via-emerald-400 to-teal-500 rounded-full transition-all duration-1000 shadow-[0_0_15px_rgba(20,184,166,0.4)]"
+                    data-percent="95%"></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="bg-[rgba(255,255,255,0.02)] p-6 rounded-xl card-tilt reveal" aria-labelledby="h-backend">
-            <h3 id="h-backend" class="text-xl font-semibold mb-4">Backend & DB</h3>
-            <div class="space-y-4">
-              <div>
-                <div class="flex justify-between mb-1"><span>Node.js</span><span
-                    class="text-sm text-gray-400">87%</span></div>
-                <div class="skill-bg">
-                  <div class="skill-fill" data-percent="87%"></div>
+          <!-- Backend Card -->
+          <div
+            class="group p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl card-tilt reveal transition-all duration-500 hover:border-purple-500/50 hover:bg-white/10"
+            aria-labelledby="h-backend">
+            <div class="flex items-center gap-4 mb-8">
+              <div
+                class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 text-xl group-hover:scale-110 transition-transform">
+                <i class="fas fa-database"></i>
+              </div>
+              <h3 id="h-backend" class="text-2xl font-extrabold group-hover:text-purple-300 transition-colors">Backend &
+                DevOps</h3>
+            </div>
+
+            <div class="space-y-8">
+              <div class="group/skill">
+                <div class="flex justify-between items-end mb-3">
+                  <span class="text-gray-200 font-bold tracking-wide">Node.js / Express</span>
+                  <span class="text-xs font-black text-purple-400 bg-purple-500/10 px-2 py-1 rounded-md">88%</span>
+                </div>
+                <div class="h-3 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
+                  <div
+                    class="skill-fill h-full bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 rounded-full transition-all duration-1000 shadow-[0_0_15px_rgba(147,51,234,0.4)]"
+                    data-percent="88%"></div>
                 </div>
               </div>
 
-              <div>
-                <div class="flex justify-between mb-1"><span>Django / Python</span><span
-                    class="text-sm text-gray-400">82%</span></div>
-                <div class="skill-bg">
-                  <div class="skill-fill" data-percent="82%"></div>
+              <div class="group/skill">
+                <div class="flex justify-between items-end mb-3">
+                  <span class="text-gray-200 font-bold tracking-wide">Python / Flask</span>
+                  <span class="text-xs font-black text-green-400 bg-green-500/10 px-2 py-1 rounded-md">85%</span>
+                </div>
+                <div class="h-3 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
+                  <div
+                    class="skill-fill h-full bg-gradient-to-r from-green-600 via-emerald-500 to-green-600 rounded-full transition-all duration-1000 shadow-[0_0_15px_rgba(22,163,74,0.4)]"
+                    data-percent="85%"></div>
                 </div>
               </div>
 
-              <div>
-                <div class="flex justify-between mb-1"><span>PostgreSQL / MongoDB</span><span
-                    class="text-sm text-gray-400">90%</span></div>
-                <div class="skill-bg">
-                  <div class="skill-fill" data-percent="90%"></div>
+              <div class="group/skill">
+                <div class="flex justify-between items-end mb-3">
+                  <span class="text-gray-200 font-bold tracking-wide">Docker / AWS / Cloud</span>
+                  <span class="text-xs font-black text-orange-400 bg-orange-500/10 px-2 py-1 rounded-md">80%</span>
+                </div>
+                <div class="h-3 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
+                  <div
+                    class="skill-fill h-full bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600 rounded-full transition-all duration-1000 shadow-[0_0_15px_rgba(234,88,12,0.4)]"
+                    data-percent="80%"></div>
                 </div>
               </div>
             </div>
@@ -406,213 +514,395 @@
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="py-14 bg-[rgba(255,255,255,0.01)]" aria-labelledby="h-services">
-      <div class="container mx-auto">
-        <h2 id="h-services" class="text-3xl font-bold reveal">Services</h2>
-        <p class="text-gray-400 mt-2 reveal">Solutions clé en main : développement front, APIs, intégration, migration,
-          et déploiement cloud.</p>
+    <section id="services" class="py-20 relative overflow-hidden" aria-labelledby="h-services">
+      <!-- Decor background blobs -->
+      <div class="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 blur-[120px] -z-10 animate-pulse"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 blur-[120px] -z-10 animate-pulse"></div>
 
-        <div class="grid md:grid-cols-3 gap-6 mt-8">
-          <article class="p-5 rounded-xl card-tilt reveal" role="article" aria-labelledby="s1">
-            <h3 id="s1" class="font-semibold text-lg mb-2">Développement Frontend</h3>
-            <p class="text-gray-400 mb-4">Interfaces réactives, responsive, performantes et accessibles (a11y).</p>
-            <div class="flex gap-3 flex-wrap" aria-hidden="true"><span class="badge">React</span><span
-                class="badge">Vue</span><span class="badge">Tailwind</span></div>
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 id="h-services" class="text-4xl md:text-5xl font-bold reveal tracking-tight">Services</h2>
+          <div class="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mt-4 rounded-full reveal"></div>
+          <p class="text-gray-400 mt-6 text-lg max-w-2xl mx-auto reveal">Solutions digitales haut de gamme pour
+            transformer vos visions en réalités interactives et performantes.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+          <!-- Service 1 -->
+          <article
+            class="group relative p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm card-tilt reveal overflow-hidden transition-all duration-500 hover:border-purple-500/50 hover:bg-white/10"
+            role="article" aria-labelledby="s1">
+            <div
+              class="absolute -right-10 -top-10 w-32 h-32 bg-purple-600/20 blur-3xl rounded-full transition-all duration-500 group-hover:bg-purple-600/40">
+            </div>
+
+            <div
+              class="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center mb-6 text-purple-400 text-2xl group-hover:scale-110 transition-transform duration-500">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+
+            <h3 id="s1" class="font-bold text-2xl mb-4 group-hover:text-purple-300 transition-colors">Développement
+              Frontend</h3>
+            <p class="text-gray-400 mb-6 leading-relaxed group-hover:text-gray-300">Interfaces réactives ultra-fluides,
+              designs pixel-perfect et accessibilité sans compromis pour une expérience utilisateur exceptionnelle.</p>
+
+            <div class="flex gap-2 flex-wrap" aria-hidden="true">
+              <span
+                class="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs text-purple-300">React</span>
+              <span
+                class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300">Vue.js</span>
+              <span
+                class="px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs text-teal-300">Tailwind</span>
+            </div>
           </article>
 
-          <article class="p-5 rounded-xl card-tilt reveal" role="article" aria-labelledby="s2">
-            <h3 id="s2" class="font-semibold text-lg mb-2">APIs & Backend</h3>
-            <p class="text-gray-400 mb-4">APIs REST/GraphQL, microservices, auth & tests.</p>
-            <div class="flex gap-3 flex-wrap" aria-hidden="true"><span class="badge">Node</span><span
-                class="badge">Django</span><span class="badge">Laravel</span></div>
+          <!-- Service 2 -->
+          <article
+            class="group relative p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm card-tilt reveal overflow-hidden transition-all duration-500 hover:border-blue-500/50 hover:bg-white/10"
+            role="article" aria-labelledby="s2">
+            <div
+              class="absolute -right-10 -top-10 w-32 h-32 bg-blue-600/20 blur-3xl rounded-full transition-all duration-500 group-hover:bg-blue-600/40">
+            </div>
+
+            <div
+              class="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center mb-6 text-blue-400 text-2xl group-hover:scale-110 transition-transform duration-500">
+              <i class="fas fa-server"></i>
+            </div>
+
+            <h3 id="s2" class="font-bold text-2xl mb-4 group-hover:text-blue-300 transition-colors">APIs & Backend</h3>
+            <p class="text-gray-400 mb-6 leading-relaxed group-hover:text-gray-300">Architectures robustes et
+              évolutives. APIs haute performance, sécurisées et prêtes pour une montée en charge massive.</p>
+
+            <div class="flex gap-2 flex-wrap" aria-hidden="true">
+              <span
+                class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300">Node.js</span>
+              <span
+                class="px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-xs text-green-300">Django</span>
+              <span
+                class="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs text-red-300">Laravel</span>
+            </div>
           </article>
 
-          <article class="p-5 rounded-xl card-tilt reveal" role="article" aria-labelledby="s3">
-            <h3 id="s3" class="font-semibold text-lg mb-2">DevOps & Cloud</h3>
-            <p class="text-gray-400 mb-4">CI/CD, Docker, déploiement et monitoring (AWS / Vercel / DigitalOcean).</p>
-            <div class="flex gap-3 flex-wrap" aria-hidden="true"><span class="badge">Docker</span><span
-                class="badge">AWS</span><span class="badge">CI</span></div>
+          <!-- Service 3 -->
+          <article
+            class="group relative p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm card-tilt reveal overflow-hidden transition-all duration-500 hover:border-indigo-500/50 hover:bg-white/10"
+            role="article" aria-labelledby="s3">
+            <div
+              class="absolute -right-10 -top-10 w-32 h-32 bg-indigo-600/20 blur-3xl rounded-full transition-all duration-500 group-hover:bg-indigo-600/40">
+            </div>
+
+            <div
+              class="w-14 h-14 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-6 text-indigo-400 text-2xl group-hover:scale-110 transition-transform duration-500">
+              <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+
+            <h3 id="s3" class="font-bold text-2xl mb-4 group-hover:text-indigo-300 transition-colors">DevOps & Cloud
+            </h3>
+            <p class="text-gray-400 mb-6 leading-relaxed group-hover:text-gray-300">Déploiement continu et
+              infrastructure moderne. Automatisation complète pour une agilité maximale et un monitoring total.</p>
+
+            <div class="flex gap-2 flex-wrap" aria-hidden="true">
+              <span
+                class="px-3 py-1 rounded-full bg-blue-600/10 border border-blue-600/20 text-xs text-blue-400">Docker</span>
+              <span
+                class="px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-xs text-orange-300">AWS</span>
+              <span
+                class="px-3 py-1 rounded-full bg-gray-500/10 border border-gray-500/20 text-xs text-gray-300">CI/CD</span>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
     <!-- PORTFOLIO -->
-    <section id="portfolio" class="py-14" aria-labelledby="h-portfolio">
-      <div class="container mx-auto">
-        <h2 id="h-portfolio" class="text-3xl font-bold reveal">Portfolio</h2>
-        <p class="text-gray-400 mt-2 reveal">Projets récents — démonstrations et liens GitHub.</p>
+    <section id="portfolio" class="py-24 relative overflow-hidden" aria-labelledby="h-portfolio">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 id="h-portfolio" class="text-4xl md:text-5xl font-bold reveal tracking-tight">Portfolio</h2>
+          <div class="w-24 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full reveal"></div>
+          <p class="text-gray-400 mt-6 text-lg max-w-2xl mx-auto reveal">Une sélection de mes travaux récents, alliant
+            design innovant et excellence technique.</p>
+        </div>
 
-        <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           <!-- Project 1 -->
-          <div class="bg-[rgba(255,255,255,0.02)] rounded-xl overflow-hidden card-tilt reveal">
-            <div class="h-44 bg-black/30 overflow-hidden">
+          <div
+            class="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-md card-tilt reveal transition-all duration-500 hover:border-indigo-500/50 hover:bg-white/10">
+            <div class="aspect-video relative overflow-hidden">
               <img src="static/images/2.jpg" alt="E-commerce"
-                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold">Plateforme E-commerce</h3>
-              <p class="text-gray-400 mt-2 text-sm">Site e-commerce complet (React, Node, paiement).</p>
-              <div class="mt-4 flex justify-between items-center">
-                <div class="flex gap-2">
-                  <a href="#" class="text-sm text-indigo-300 hover:underline"
-                    aria-label="Voir code GitHub projet e-commerce"><i class="fab fa-github" aria-hidden="true"></i>
-                    Code</a>
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                <div class="flex gap-4">
                   <a href="#"
-                    class="text-sm text-indigo-300 hover:underline" aria-label="Voir démo projet e-commerce"><i
-                      class="fas fa-external-link-alt" aria-hidden="true"></i> Demo</a>
+                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-indigo-500 transition-colors"
+                    title="GitHub"><i class="fab fa-github"></i></a>
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-purple-500 transition-colors"
+                    title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <span class="text-sm text-gray-400">React • Node</span>
               </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold group-hover:text-indigo-300 transition-colors">Plateforme E-commerce</h3>
+                <span class="text-xs font-semibold px-2 py-1 rounded-md bg-white/10 text-gray-400">React • Node</span>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6">Solution e-commerce complète avec gestion de panier,
+                paiements sécurisés et dashboard administrateur.</p>
             </div>
           </div>
 
           <!-- Project 2 -->
-          <div class="bg-[rgba(255,255,255,0.02)] rounded-xl overflow-hidden card-tilt reveal">
-            <div class="h-44 bg-black/30 overflow-hidden">
-              <img src="static/images/michlifen.jpg" alt="Dashboard"
-                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold">SITE WEB</h3>
-              <p class="text-gray-400 mt-2 text-sm">Visualisation temps réel — HTML, CSS, JS & Flask.</p>
-              <div class="mt-4 flex justify-between items-center">
-                <div class="flex gap-2">
-                  <a href="#" class="text-sm text-indigo-300 hover:underline"><i class="fab fa-github"
-                      aria-hidden="true"></i> Code</a>
-                  <a href="https://www.michlifen.com/fr/restaurants-bars/restaurant-gastronomique.html"
-                    class="text-sm text-indigo-300 hover:underline" target="_blank" rel="noopener">Site</a>
+          <div
+            class="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-md card-tilt reveal transition-all duration-500 hover:border-blue-500/50 hover:bg-white/10">
+            <div class="aspect-video relative overflow-hidden">
+              <img src="static/images/michlifen.jpg" alt="Michlifen"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                <div class="flex gap-4">
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-blue-500 transition-colors"
+                    title="GitHub"><i class="fab fa-github"></i></a>
+                  <a href="https://www.michlifen.com/fr/restaurants-bars/restaurant-gastronomique.html" target="_blank"
+                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-teal-500 transition-colors"
+                    title="Live Site"><i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <span class="text-sm text-gray-400">Vue • Express</span>
               </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold group-hover:text-blue-300 transition-colors">Michlifen Resort</h3>
+                <span class="text-xs font-semibold px-2 py-1 rounded-md bg-white/10 text-gray-400">Flask • Luxury
+                  UI</span>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6">Expérience digitale immersive pour un établissement
+                de prestige, optimisée pour la conversion et le SEO.</p>
             </div>
           </div>
 
           <!-- Project 3 -->
-         <div class="bg-[rgba(255,255,255,0.02)] rounded-xl overflow-hidden card-tilt reveal">
-            <div class="h-44 bg-black/30 overflow-hidden">
-              <img src="static/images/lina.jpg" alt="E-commerce"
-                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold">SITE WEB</h3>
-              <p class="text-gray-400 mt-2 text-sm">Site  (React, Node, paiement).</p>
-              <div class="mt-4 flex justify-between items-center">
-                <div class="flex gap-2">
-                  <a href="#" class="text-sm text-indigo-300 hover:underline"
-                    aria-label="Voir code GitHub projet e-commerce"><i class="fab fa-github" aria-hidden="true"></i>
-                    Code</a>
+          <div
+            class="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-md card-tilt reveal transition-all duration-500 hover:border-teal-500/50 hover:bg-white/10">
+            <div class="aspect-video relative overflow-hidden">
+              <img src="static/images/lina.jpg" alt="Lina"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                <div class="flex gap-4">
                   <a href="#"
-                    class="text-sm text-indigo-300 hover:underline" aria-label="Voir démo projet e-commerce"><i
-                      class="fas fa-external-link-alt" aria-hidden="true"></i> Demo</a>
+                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-teal-500 transition-colors"
+                    title="GitHub"><i class="fab fa-github"></i></a>
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-green-500 transition-colors"
+                    title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <span class="text-sm text-gray-400">React • Node</span>
               </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold group-hover:text-teal-300 transition-colors">Lina Website</h3>
+                <span class="text-xs font-semibold px-2 py-1 rounded-md bg-white/10 text-gray-400">React • Design</span>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6">Interface moderne et épurée mettant l'accent sur le
+                contenu et l'interactivité utilisateur.</p>
             </div>
           </div>
 
           <!-- Project 4 -->
-          <div class="bg-[rgba(255,255,255,0.02)] rounded-xl overflow-hidden card-tilt reveal">
-            <div class="h-44 bg-black/30 overflow-hidden">
-              <img src="static/images/WhatsApp Image 2026-01-31 at 22.28.51.jpeg" alt="Dashboard"
-                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
-            </div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold"> SITE WEB</h3>
-              <p class="text-gray-400 mt-2 text-sm">Web React Native + Firebase.</p>
-              <div class="mt-4 flex justify-between items-center">
-                <div class="flex gap-2">
-                  <a href="#" class="text-sm text-indigo-300 hover:underline"><i class="fab fa-github"
-                      aria-hidden="true"></i> Code</a>
+          <div
+            class="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-md card-tilt reveal transition-all duration-500 hover:border-pink-500/50 hover:bg-white/10">
+            <div class="aspect-video relative overflow-hidden">
+              <img src="static/images/WhatsApp Image 2026-01-31 at 22.28.51.jpeg" alt="React Native"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                <div class="flex gap-4">
                   <a href="#"
-                    class="text-sm text-indigo-300 hover:underline"><i class="fas fa-external-link-alt"
-                      aria-hidden="true"></i> site</a>
+                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-pink-500 transition-colors"
+                    title="GitHub"><i class="fab fa-github"></i></a>
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-rose-500 transition-colors"
+                    title="Demo"><i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <span class="text-sm text-gray-400">React Native • Firebase</span>
               </div>
             </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold group-hover:text-pink-300 transition-colors">App Mobile Native</h3>
+                <span class="text-xs font-semibold px-2 py-1 rounded-md bg-white/10 text-gray-400">React Native •
+                  Firebase</span>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6">Application mobile multiplateforme performante avec
+                synchronisation des données en temps réel.</p>
+            </div>
           </div>
-        <div class="mt-8 text-center reveal">
+        </div>
+
+        <div class="mt-16 text-center reveal">
           <a href="#"
-            class="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-gradient-to-r from-[#6a11cb] to-[#2575fc]">Voir
-            tous mes projets <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            class="group inline-flex items-center gap-4 px-8 py-4 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold shadow-xl shadow-indigo-500/20 hover:scale-105 transition-all">
+            Voir tous mes projets <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Certifications -->
-    <section id="certifs" class="py-14 bg-[rgba(255,255,255,0.01)]" aria-labelledby="h-certifs">
-      <div class="container mx-auto">
-        <h2 id="h-certifs" class="text-3xl font-bold reveal">Certifications & Formations</h2>
-        <div class="mt-6 grid md:grid-cols-3 gap-4 reveal">
-          <div class="p-4 rounded-lg bg-[rgba(255,255,255,0.02)]">
-            <h4 class="font-semibold">Certificat React — Platform X</h4>
-            <p class="text-gray-400 text-sm mt-2">2024 — Concepts avancés React.</p>
+    <section id="certifs" class="py-20 bg-white/[0.01] relative overflow-hidden" aria-labelledby="h-certifs">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div class="max-w-2xl">
+            <h2 id="h-certifs" class="text-4xl font-bold reveal tracking-tight">Certifications & Formations</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mt-4 rounded-full reveal"></div>
+            <p class="text-gray-400 mt-6 text-lg reveal">Mon parcours d'apprentissage continu et mes validations
+              d'expertise technique.</p>
           </div>
-          <div class="p-4 rounded-lg bg-[rgba(255,255,255,0.02)]">
-            <h4 class="font-semibold">AWS Solutions Architect — Level 1</h4>
-            <p class="text-gray-400 text-sm mt-2">2023 — Architecture & déploiement cloud.</p>
+        </div>
+
+        <div class="mt-6 grid md:grid-cols-3 gap-8 reveal">
+          <!-- Cert 1 -->
+          <div
+            class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm card-tilt transition-all duration-500 hover:border-blue-500/50 hover:bg-white/10">
+            <div
+              class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mb-6 text-blue-400 text-xl group-hover:scale-110 transition-transform duration-500">
+              <i class="fab fa-react"></i>
+            </div>
+            <h4 class="font-bold text-xl mb-2 group-hover:text-blue-300 transition-colors">Certificat React — Platform X
+            </h4>
+            <p class="text-gray-400 text-sm leading-relaxed">2024 — Maîtrise des concepts avancés, hooks personnalisés,
+              gestion d'état complexe et optimisation des performances.</p>
           </div>
-          <div class="p-4 rounded-lg bg-[rgba(255,255,255,0.02)]">
-            <h4 class="font-semibold">FullStack Bootcamp</h4>
-            <p class="text-gray-400 text-sm mt-2">2022 — Projects, TDD, CI/CD.</p>
+
+          <!-- Cert 2 -->
+          <div
+            class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm card-tilt transition-all duration-500 hover:border-orange-500/50 hover:bg-white/10">
+            <div
+              class="w-12 h-12 rounded-lg bg-orange-500/20 flex items-center justify-center mb-6 text-orange-400 text-xl group-hover:scale-110 transition-transform duration-500">
+              <i class="fab fa-aws"></i>
+            </div>
+            <h4 class="font-bold text-xl mb-2 group-hover:text-orange-300 transition-colors">AWS Solutions Architect
+            </h4>
+            <p class="text-gray-400 text-sm leading-relaxed">2023 — Level 1 : Conception d'architectures cloud
+              résilientes, sécurisées et hautement disponibles sur AWS.</p>
+          </div>
+
+          <!-- Cert 3 -->
+          <div
+            class="group p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm card-tilt transition-all duration-500 hover:border-indigo-500/50 hover:bg-white/10">
+            <div
+              class="w-12 h-12 rounded-lg bg-indigo-500/20 flex items-center justify-center mb-6 text-indigo-400 text-xl group-hover:scale-110 transition-transform duration-500">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h4 class="font-bold text-xl mb-2 group-hover:text-indigo-300 transition-colors">FullStack Bootcamp</h4>
+            <p class="text-gray-400 text-sm leading-relaxed">2022 — Formation intensive axée sur les projets réels, TDD,
+              CI/CD et les meilleures pratiques de développement.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="py-14" aria-labelledby="h-contact">
-      <div class="container mx-auto grid md:grid-cols-2 gap-8 items-start">
-        <div class="reveal">
-          <h2 id="h-contact" class="text-3xl font-bold">Contact</h2>
-          <p class="text-gray-400 mt-2">Disponible pour missions freelance et opportunités CDI. Envoie-moi un message —
-            je réponds rapidement.</p>
+    <section id="contact" class="py-24 relative overflow-hidden" aria-labelledby="h-contact">
+      <!-- Decorative background elements -->
+      <div
+        class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-600/5 blur-[120px] rounded-full -z-10 animate-pulse">
+      </div>
 
-          <div class="mt-6 space-y-4">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-lg flex items-center justify-center"
-                style="background:var(--glass);border:1px solid rgba(255,255,255,0.03)"><i
-                  class="fas fa-envelope text-indigo-300" aria-hidden="true"></i></div>
-              <div>
-                <div class="font-semibold">Email</div>
-                <div class="text-gray-400 text-sm">benismail722@gmail.com</div>
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <div class="reveal">
+            <h2 id="h-contact" class="text-4xl md:text-5xl font-bold tracking-tight mb-6">Contact</h2>
+            <div class="w-20 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mb-8"></div>
+            <p class="text-gray-300 text-lg leading-relaxed mb-10 max-w-md">Disponible pour missions freelance et
+              opportunités CDI. Envoie-moi un message — je réponds généralement sous 24h.</p>
+
+            <div class="space-y-6">
+              <!-- Contact Info Item -->
+              <div
+                class="group flex items-center gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md transition-all hover:bg-white/10 hover:border-indigo-500/30">
+                <div
+                  class="w-14 h-14 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-xl group-hover:scale-110 transition-transform">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Email</div>
+                  <div class="text-lg font-bold text-white">benismail722@gmail.com</div>
+                </div>
+              </div>
+
+              <div
+                class="group flex items-center gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md transition-all hover:bg-white/10 hover:border-purple-500/30">
+                <div
+                  class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl group-hover:scale-110 transition-transform">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Téléphone</div>
+                  <div class="text-lg font-bold text-white">+212 6 79 56 57 47</div>
+                </div>
+              </div>
+
+              <div
+                class="group flex items-center gap-6 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md transition-all hover:bg-white/10 hover:border-teal-500/30">
+                <div
+                  class="w-14 h-14 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-400 text-xl group-hover:scale-110 transition-transform">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Localisation</div>
+                  <div class="text-lg font-bold text-white">Rabat, Maroc (Remote OK)</div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-lg flex items-center justify-center"
-                style="background:var(--glass);border:1px solid rgba(255,255,255,0.03)"><i
-                  class="fas fa-phone text-indigo-300" aria-hidden="true"></i></div>
-              <div>
-                <div class="font-semibold">Téléphone</div>
-                <div class="text-gray-400 text-sm">+212 6 79 56 57 47</div>
+          <!-- Contact Form -->
+          <div class="reveal" style="transition-delay: 200ms">
+            <form action="{{ url_for('contact') }}" method="POST"
+              class="p-8 md:p-10 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden group"
+              aria-label="Formulaire de contact">
+              <!-- Glass streak -->
+              <div
+                class="absolute -inset-full h-full w-1/2 z-0 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:animate-[shine_4s_ease-in-out_infinite]">
               </div>
-            </div>
+
+              <div class="relative z-10">
+                <div class="mb-6">
+                  <label class="block text-sm font-bold text-gray-400 mb-3 ml-1" for="name">Nom complet</label>
+                  <input id="name" name="name" required placeholder="Votre nom"
+                    class="w-full px-5 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:bg-white/10 transition-all" />
+                </div>
+
+                <div class="mb-6">
+                  <label class="block text-sm font-bold text-gray-400 mb-3 ml-1" for="email">Email</label>
+                  <input id="email" name="email" type="email" required placeholder="votre@email.com"
+                    class="w-full px-5 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:bg-white/10 transition-all" />
+                </div>
+
+                <div class="mb-8">
+                  <label class="block text-sm font-bold text-gray-400 mb-3 ml-1" for="message">Message</label>
+                  <textarea id="message" name="message" rows="5" required
+                    placeholder="Dites-moi tout sur votre projet..."
+                    class="w-full px-5 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:bg-white/10 transition-all resize-none"></textarea>
+                </div>
+
+                <button type="submit"
+                  class="w-full group relative flex justify-center items-center gap-4 px-8 py-5 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-black shadow-xl shadow-indigo-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all overflow-hidden">
+                  <span class="relative z-10 flex items-center gap-3">
+                    Envoyer le message <i
+                      class="fas fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                  </span>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-
-        <form action="{{ url_for('contact') }}" method="POST" class="bg-[rgba(255,255,255,0.02)] p-6 rounded-xl reveal"
-          aria-label="Formulaire de contact">
-          <div class="mb-4">
-            <label class="block text-sm text-gray-300 mb-2" for="name">Nom complet</label>
-            <input id="name" name="name" required
-              class="w-full px-4 py-3 rounded-md bg-transparent border border-white/8 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-          </div>
-          <div class="mb-4">
-            <label class="block text-sm text-gray-300 mb-2" for="email">Email</label>
-            <input id="email" name="email" type="email" required
-              class="w-full px-4 py-3 rounded-md bg-transparent border border-white/8 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-          </div>
-          <div class="mb-4">
-            <label class="block text-sm text-gray-300 mb-2" for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required
-              class="w-full px-4 py-3 rounded-md bg-transparent border border-white/8 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
-          </div>
-          <button type="submit"
-            class="w-full inline-flex justify-center gap-3 items-center px-4 py-3 rounded-lg bg-gradient-to-r from-[#6a11cb] to-[#2575fc]">Envoyer
-            <i class="fas fa-paper-plane" aria-hidden="true"></i></button>
-        </form>
       </div>
     </section>
   </main>
