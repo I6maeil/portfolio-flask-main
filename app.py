@@ -16,7 +16,15 @@ app.secret_key = os.environ.get("FLASK_SECRET", "change_this_secret")
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
 db_path = os.path.join(base_dir, "database.db")
-app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{db_path}"
+
+# Load from .env if available
+load_dotenv()
+env_db_url = os.environ.get("DATABASE_URL")
+if env_db_url:
+    app.config['SQLALCHEMY_DATABASE_URI'] = env_db_url
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{db_path}"
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -127,12 +135,3 @@ def delete_message(id):
 # --------------------------
 if __name__ == '__main__':
     app.run(debug=True)
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-
-print(os.environ.get("DATABASE_URL"))
-print(os.environ.get("EMAIL_ADDRESS"))
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
