@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-6 py-20 lg:py-32 overflow-hidden">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Text Content -->
+        <div class="reveal">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-300 text-xs font-bold mb-6 tracking-wider uppercase">
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
+                </span>
+                Disponible pour nouveaux projets
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+                Web <span
+                    class="bg-gradient-to-r from-accent-400 via-gold to-accent-400 bg-clip-text text-transparent">Développeur</span>
+            </h1>
+
+            <p class="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
+                Salut, je suis <span
+                    class="text-white font-bold decoration-accent-500/50 underline-offset-4 underline">Ismail</span> —
+                architecte web full-stack spécialisé dans la création d'expériences numériques <span
+                    class="text-white">immersives</span> et <span class="text-white">performantes</span>.
+            </p>
+
+            <div class="flex flex-wrap gap-5">
+                <a href="{{ url_for('portfolio') }}"
+                    class="group relative px-8 py-4 rounded-2xl bg-accent-600 text-white font-bold shadow-xl shadow-accent-500/20 hover:scale-105 transition-all overflow-hidden">
+                    <span class="relative z-10 flex items-center gap-3">
+                        <i class="fas fa-folder-open"></i> Voir mon travail
+                    </span>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-accent-500 to-emerald-700 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                </a>
+                <a href="{{ url_for('contact_page') }}"
+                    class="px-8 py-4 rounded-2xl glass text-white font-bold hover:bg-white/10 transition-all flex items-center gap-3">
+                    <i class="fas fa-paper-plane"></i> Me contacter
+                </a>
+            </div>
+
+            <div class="mt-16 flex items-center gap-6 pt-8 border-t border-white/5">
+                <div class="flex -space-x-3">
+                    {% for tech in ['React', 'Node', 'Py', 'Docker'] %}
+                    <div
+                        class="w-10 h-10 rounded-full glass flex items-center justify-center text-[10px] font-black tracking-tighter border-white/10">
+                        {{ tech }}</div>
+                    {% endfor %}
+                </div>
+                <span class="text-sm text-gray-500 font-medium tracking-wide italic">Expertise multi-stack
+                    éprouvée</span>
+            </div>
+        </div>
+
+        <!-- Visual Content / Avatar -->
+        <div class="relative flex justify-center lg:justify-end reveal" style="transition-delay: 200ms">
+            <!-- Animated Rings -->
+            <div
+                class="absolute inset-0 animate-spin [animation-duration:15s] rounded-full border-2 border-dashed border-accent-500/10">
+            </div>
+            <div
+                class="absolute -inset-10 animate-spin [animation-duration:25s] [animation-direction:reverse] rounded-full border border-gold/10">
+            </div>
+
+            <div class="relative z-10 w-72 h-72 md:w-[450px] md:h-[450px]">
+                <div class="absolute inset-0 bg-accent-600/20 blur-[100px] rounded-full"></div>
+                <img src="{{ url_for('static', filename='images/ca9383dc-ee3d-4ef7-9828-fe418baaed3e.jpg') }}"
+                    alt="Portrait d'Ismail"
+                    class="w-full h-full object-cover rounded-[3rem] border-2 border-white/10 shadow-2xl relative z-20 grayscale hover:grayscale-0 transition-all duration-700">
+
+                <!-- Floating Info Card -->
+                <div class="absolute -left-10 bottom-10 glass p-6 rounded-3xl z-30 shadow-2xl reveal"
+                    style="transition-delay: 600ms">
+                    <div class="text-gold font-black text-3xl">+2 Ans</div>
+                    <div class="text-gray-400 text-xs font-bold uppercase tracking-widest">Expérience</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

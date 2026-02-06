@@ -42,6 +42,10 @@ class Message(db.Model):
 with app.app_context():
     db.create_all()
 
+@app.context_processor
+def inject_now():
+    return {'now': datetime.utcnow()}
+
 # --------------------------
 # Email config
 # --------------------------
@@ -88,7 +92,27 @@ def requires_auth(f):
 # --------------------------
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home.html')
+
+@app.route('/skills')
+def skills():
+    return render_template('skills.html')
+
+@app.route('/services')
+def services():
+    return render_template('services.html')
+
+@app.route('/portfolio')
+def portfolio():
+    return render_template('portfolio.html')
+
+@app.route('/certifications')
+def certifications():
+    return render_template('certifications.html')
+
+@app.route('/contact')
+def contact_page():
+    return render_template('contact.html')
 
 @app.route('/contact', methods=['POST'])
 def contact():
