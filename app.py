@@ -20,10 +20,17 @@ db_path = os.path.join(base_dir, "database.db")
 # Load from .env if available
 load_dotenv()
 env_db_url = os.environ.get("DATABASE_URL")
+
 if env_db_url:
+    # Render and some other providers use "postgres://" which is deprecated
+    # SQLAlchemy 2.0+ requires "postgresql://"
+    if env_db_url.startswith("postgres://"):
+        env_db_url = env_db_url.replace("postgres://", "postgresql://", 1)
     app.config['SQLALCHEMY_DATABASE_URI'] = env_db_url
+    print(f"[*] Using Database: Remote PostgreSQL")
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{db_path}"
+    print(f"[*] Using Database: Local SQLite ({db_path})")
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -50,7 +57,7 @@ def inject_now():
 # Email config
 # --------------------------
 EMAIL_ADDRESS = "benismail722@gmail.com"
-EMAIL_PASSWORD = "qhtf bbmi obil eteg"  # token si Gmail
+EMAIL_PASSWORD = "srkbhgqevpxggcjppyth"  # Updated to match the working test_email.py token
 
 def send_email(name, email, message_text):
     msg = EmailMessage()
@@ -116,28 +123,34 @@ def contact_page():
 
 @app.route('/contact', methods=['POST'])
 def contact():
-    name = request.form.get('name', '').strip()
-    email = request.form.get('email', '').strip()
-    message_text = request.form.get('message', '').strip()
-
-    if not name or not email or not message_text:
-        flash("Tous les champs sont obligatoires.", "error")
-        return redirect(url_for('index'))
-
-    # Save message in DB
-    msg = Message(name=name, email=email, message=message_text)
-    db.session.add(msg)
-    db.session.commit()
-
-    # Send email
     try:
-        send_email(name, email, message_text)
-        flash("Message envoyé et sauvegardé avec succès !", "success")
-    except Exception as e:
-        print(e)
-        flash("Message sauvegardé mais erreur lors de l'envoi du mail.", "error")
+        name = request.form.get('name', '').strip()
+        email = request.form.get('email', '').strip()
+        message_text = request.form.get('message', '').strip()
 
-    return redirect(url_for('index'))
+        if not name or not email or not message_text:
+            flash("Tous les champs sont obligatoires.", "error")
+            return redirect(url_for('contact_page'))
+
+        # Save message in DB
+        msg = Message(name=name, email=email, message=message_text)
+        db.session.add(msg)
+        db.session.commit()
+
+        # Send email
+        try:
+            send_email(name, email, message_text)
+            flash("Message envoyé et sauvegardé avec succès !", "success")
+        except Exception as e:
+            print(f"Email Error: {e}")
+            flash("Message sauvegardé dans l'admin, mais erreur d'envoi mail (vérifiez votre connexion).", "warning")
+
+    except Exception as e:
+        db.session.rollback()
+        print(f"Server Error: {e}")
+        flash("Une erreur interne est survenue. Veuillez réessayer plus tard.", "error")
+
+    return redirect(url_for('contact_page'))
 
 @app.route('/admin')
 @requires_auth
@@ -158,4 +171,7 @@ def delete_message(id):
 # Run App
 # --------------------------
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Get port from environment (Render sets this)
+    port = int(os.environ.get("PORT", 5000))
+    print(f"[*] Starting app on port {port}...")
+    app.run(host='0.0.0.0', port=port, debug=True)
