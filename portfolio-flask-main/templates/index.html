@@ -1,87 +1,246 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>IsmailDev — Portfolio Professionnel</title>
-  <meta name="description" content="Portfolio d'Ismail — Développeur Web (Frontend / Backend). Projets, services et contact." />
+  <meta name="description"
+    content="Portfolio d'Ismail — Développeur Web (Frontend / Backend). Projets, services et contact." />
   <meta name="author" content="Ismail" />
   <meta name="theme-color" content="#0b1020" />
 
   <!-- Tailwind (CDN for dev) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome (icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity=""
+    crossorigin="anonymous" />
 
   <style>
-    :root{
+    :root {
       --bg: #0b1020;
-      --panel: rgba(255,255,255,0.03);
+      --panel: rgba(255, 255, 255, 0.03);
       --muted: #9aa4bf;
       --accent-1: #6a11cb;
       --accent-2: #2575fc;
-      --glow: linear-gradient(90deg,var(--accent-1),var(--accent-2));
-      --glass: rgba(255,255,255,0.04);
+      --glow: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+      --glass: rgba(255, 255, 255, 0.04);
     }
 
-    html,body{height:100%}
-    body{
-      background: radial-gradient(1200px 500px at 10% 10%, rgba(37,117,252,0.06), transparent 8%),
-                  radial-gradient(900px 400px at 90% 90%, rgba(106,17,203,0.05), transparent 12%),
-                  var(--bg);
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      background: radial-gradient(1200px 500px at 10% 10%, rgba(37, 117, 252, 0.06), transparent 8%),
+        radial-gradient(900px 400px at 90% 90%, rgba(106, 17, 203, 0.05), transparent 12%),
+        var(--bg);
       color: #e6eef8;
       font-family: Inter, system-ui, -apple-system, "Poppins", "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.45;
     }
 
-    .container{max-width:1200px;margin-left:auto;margin-right:auto;padding-left:1.25rem;padding-right:1.25rem;}
+    .container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
 
-    nav{backdrop-filter: blur(6px); background: linear-gradient(180deg, rgba(10,16,30,0.6), rgba(10,16,30,0.35)); border-bottom:1px solid rgba(255,255,255,0.03)}
-    .nav-link{position:relative;font-weight:600;color:#dbe7ff}
-    .nav-link::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:3px;border-radius:6px;background:var(--glow);transition:width .32s cubic-bezier(.2,.9,.3,1)}
-    .nav-link:hover::after,.nav-link.active::after{width:100%}
+    nav {
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(10, 16, 30, 0.6), rgba(10, 16, 30, 0.35));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03)
+    }
 
-    .hero{padding-top:4.5rem;padding-bottom:4.5rem;position:relative;overflow:hidden}
-    .hero-card{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border: 1px solid rgba(255,255,255,0.04);box-shadow: 0 10px 30px rgba(2,6,23,0.6);border-radius:14px;padding:2rem}
-    .logo-text{font-weight:800; letter-spacing: -0.02em;background:var(--glow); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .nav-link {
+      position: relative;
+      font-weight: 600;
+      color: #dbe7ff
+    }
 
-    .avatar-outer{width:18.5rem;height:18.5rem;border-radius:9999px;display:flex;align-items:center;justify-content:center;position:relative;background: radial-gradient(circle at 30% 30%, rgba(37,117,252,0.12), transparent 20%), radial-gradient(circle at 70% 70%, rgba(106,17,203,0.12), transparent 22%), rgba(255,255,255,0.02);border: 6px solid rgba(255,255,255,0.03);box-shadow: 0 30px 60px rgba(15,20,35,0.6), inset 0 2px 8px rgba(255,255,255,0.02)}
-    .avatar-outer img{width:86%;height:86%;object-fit:cover;border-radius:9999px;display:block}
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 3px;
+      border-radius: 6px;
+      background: var(--glow);
+      transition: width .32s cubic-bezier(.2, .9, .3, 1)
+    }
 
-    .blob{position:absolute;border-radius:50%;filter:blur(36px);mix-blend-mode:screen;opacity:0.55;pointer-events:none}
-    .b1{width:260px;height:260px;background:rgba(106,17,203,0.65);right:-60px;bottom:-40px}
-    .b2{width:170px;height:170px;background:rgba(37,117,252,0.7);left:-50px;top:30px}
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%
+    }
 
-    .particle{position:absolute;border-radius:9999px;opacity:0.95;transform-origin:center;pointer-events:none;filter:blur(.2px)}
+    .hero {
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
+      position: relative;
+      overflow: hidden
+    }
 
-    .card-tilt{transition:transform .35s cubic-bezier(.2,.9,.3,1), box-shadow .35s ease;transform-style:preserve-3d}
-    .card-tilt:hover{transform:translateY(-8px) rotateX(4deg) rotateY(-4deg);box-shadow:0 40px 80px rgba(2,6,23,.6)}
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+      border-radius: 14px;
+      padding: 2rem
+    }
 
-    .badge{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:.35rem .7rem;border-radius:999px;border:1px solid rgba(255,255,255,0.03);font-weight:600}
+    .logo-text {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: var(--glow);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent
+    }
 
-    .skill-bg{background:rgba(255,255,255,0.04);height:10px;border-radius:999px;overflow:hidden}
-    .skill-fill{height:10px;border-radius:999px;width:0;background:linear-gradient(90deg,#6a11cb,#2575fc);transition:width 1.6s cubic-bezier(.2,.9,.3,1)}
+    .avatar-outer {
+      width: 18.5rem;
+      height: 18.5rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: radial-gradient(circle at 30% 30%, rgba(37, 117, 252, 0.12), transparent 20%), radial-gradient(circle at 70% 70%, rgba(106, 17, 203, 0.12), transparent 22%), rgba(255, 255, 255, 0.02);
+      border: 6px solid rgba(255, 255, 255, 0.03);
+      box-shadow: 0 30px 60px rgba(15, 20, 35, 0.6), inset 0 2px 8px rgba(255, 255, 255, 0.02)
+    }
 
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease, transform .8s ease}
-    .reveal.active{opacity:1;transform:translateY(0)}
+    .avatar-outer img {
+      width: 86%;
+      height: 86%;
+      object-fit: cover;
+      border-radius: 9999px;
+      display: block
+    }
 
-    footer{border-top:1px solid rgba(255,255,255,0.03)}
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(36px);
+      mix-blend-mode: screen;
+      opacity: 0.55;
+      pointer-events: none
+    }
 
-    @media (max-width:768px){.avatar-outer{width:14rem;height:14rem}.b1,.b2{display:none}}
+    .b1 {
+      width: 260px;
+      height: 260px;
+      background: rgba(106, 17, 203, 0.65);
+      right: -60px;
+      bottom: -40px
+    }
+
+    .b2 {
+      width: 170px;
+      height: 170px;
+      background: rgba(37, 117, 252, 0.7);
+      left: -50px;
+      top: 30px
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 9999px;
+      opacity: 0.95;
+      transform-origin: center;
+      pointer-events: none;
+      filter: blur(.2px)
+    }
+
+    .card-tilt {
+      transition: transform .35s cubic-bezier(.2, .9, .3, 1), box-shadow .35s ease;
+      transform-style: preserve-3d
+    }
+
+    .card-tilt:hover {
+      transform: translateY(-8px) rotateX(4deg) rotateY(-4deg);
+      box-shadow: 0 40px 80px rgba(2, 6, 23, .6)
+    }
+
+    .badge {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      padding: .35rem .7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      font-weight: 600
+    }
+
+    .skill-bg {
+      background: rgba(255, 255, 255, 0.04);
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden
+    }
+
+    .skill-fill {
+      height: 10px;
+      border-radius: 999px;
+      width: 0;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      transition: width 1.6s cubic-bezier(.2, .9, .3, 1)
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .8s ease, transform .8s ease
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.03)
+    }
+
+    @media (max-width:768px) {
+      .avatar-outer {
+        width: 14rem;
+        height: 14rem
+      }
+
+      .b1,
+      .b2 {
+        display: none
+      }
+    }
 
     /* small accessibility helpers */
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0
+    }
   </style>
 </head>
+
 <body class="antialiased">
 
   <!-- NAV -->
   <nav class="fixed w-full z-50" aria-label="Navigation principale">
     <div class="container mx-auto flex items-center justify-between py-4">
       <a href="#accueil" class="flex items-center gap-3" aria-label="IsmailDev home">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#6a11cb,#2575fc);box-shadow:0 8px 30px rgba(37,117,252,0.12)">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center"
+          style="background:linear-gradient(135deg,#6a11cb,#2575fc);box-shadow:0 8px 30px rgba(37,117,252,0.12)">
           <i class="fas fa-code text-white" aria-hidden="true"></i>
         </div>
         <span class="logo-text text-xl">IsmailDev</span>
@@ -96,15 +255,19 @@
       </div>
 
       <!-- mobile toggle -->
-      <button id="nav-toggle" class="md:hidden text-gray-300" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+      <button id="nav-toggle" class="md:hidden text-gray-300" aria-expanded="false" aria-controls="mobile-menu"
+        aria-label="Ouvrir le menu">
         <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
       </button>
     </div>
 
     <!-- mobile menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transform -translate-y-full transition-transform duration-350 md:hidden" aria-hidden="true">
+    <div id="mobile-menu"
+      class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transform -translate-y-full transition-transform duration-350 md:hidden"
+      aria-hidden="true">
       <div class="absolute right-4 top-4">
-        <button id="nav-close" class="text-white text-2xl" aria-label="Fermer le menu"><i class="fas fa-times" aria-hidden="true"></i></button>
+        <button id="nav-close" class="text-white text-2xl" aria-label="Fermer le menu"><i class="fas fa-times"
+            aria-hidden="true"></i></button>
       </div>
       <div class="h-full flex flex-col items-center justify-center gap-6">
         <a class="text-xl text-white" href="#accueil">Accueil</a>
@@ -122,14 +285,22 @@
       <!-- left -->
       <div class="space-y-6">
         <div class="hero-card">
-          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Web <span style="background:var(--glow);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Développeur</span></h1>
-          <p class="text-gray-300 mt-3 max-w-xl">Salut, je suis <strong>Ismail</strong> — développeur web full-stack. Je transforme des idées en produits numériques robustes et accessibles. Techs : Python, JavaScript, React, Node, Docker, AWS.</p>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Web <span
+              style="background:var(--glow);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Développeur</span>
+          </h1>
+          <p class="text-gray-300 mt-3 max-w-xl">Salut, je suis <strong>Ismail</strong> — développeur web full-stack. Je
+            transforme des idées en produits numériques robustes et accessibles. Techs : Python, JavaScript, React,
+            Node, Docker, AWS.</p>
 
           <div class="mt-6 flex flex-wrap gap-4">
-            <a href="#portfolio" class="inline-flex items-center gap-3 px-5 py-3 rounded-lg bg-gradient-to-r from-[#6a11cb] to-[#2575fc] shadow-lg hover:scale-105 transition-transform" aria-label="Voir mon portfolio">
+            <a href="#portfolio"
+              class="inline-flex items-center gap-3 px-5 py-3 rounded-lg bg-gradient-to-r from-[#6a11cb] to-[#2575fc] shadow-lg hover:scale-105 transition-transform"
+              aria-label="Voir mon portfolio">
               <i class="fas fa-folder-open" aria-hidden="true"></i> Voir mon travail
             </a>
-            <a href="#contact" class="inline-flex items-center gap-3 px-5 py-3 rounded-lg border border-white/10 hover:bg-white/6 transition-colors" aria-label="Me contacter">
+            <a href="#contact"
+              class="inline-flex items-center gap-3 px-5 py-3 rounded-lg border border-white/10 hover:bg-white/6 transition-colors"
+              aria-label="Me contacter">
               <i class="fas fa-paper-plane" aria-hidden="true"></i> Me contacter
             </a>
           </div>
@@ -145,7 +316,8 @@
         <!-- quick about -->
         <div class="mt-6 reveal" id="about-blurb">
           <h3 class="text-xl font-semibold">À propos</h3>
-          <p class="text-gray-400 max-w-xl">Basé à Rabat — +2ans d'expérience : interfaces modernes, APIs performantes, et déploiement cloud. Disponible pour missions freelance et CDI.</p>
+          <p class="text-gray-400 max-w-xl">Basé à Rabat — +2ans d'expérience : interfaces modernes, APIs performantes,
+            et déploiement cloud. Disponible pour missions freelance et CDI.</p>
         </div>
       </div>
 
@@ -155,7 +327,7 @@
           <div class="blob b1" aria-hidden="true"></div>
           <div class="blob b2" aria-hidden="true"></div>
 
-          <img src="static/images/ca9383dc-ee3d-4ef7-9828-fe418baaed3e.jpg" alt="Portrait d'Ismail" loading="lazy" width="400" height="400" />
+          <img src="static/images/ismail_profile.jpg" alt="Portrait d'Ismail" loading="lazy" width="400" height="400" />
         </div>
       </div>
     </div>
@@ -166,25 +338,35 @@
     <section id="competences" class="py-14" aria-labelledby="h-competences">
       <div class="container mx-auto">
         <h2 id="h-competences" class="text-3xl font-bold reveal">Compétences</h2>
-        <p class="text-gray-400 mt-2 max-w-2xl reveal">Stack technique : HTML/CSS, JavaScript, React, Vue, Node, Django, Laravel, PostgreSQL, MongoDB, Docker, CI/CD, AWS.</p>
+        <p class="text-gray-400 mt-2 max-w-2xl reveal">Stack technique : HTML/CSS, JavaScript, React, Vue, Node, Django,
+          Laravel, PostgreSQL, MongoDB, Docker, CI/CD, AWS.</p>
 
         <div class="grid md:grid-cols-2 gap-8 mt-8">
           <div class="bg-[rgba(255,255,255,0.02)] p-6 rounded-xl card-tilt reveal" aria-labelledby="h-frontend">
             <h3 id="h-frontend" class="text-xl font-semibold mb-4">Frontend</h3>
             <div class="space-y-4">
               <div>
-                <div class="flex justify-between mb-1"><span>HTML / CSS</span><span class="text-sm text-gray-400">95%</span></div>
-                <div class="skill-bg"><div class="skill-fill" data-percent="95%"></div></div>
+                <div class="flex justify-between mb-1"><span>HTML / CSS</span><span
+                    class="text-sm text-gray-400">95%</span></div>
+                <div class="skill-bg">
+                  <div class="skill-fill" data-percent="95%"></div>
+                </div>
               </div>
 
               <div>
-                <div class="flex justify-between mb-1"><span>JavaScript</span><span class="text-sm text-gray-400">90%</span></div>
-                <div class="skill-bg"><div class="skill-fill" data-percent="90%"></div></div>
+                <div class="flex justify-between mb-1"><span>JavaScript</span><span
+                    class="text-sm text-gray-400">90%</span></div>
+                <div class="skill-bg">
+                  <div class="skill-fill" data-percent="90%"></div>
+                </div>
               </div>
 
               <div>
-                <div class="flex justify-between mb-1"><span>React</span><span class="text-sm text-gray-400">88%</span></div>
-                <div class="skill-bg"><div class="skill-fill" data-percent="88%"></div></div>
+                <div class="flex justify-between mb-1"><span>React</span><span class="text-sm text-gray-400">88%</span>
+                </div>
+                <div class="skill-bg">
+                  <div class="skill-fill" data-percent="88%"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -193,18 +375,27 @@
             <h3 id="h-backend" class="text-xl font-semibold mb-4">Backend & DB</h3>
             <div class="space-y-4">
               <div>
-                <div class="flex justify-between mb-1"><span>Node.js</span><span class="text-sm text-gray-400">87%</span></div>
-                <div class="skill-bg"><div class="skill-fill" data-percent="87%"></div></div>
+                <div class="flex justify-between mb-1"><span>Node.js</span><span
+                    class="text-sm text-gray-400">87%</span></div>
+                <div class="skill-bg">
+                  <div class="skill-fill" data-percent="87%"></div>
+                </div>
               </div>
 
               <div>
-                <div class="flex justify-between mb-1"><span>Django / Python</span><span class="text-sm text-gray-400">82%</span></div>
-                <div class="skill-bg"><div class="skill-fill" data-percent="82%"></div></div>
+                <div class="flex justify-between mb-1"><span>Django / Python</span><span
+                    class="text-sm text-gray-400">82%</span></div>
+                <div class="skill-bg">
+                  <div class="skill-fill" data-percent="82%"></div>
+                </div>
               </div>
 
               <div>
-                <div class="flex justify-between mb-1"><span>PostgreSQL / MongoDB</span><span class="text-sm text-gray-400">90%</span></div>
-                <div class="skill-bg"><div class="skill-fill" data-percent="90%"></div></div>
+                <div class="flex justify-between mb-1"><span>PostgreSQL / MongoDB</span><span
+                    class="text-sm text-gray-400">90%</span></div>
+                <div class="skill-bg">
+                  <div class="skill-fill" data-percent="90%"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -216,25 +407,29 @@
     <section id="services" class="py-14 bg-[rgba(255,255,255,0.01)]" aria-labelledby="h-services">
       <div class="container mx-auto">
         <h2 id="h-services" class="text-3xl font-bold reveal">Services</h2>
-        <p class="text-gray-400 mt-2 reveal">Solutions clé en main : développement front, APIs, intégration, migration, et déploiement cloud.</p>
+        <p class="text-gray-400 mt-2 reveal">Solutions clé en main : développement front, APIs, intégration, migration,
+          et déploiement cloud.</p>
 
         <div class="grid md:grid-cols-3 gap-6 mt-8">
           <article class="p-5 rounded-xl card-tilt reveal" role="article" aria-labelledby="s1">
             <h3 id="s1" class="font-semibold text-lg mb-2">Développement Frontend</h3>
             <p class="text-gray-400 mb-4">Interfaces réactives, responsive, performantes et accessibles (a11y).</p>
-            <div class="flex gap-3 flex-wrap" aria-hidden="true"><span class="badge">React</span><span class="badge">Vue</span><span class="badge">Tailwind</span></div>
+            <div class="flex gap-3 flex-wrap" aria-hidden="true"><span class="badge">React</span><span
+                class="badge">Vue</span><span class="badge">Tailwind</span></div>
           </article>
 
           <article class="p-5 rounded-xl card-tilt reveal" role="article" aria-labelledby="s2">
             <h3 id="s2" class="font-semibold text-lg mb-2">APIs & Backend</h3>
             <p class="text-gray-400 mb-4">APIs REST/GraphQL, microservices, auth & tests.</p>
-            <div class="flex gap-3 flex-wrap" aria-hidden="true"><span class="badge">Node</span><span class="badge">Django</span><span class="badge">Laravel</span></div>
+            <div class="flex gap-3 flex-wrap" aria-hidden="true"><span class="badge">Node</span><span
+                class="badge">Django</span><span class="badge">Laravel</span></div>
           </article>
 
           <article class="p-5 rounded-xl card-tilt reveal" role="article" aria-labelledby="s3">
             <h3 id="s3" class="font-semibold text-lg mb-2">DevOps & Cloud</h3>
             <p class="text-gray-400 mb-4">CI/CD, Docker, déploiement et monitoring (AWS / Vercel / DigitalOcean).</p>
-            <div class="flex gap-3 flex-wrap" aria-hidden="true"><span class="badge">Docker</span><span class="badge">AWS</span><span class="badge">CI</span></div>
+            <div class="flex gap-3 flex-wrap" aria-hidden="true"><span class="badge">Docker</span><span
+                class="badge">AWS</span><span class="badge">CI</span></div>
           </article>
         </div>
       </div>
@@ -250,15 +445,20 @@
           <!-- Project 1 -->
           <div class="bg-[rgba(255,255,255,0.02)] rounded-xl overflow-hidden card-tilt reveal">
             <div class="h-44 bg-black/30 overflow-hidden">
-              <img src="static/images/2.jpg" alt="E-commerce" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+              <img src="static/images/2.jpg" alt="E-commerce"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
             </div>
             <div class="p-5">
               <h3 class="text-lg font-semibold">Plateforme E-commerce</h3>
               <p class="text-gray-400 mt-2 text-sm">Site e-commerce complet (React, Node, paiement).</p>
               <div class="mt-4 flex justify-between items-center">
                 <div class="flex gap-2">
-                  <a href="#" class="text-sm text-indigo-300 hover:underline" aria-label="Voir code GitHub projet e-commerce"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
-                  <a href="https://play.google.com/store/apps/details?id=com.woocommerce.android&hl=fr" class="text-sm text-indigo-300 hover:underline" aria-label="Voir démo projet e-commerce"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo</a>
+                  <a href="#" class="text-sm text-indigo-300 hover:underline"
+                    aria-label="Voir code GitHub projet e-commerce"><i class="fab fa-github" aria-hidden="true"></i>
+                    Code</a>
+                  <a href="https://play.google.com/store/apps/details?id=com.woocommerce.android&hl=fr"
+                    class="text-sm text-indigo-300 hover:underline" aria-label="Voir démo projet e-commerce"><i
+                      class="fas fa-external-link-alt" aria-hidden="true"></i> Demo</a>
                 </div>
                 <span class="text-sm text-gray-400">React • Node</span>
               </div>
@@ -268,15 +468,18 @@
           <!-- Project 2 -->
           <div class="bg-[rgba(255,255,255,0.02)] rounded-xl overflow-hidden card-tilt reveal">
             <div class="h-44 bg-black/30 overflow-hidden">
-              <img src="static/images/michlifen.jpg" alt="Dashboard" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+              <img src="static/images/michlifen.jpg" alt="Dashboard"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
             </div>
             <div class="p-5">
               <h3 class="text-lg font-semibold">Site web</h3>
               <p class="text-gray-400 mt-2 text-sm">Visualisation temps réel — HTML, CSS, JS & Flask.</p>
               <div class="mt-4 flex justify-between items-center">
                 <div class="flex gap-2">
-                  <a href="#" class="text-sm text-indigo-300 hover:underline"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
-                  <a href="https://www.michlifen.com/fr/restaurants-bars/restaurant-gastronomique.html" class="text-sm text-indigo-300 hover:underline" target="_blank" rel="noopener">Site</a>
+                  <a href="#" class="text-sm text-indigo-300 hover:underline"><i class="fab fa-github"
+                      aria-hidden="true"></i> Code</a>
+                  <a href="https://www.michlifen.com/fr/restaurants-bars/restaurant-gastronomique.html"
+                    class="text-sm text-indigo-300 hover:underline" target="_blank" rel="noopener">Site</a>
                 </div>
                 <span class="text-sm text-gray-400">Vue • Express</span>
               </div>
@@ -286,15 +489,19 @@
           <!-- Project 3 -->
           <div class="bg-[rgba(255,255,255,0.02)] rounded-xl overflow-hidden card-tilt reveal">
             <div class="h-44 bg-black/30 overflow-hidden">
-              <img src="static/images/lina.png" alt="App fitness" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+              <img src="static/images/lina.png" alt="App fitness"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
             </div>
             <div class="p-5">
               <h3 class="text-lg font-semibold"> Site Web</h3>
               <p class="text-gray-400 mt-2 text-sm">Web React Native + Firebase.</p>
               <div class="mt-4 flex justify-between items-center">
                 <div class="flex gap-2">
-                  <a href="#" class="text-sm text-indigo-300 hover:underline"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
-                  <a href="https://www.google.com/search?q=lina+azrou&oq=lina+azrou+&gs_lcrp=EgZjaHJvbWUyCggAEEUYFhgeGDkyCAgBEAAYFhgeMgcIAhAAGO8FMgcIAxAAGO8FMgcIBBAAGO8FMgoIBRAAGIAEGKIEMgoIBhAAGIAEGKIEMgYIBxBFGDzSAQgyMTcxajFqN6gCCLACAfEF3o_TnVPp2vQ&sourceid=chrome&ie=UTF-8#lpg=cid:CgIgAQ%3D%3D,ik:CAoSFkNJSE0wb2dLRUlDQWdJRGNsY1NRTUE%3D" class="text-sm text-indigo-300 hover:underline"><i class="fas fa-external-link-alt" aria-hidden="true"></i> site</a>
+                  <a href="#" class="text-sm text-indigo-300 hover:underline"><i class="fab fa-github"
+                      aria-hidden="true"></i> Code</a>
+                  <a href="https://www.google.com/search?q=lina+azrou&oq=lina+azrou+&gs_lcrp=EgZjaHJvbWUyCggAEEUYFhgeGDkyCAgBEAAYFhgeMgcIAhAAGO8FMgcIAxAAGO8FMgcIBBAAGO8FMgoIBRAAGIAEGKIEMgoIBhAAGIAEGKIEMgYIBxBFGDzSAQgyMTcxajFqN6gCCLACAfEF3o_TnVPp2vQ&sourceid=chrome&ie=UTF-8#lpg=cid:CgIgAQ%3D%3D,ik:CAoSFkNJSE0wb2dLRUlDQWdJRGNsY1NRTUE%3D"
+                    class="text-sm text-indigo-300 hover:underline"><i class="fas fa-external-link-alt"
+                      aria-hidden="true"></i> site</a>
                 </div>
                 <span class="text-sm text-gray-400">React Native • Firebase</span>
               </div>
@@ -303,7 +510,9 @@
         </div>
 
         <div class="mt-8 text-center reveal">
-          <a href="#" class="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-gradient-to-r from-[#6a11cb] to-[#2575fc]">Voir tous mes projets <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a href="#"
+            class="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-gradient-to-r from-[#6a11cb] to-[#2575fc]">Voir
+            tous mes projets <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </section>
@@ -334,19 +543,24 @@
       <div class="container mx-auto grid md:grid-cols-2 gap-8 items-start">
         <div class="reveal">
           <h2 id="h-contact" class="text-3xl font-bold">Contact</h2>
-          <p class="text-gray-400 mt-2">Disponible pour missions freelance et opportunités CDI. Envoie-moi un message — je réponds rapidement.</p>
+          <p class="text-gray-400 mt-2">Disponible pour missions freelance et opportunités CDI. Envoie-moi un message —
+            je réponds rapidement.</p>
 
           <div class="mt-6 space-y-4">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-lg flex items-center justify-center" style="background:var(--glass);border:1px solid rgba(255,255,255,0.03)"><i class="fas fa-envelope text-indigo-300" aria-hidden="true"></i></div>
+              <div class="w-12 h-12 rounded-lg flex items-center justify-center"
+                style="background:var(--glass);border:1px solid rgba(255,255,255,0.03)"><i
+                  class="fas fa-envelope text-indigo-300" aria-hidden="true"></i></div>
               <div>
                 <div class="font-semibold">Email</div>
                 <div class="text-gray-400 text-sm">benismail722@gmail.com</div>
-              </div>      
+              </div>
             </div>
 
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-lg flex items-center justify-center" style="background:var(--glass);border:1px solid rgba(255,255,255,0.03)"><i class="fas fa-phone text-indigo-300" aria-hidden="true"></i></div>
+              <div class="w-12 h-12 rounded-lg flex items-center justify-center"
+                style="background:var(--glass);border:1px solid rgba(255,255,255,0.03)"><i
+                  class="fas fa-phone text-indigo-300" aria-hidden="true"></i></div>
               <div>
                 <div class="font-semibold">Téléphone</div>
                 <div class="text-gray-400 text-sm">+212 6 79 56 57 47</div>
@@ -355,37 +569,53 @@
           </div>
         </div>
 
-        <form action="{{ url_for('contact') }}" method="POST" class="bg-[rgba(255,255,255,0.02)] p-6 rounded-xl reveal" aria-label="Formulaire de contact">
+        <form action="{{ url_for('contact') }}" method="POST" class="bg-[rgba(255,255,255,0.02)] p-6 rounded-xl reveal"
+          aria-label="Formulaire de contact">
           <div class="mb-4">
             <label class="block text-sm text-gray-300 mb-2" for="name">Nom complet</label>
-            <input id="name" name="name" required class="w-full px-4 py-3 rounded-md bg-transparent border border-white/8 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            <input id="name" name="name" required
+              class="w-full px-4 py-3 rounded-md bg-transparent border border-white/8 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
           </div>
           <div class="mb-4">
             <label class="block text-sm text-gray-300 mb-2" for="email">Email</label>
-            <input id="email" name="email" type="email" required class="w-full px-4 py-3 rounded-md bg-transparent border border-white/8 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            <input id="email" name="email" type="email" required
+              class="w-full px-4 py-3 rounded-md bg-transparent border border-white/8 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
           </div>
           <div class="mb-4">
             <label class="block text-sm text-gray-300 mb-2" for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-md bg-transparent border border-white/8 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+            <textarea id="message" name="message" rows="5" required
+              class="w-full px-4 py-3 rounded-md bg-transparent border border-white/8 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
           </div>
-          <button type="submit" class="w-full inline-flex justify-center gap-3 items-center px-4 py-3 rounded-lg bg-gradient-to-r from-[#6a11cb] to-[#2575fc]">Envoyer <i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+          <button type="submit"
+            class="w-full inline-flex justify-center gap-3 items-center px-4 py-3 rounded-lg bg-gradient-to-r from-[#6a11cb] to-[#2575fc]">Envoyer
+            <i class="fas fa-paper-plane" aria-hidden="true"></i></button>
         </form>
       </div>
     </section>
   </main>
-  
+
   <!-- FOOTER -->
   <div class="flex justify-center gap-6 mt-4">
-    <a href="https://github.com/I6maeil" target="_blank" class="text-gray-400 hover:text-white text-2xl transition-all duration-300 hover:scale-110" rel="noopener"> <i class="fab fa-github" aria-hidden="true"></i>
-    <span class="sr-only">GitHub</span></a>
-    <a href="https://facebook.com/ismail.benis" target="_blank" class="text-gray-400 hover:text-blue-500 text-2xl transition-all duration-300 hover:scale-110" rel="noopener"> <i class="fab fa-facebook" aria-hidden="true"></i>
-    <span class="sr-only">Facebook</span></a>
-    <a href="https://instagram.com/ismail.benis" target="_blank" class="text-gray-400 hover:text-pink-500 text-2xl transition-all duration-300 hover:scale-110" rel="noopener"> <i class="fab fa-instagram" aria-hidden="true"></i>
-    <span class="sr-only">Instagram</span></a>
-    <a href="https://wa.me/212679565747" target="_blank" class="text-gray-400 hover:text-green-500 text-2xl transition-all duration-300 hover:scale-110" rel="noopener"> <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    <span class="sr-only">WhatsApp</span></a>
-    <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank" class="text-gray-400 hover:text-blue-400 text-2xl transition-all duration-300 hover:scale-110" rel="noopener"> <i class="fab fa-linkedin" aria-hidden="true"></i>
-    <span class="sr-only">LinkedIn</span></a>
+    <a href="https://github.com/I6maeil" target="_blank"
+      class="text-gray-400 hover:text-white text-2xl transition-all duration-300 hover:scale-110" rel="noopener"> <i
+        class="fab fa-github" aria-hidden="true"></i>
+      <span class="sr-only">GitHub</span></a>
+    <a href="https://facebook.com/ismail.benis" target="_blank"
+      class="text-gray-400 hover:text-blue-500 text-2xl transition-all duration-300 hover:scale-110" rel="noopener"> <i
+        class="fab fa-facebook" aria-hidden="true"></i>
+      <span class="sr-only">Facebook</span></a>
+    <a href="https://instagram.com/ismail.benis" target="_blank"
+      class="text-gray-400 hover:text-pink-500 text-2xl transition-all duration-300 hover:scale-110" rel="noopener"> <i
+        class="fab fa-instagram" aria-hidden="true"></i>
+      <span class="sr-only">Instagram</span></a>
+    <a href="https://wa.me/212679565747" target="_blank"
+      class="text-gray-400 hover:text-green-500 text-2xl transition-all duration-300 hover:scale-110" rel="noopener"> <i
+        class="fab fa-whatsapp" aria-hidden="true"></i>
+      <span class="sr-only">WhatsApp</span></a>
+    <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
+      class="text-gray-400 hover:text-blue-400 text-2xl transition-all duration-300 hover:scale-110" rel="noopener"> <i
+        class="fab fa-linkedin" aria-hidden="true"></i>
+      <span class="sr-only">LinkedIn</span></a>
   </div>
 
   <footer class="py-10" role="contentinfo">
@@ -399,44 +629,44 @@
 
   <!-- JS: behavior (defer-like, executed after markup) -->
   <script>
-    (function(){
+    (function () {
       'use strict';
 
       const navToggle = document.getElementById('nav-toggle');
       const navClose = document.getElementById('nav-close');
       const mobileMenu = document.getElementById('mobile-menu');
-      if(navToggle){
+      if (navToggle) {
         navToggle.addEventListener('click', () => {
           const expanded = navToggle.getAttribute('aria-expanded') === 'true';
           navToggle.setAttribute('aria-expanded', String(!expanded));
           mobileMenu.classList.remove('-translate-y-full');
-          mobileMenu.setAttribute('aria-hidden','false');
+          mobileMenu.setAttribute('aria-hidden', 'false');
         });
       }
-      if(navClose){
+      if (navClose) {
         navClose.addEventListener('click', () => {
           mobileMenu.classList.add('-translate-y-full');
-          mobileMenu.setAttribute('aria-hidden','true');
-          navToggle.setAttribute('aria-expanded','false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+          navToggle.setAttribute('aria-expanded', 'false');
         });
       }
-      mobileMenu.addEventListener('click', (e) => { if(e.target === mobileMenu) mobileMenu.classList.add('-translate-y-full'); });
+      mobileMenu.addEventListener('click', (e) => { if (e.target === mobileMenu) mobileMenu.classList.add('-translate-y-full'); });
 
       // IntersectionObserver for reveal animations + skill bars
       const revealEls = document.querySelectorAll('.reveal');
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
             entry.target.classList.add('active');
             // animate skill fills when visible
-            entry.target.querySelectorAll('.skill-fill').forEach(el=>{
+            entry.target.querySelectorAll('.skill-fill').forEach(el => {
               const p = el.dataset.percent || '0%';
-              setTimeout(()=> el.style.width = p, 120);
+              setTimeout(() => el.style.width = p, 120);
             });
           }
         });
-      },{threshold:0.15});
-      revealEls.forEach(el=> io.observe(el));
+      }, { threshold: 0.15 });
+      revealEls.forEach(el => io.observe(el));
 
       // Nav active on scroll
       const sections = document.querySelectorAll('section, header');
@@ -444,31 +674,31 @@
       window.addEventListener('scroll', () => {
         const fromTop = window.scrollY + 120;
         sections.forEach(sec => {
-          if(sec.offsetTop <= fromTop && (sec.offsetTop + sec.offsetHeight) > fromTop){
+          if (sec.offsetTop <= fromTop && (sec.offsetTop + sec.offsetHeight) > fromTop) {
             navLinks.forEach(link => link.classList.remove('active'));
             navLinks.forEach(link => {
-              const href = link.getAttribute('href')?.replace('#','');
-              if(href && sec.id === href) link.classList.add('active');
+              const href = link.getAttribute('href')?.replace('#', '');
+              if (href && sec.id === href) link.classList.add('active');
             });
           }
         });
       });
 
       // Particle ring around avatar
-      (function(){
+      (function () {
         const wrap = document.querySelector('.avatar-outer');
-        if(!wrap) return;
-        const colors = ['#ffffff','#a78bfa','#60a5fa','#8b5cf6'];
-        for(let i=0;i<10;i++){
+        if (!wrap) return;
+        const colors = ['#ffffff', '#a78bfa', '#60a5fa', '#8b5cf6'];
+        for (let i = 0; i < 10; i++) {
           const p = document.createElement('div');
           p.className = 'particle';
-          const size = 3 + Math.round(Math.random()*6);
+          const size = 3 + Math.round(Math.random() * 6);
           p.style.width = p.style.height = size + 'px';
           p.style.background = colors[i % colors.length];
-          const angle = (i/10)*Math.PI*2;
-          const r = 70 + Math.random()*30;
-          p.style.left = `calc(50% + ${Math.cos(angle)*r}px)`;
-          p.style.top = `calc(50% + ${Math.sin(angle)*r}px)`;
+          const angle = (i / 10) * Math.PI * 2;
+          const r = 70 + Math.random() * 30;
+          p.style.left = `calc(50% + ${Math.cos(angle) * r}px)`;
+          p.style.top = `calc(50% + ${Math.sin(angle) * r}px)`;
           p.style.opacity = 0.9 - Math.random() * 0.5;
           p.style.transition = 'transform .9s ease, opacity .9s ease';
           wrap.appendChild(p);
@@ -476,29 +706,29 @@
       })();
 
       // Card tilt mouse effect (desktop)
-      document.querySelectorAll('.card-tilt').forEach(card=>{
-        card.addEventListener('mousemove',(e)=>{
+      document.querySelectorAll('.card-tilt').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
           const rect = card.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
-          const cx = rect.width/2, cy = rect.height/2;
-          const dx = (x - cx)/cx, dy = (y - cy)/cy;
-          card.style.transform = `perspective(900px) rotateX(${(-dy*6).toFixed(2)}deg) rotateY(${(dx*6).toFixed(2)}deg) translateY(-6px)`;
+          const cx = rect.width / 2, cy = rect.height / 2;
+          const dx = (x - cx) / cx, dy = (y - cy) / cy;
+          card.style.transform = `perspective(900px) rotateX(${(-dy * 6).toFixed(2)}deg) rotateY(${(dx * 6).toFixed(2)}deg) translateY(-6px)`;
         });
-        card.addEventListener('mouseleave',()=> card.style.transform = '');
+        card.addEventListener('mouseleave', () => card.style.transform = '');
       });
 
       // Smooth anchor scrolling
-      document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click',function(e){
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function (e) {
           const href = this.getAttribute('href');
-          if(!href || href === '#') return;
-          if(href.startsWith('#')){
+          if (!href || href === '#') return;
+          if (href.startsWith('#')) {
             e.preventDefault();
             const id = href.slice(1);
             const el = document.getElementById(id);
-            if(!el) return;
-            window.scrollTo({top: el.offsetTop - 80, behavior:'smooth'});
+            if (!el) return;
+            window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
             mobileMenu.classList.add('-translate-y-full');
           }
         });
@@ -506,13 +736,13 @@
 
       // Footer year
       const yearEl = document.getElementById('year');
-      if(yearEl) yearEl.textContent = new Date().getFullYear();
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
       // Accessibility: keyboard close for mobile menu (Esc)
-      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') mobileMenu.classList.add('-translate-y-full'); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') mobileMenu.classList.add('-translate-y-full'); });
 
     })();
   </script>
 </body>
+
 </html>
-  
