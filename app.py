@@ -49,9 +49,19 @@ def send_email(name, email, message_text):
     msg['From'] = EMAIL_ADDRESS
     msg['To'] = EMAIL_ADDRESS
     msg.set_content(f"Nom: {name}\nEmail: {email}\nMessage:\n{message_text}")
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-        smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
-        smtp.send_message(msg)
+
+    try:
+        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+            smtp.ehlo()
+            smtp.starttls()  # 🔥 مهم بزاف
+            smtp.ehlo()
+            smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+            smtp.send_message(msg)
+            print("✅ Email sent successfully")
+
+    except Exception as e:
+        print("❌ Email error:", e)
+        raise e
 
 ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "1234")
@@ -140,5 +150,5 @@ def delete_message(id):
     return redirect(url_for('admin'))
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 587))
+    port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
