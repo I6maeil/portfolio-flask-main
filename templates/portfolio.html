@@ -24,16 +24,17 @@
     <div class="grid md:grid-cols-2 gap-10">
         {% set projects = [
         ('Luxe Resort Experience', 'michlifen.jpg', 'Flask • Luxury UI', 'Une refonte complète pour un établissement de
-        prestige, focalisée sur l\'immersion visuelle.'),
+        prestige, focalisée sur l\'immersion visuelle.',
+        'https://www.michlifen.com/fr/restaurants-bars/restaurant-gastronomique.html'),
         ('Global E-commerce Hub', '2.jpg', 'React • Node', 'Plateforme scalable gérant des milliers de transactions
-        quotidiennes.'),
+        quotidiennes.', '#'),
         ('Lina Creative Agency', 'lina.jpg', 'Next.js • Design', 'Une vitrine moderne pour une agence créative,
-        utilisant des animations avancées.'),
+        utilisant des animations avancées.', '#'),
         ('Wellness Native App', 'WhatsApp Image 2026-01-31 at 22.28.51.jpeg', 'React Native', 'Application mobile
-        cross-platform avec focus sur l\'expérience utilisateur.')
+        cross-platform avec focus sur l\'expérience utilisateur.', '#')
         ] %}
 
-        {% for title, img, stack, desc in projects %}
+        {% for title, img, stack, desc, link in projects %}
         <div class="group reveal" style="transition-delay: {{ loop.index0 * 100 }}ms">
             <div class="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden glass mb-8">
                 <img src="{{ url_for('static', filename='images/' + img) }}" alt="{{ title }}"
@@ -44,7 +45,7 @@
                         <a href="#"
                             class="w-12 h-12 rounded-full glass flex items-center justify-center text-white hover:bg-accent-500 transition-colors"><i
                                 class="fab fa-github"></i></a>
-                        <a href="#"
+                        <a href="{{ link }}" {% if link !='#' %}target="_blank" {% endif %}
                             class="w-12 h-12 rounded-full glass flex items-center justify-center text-white hover:bg-gold transition-colors"><i
                                 class="fas fa-external-link-alt"></i></a>
                     </div>

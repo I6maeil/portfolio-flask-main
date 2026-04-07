@@ -8,37 +8,23 @@ from email.message import EmailMessage
 from functools import wraps
 import os
 
-# --------------------------
-# Config Flask & Database
-# --------------------------
 app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET", "change_this_secret")
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
 db_path = os.path.join(base_dir, "database.db")
 
-# Load from .env if available
-load_dotenv()
 env_db_url = os.environ.get("DATABASE_URL")
-
 if env_db_url:
-    # Render and some other providers use "postgres://" which is deprecated
-    # SQLAlchemy 2.0+ requires "postgresql://"
     if env_db_url.startswith("postgres://"):
         env_db_url = env_db_url.replace("postgres://", "postgresql://", 1)
     app.config['SQLALCHEMY_DATABASE_URI'] = env_db_url
-    print(f"[*] Using Database: Remote PostgreSQL")
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{db_path}"
-    print(f"[*] Using Database: Local SQLite ({db_path})")
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 db = SQLAlchemy(app)
 
-# --------------------------
-# Model
-# --------------------------
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), nullable=False)
@@ -53,11 +39,9 @@ with app.app_context():
 def inject_now():
     return {'now': datetime.utcnow()}
 
-# --------------------------
-# Email config
-# --------------------------
+# ✅ Gmail مكتوب مباشرة
 EMAIL_ADDRESS = "benismail722@gmail.com"
-EMAIL_PASSWORD = "srkbhgqevpxggcjppyth"  # Updated to match the working test_email.py token
+EMAIL_PASSWORD = "vwbcvuphyslgsyvl"
 
 def send_email(name, email, message_text):
     msg = EmailMessage()
@@ -65,25 +49,18 @@ def send_email(name, email, message_text):
     msg['From'] = EMAIL_ADDRESS
     msg['To'] = EMAIL_ADDRESS
     msg.set_content(f"Nom: {name}\nEmail: {email}\nMessage:\n{message_text}")
-
-    with smtplib.SMTP_SSL('smtp.gmail.com', (465)) as smtp:
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
         smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         smtp.send_message(msg)
 
-# --------------------------
-# Basic Auth for Admin
-# --------------------------
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "1234"
+ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "1234")
 
 def check_auth(username, password):
     return username == ADMIN_USERNAME and password == ADMIN_PASSWORD
 
 def authenticate():
-    return Response(
-        'Non autorisé.', 401,
-        {'WWW-Authenticate': 'Basic realm="Login Required"'}
-    )
+    return Response('Non autorisé.', 401, {'WWW-Authenticate': 'Basic realm="Login Required"'})
 
 def requires_auth(f):
     @wraps(f)
@@ -94,9 +71,6 @@ def requires_auth(f):
         return f(*args, **kwargs)
     return decorated
 
-# --------------------------
-# Routes
-# --------------------------
 @app.route('/')
 def index():
     return render_template('home.html')
@@ -132,23 +106,21 @@ def contact():
             flash("Tous les champs sont obligatoires.", "error")
             return redirect(url_for('contact_page'))
 
-        # Save message in DB
         msg = Message(name=name, email=email, message=message_text)
         db.session.add(msg)
         db.session.commit()
 
-        # Send email
         try:
             send_email(name, email, message_text)
             flash("Message envoyé et sauvegardé avec succès !", "success")
         except Exception as e:
             print(f"Email Error: {e}")
-            flash("Message sauvegardé dans l'admin, mais erreur d'envoi mail (vérifiez votre connexion).", "warning")
+            flash("Message sauvegardé, mais erreur d'envoi mail.", "warning")
 
     except Exception as e:
         db.session.rollback()
         print(f"Server Error: {e}")
-        flash("Une erreur interne est survenue. Veuillez réessayer plus tard.", "error")
+        flash("Une erreur interne est survenue.", "error")
 
     return redirect(url_for('contact_page'))
 
@@ -167,11 +139,6 @@ def delete_message(id):
     flash("Message supprimé.", "success")
     return redirect(url_for('admin'))
 
-# --------------------------
-# Run App
-# --------------------------
 if __name__ == '__main__':
-    # Get port from environment (Render sets this)
     port = int(os.environ.get("PORT", 5000))
-    print(f"[*] Starting app on port {port}...")
     app.run(host='0.0.0.0', port=port, debug=True)
