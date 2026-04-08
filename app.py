@@ -3,9 +3,8 @@ load_dotenv()
 from flask import Flask, render_template, request, redirect, flash, url_for, Response
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import smtplib
-from email.message import EmailMessage
 from functools import wraps
+import resend
 import os
 
 app = Flask(__name__)
@@ -39,19 +38,15 @@ with app.app_context():
 def inject_now():
     return {'now': datetime.utcnow()}
 
-EMAIL_ADDRESS = "benismail722@gmail.com"
-EMAIL_PASSWORD = "vwbcvuphyslgsyvl"
+resend.api_key = "re_8xTSLLTa_GdAMy3h3727BisZd1VV3sZ1u"  # ← حط هنا API Key ديالك
 
 def send_email(name, email, message_text):
-    msg = EmailMessage()
-    msg['Subject'] = f"Nouveau message de {name}"
-    msg['From'] = EMAIL_ADDRESS
-    msg['To'] = EMAIL_ADDRESS
-    msg.set_content(f"Nom: {name}\nEmail: {email}\nMessage:\n{message_text}")
-
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-        smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
-        smtp.send_message(msg)
+    resend.Emails.send({
+        "from": "onboarding@resend.dev",
+        "to": "benismail722@gmail.com",
+        "subject": f"Nouveau message de {name}",
+        "text": f"Nom: {name}\nEmail: {email}\nMessage:\n{message_text}"
+    })
 
 ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "1234")
