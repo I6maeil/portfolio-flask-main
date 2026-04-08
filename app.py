@@ -51,7 +51,7 @@ def send_email(name, email, message_text):
     msg.set_content(f"Nom: {name}\nEmail: {email}\nMessage:\n{message_text}")
 
     try:
-        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
             smtp.ehlo()
             smtp.starttls()  # 🔥 مهم بزاف
             smtp.ehlo()
