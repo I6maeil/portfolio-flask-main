@@ -39,7 +39,6 @@ with app.app_context():
 def inject_now():
     return {'now': datetime.utcnow()}
 
-# ✅ Gmail مكتوب مباشرة
 EMAIL_ADDRESS = "benismail722@gmail.com"
 EMAIL_PASSWORD = "vwbcvuphyslgsyvl"
 
@@ -50,18 +49,9 @@ def send_email(name, email, message_text):
     msg['To'] = EMAIL_ADDRESS
     msg.set_content(f"Nom: {name}\nEmail: {email}\nMessage:\n{message_text}")
 
-    try:
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-            smtp.ehlo()
-            smtp.starttls()  # 🔥 مهم بزاف
-            smtp.ehlo()
-            smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
-            smtp.send_message(msg)
-            print("✅ Email sent successfully")
-
-    except Exception as e:
-        print("❌ Email error:", e)
-        raise e
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+        smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+        smtp.send_message(msg)
 
 ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "1234")
