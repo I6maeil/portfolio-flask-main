@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}IsmailDev{% endblock %} — Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%2310b981"/><text x="50%25" y="50%25" font-family="sans-serif" font-size="70" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="central">I</text></svg>'>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0A0F1C', // Deep dark blue/black
+                        accent: {
+                            400: '#34d399', // Emerald 400
+                            500: '#10b981', // Emerald 500
+                            600: '#059669', // Emerald 600
+                        },
+                        gold: '#fbbf24', // Amber accent
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'shine': 'shine 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'shine': {
+                            '0%': { left: '-100%' },
+                            '100%': { left: '100%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(16, 185, 129, 0.2);
+            --glow-accent: 0 0 30px rgba(16, 185, 129, 0.15);
+        }
+
+        body {
+            background-color: theme('colors.obsidian');
+            color: #e5e7eb;
+            overflow-x: hidden;
+        }
+
+        .mesh-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            background:
+                radial-gradient(circle at 0% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(251, 191, 36, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(52, 211, 153, 0.05) 0%, transparent 50%);
+        }
+
+        .glass {
+            background: rgba(10, 15, 28, 0.75);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 20px rgba(16, 185, 129, 0.1);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: theme('colors.accent.500');
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    {% block head %}{% endblock %}
+</head>
+
+<body class="antialiased">
+    <div class="mesh-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl">
+        <div class="glass rounded-3xl px-8 py-4 flex items-center justify-between shadow-2xl relative overflow-hidden">
+            <!-- Premium Gold Top Edge -->
+            <div
+                class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-gold/40 to-transparent">
+            </div>
+
+            <a href="{{ url_for('index') }}" class="flex items-center gap-3 group">
+                <!-- Logo SVG -->
+                <svg width="40" height="40" viewBox="0 0 100 100" class="transition-transform group-hover:scale-110">
+                    <!-- Code bracket symbol -->
+                    <path d="M30 20 L10 50 L30 80" stroke="#a78bfa" stroke-width="8" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M70 20 L90 50 L70 80" stroke="#a78bfa" stroke-width="8" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <line x1="55" y1="25" x2="45" y2="75" stroke="#d4d4d4" stroke-width="6" stroke-linecap="round" />
+                </svg>
+                <span
+                    class="text-2xl font-black bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
+                    IsmailDev
+                </span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="{{ url_for('index') }}"
+                    class="nav-link font-medium {% if request.endpoint == 'index' %}active text-accent-400{% endif %}">Accueil</a>
+                <a href="{{ url_for('skills') }}"
+                    class="nav-link font-medium {% if request.endpoint == 'skills' %}active text-accent-400{% endif %}">Compétences</a>
+                <a href="{{ url_for('services') }}"
+                    class="nav-link font-medium {% if request.endpoint == 'services' %}active text-accent-400{% endif %}">Services</a>
+                <a href="{{ url_for('portfolio') }}"
+                    class="nav-link font-medium {% if request.endpoint == 'portfolio' %}active text-accent-400{% endif %}">Portfolio</a>
+                <a href="{{ url_for('certifications') }}"
+                    class="nav-link font-medium {% if request.endpoint == 'certifications' %}active text-accent-400{% endif %}">Certifications</a>
+                <a href="{{ url_for('contact_page') }}"
+                    class="nav-link font-medium {% if request.endpoint == 'contact_page' %}active text-accent-400{% endif %}">Contact</a>
+            </div>
+
+            <a href="{{ url_for('static', filename='CV_Ismail_Oujebbad.pdf') }}" download
+                class="hidden md:flex items-center gap-2 bg-accent-600 hover:bg-accent-500 text-white px-5 py-2 rounded-xl font-bold transition-all shadow-lg shadow-accent-500/20 active:scale-95">
+                <i class="fas fa-file-download"></i> CV
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="md:hidden text-gray-300"
+                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden absolute top-20 left-0 w-full glass rounded-2xl p-6 flex flex-col gap-4 shadow-2xl md:hidden">
+            <a href="{{ url_for('index') }}" class="text-lg font-bold">Accueil</a>
+            <a href="{{ url_for('skills') }}" class="text-lg font-bold">Compétences</a>
+            <a href="{{ url_for('services') }}" class="text-lg font-bold">Services</a>
+            <a href="{{ url_for('portfolio') }}" class="text-lg font-bold">Portfolio</a>
+            <a href="{{ url_for('certifications') }}" class="text-lg font-bold">Certifications</a>
+            <a href="{{ url_for('contact_page') }}" class="text-lg font-bold">Contact</a>
+            <a href="{{ url_for('static', filename='CV_Ismail_Oujebbad.pdf') }}" download
+                class="bg-accent-600 text-white p-4 rounded-xl text-center font-bold">
+                Télécharger CV
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 min-h-screen">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="https://github.com/I6maeil" target="_blank"
+                    class="text-gray-400 hover:text-white text-2xl transition-all transform hover:scale-110"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
+                    class="text-gray-400 hover:text-accent-400 text-2xl transition-all transform hover:scale-110"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/212679565747" target="_blank"
+                    class="text-gray-400 hover:text-green-500 text-2xl transition-all transform hover:scale-110"><i
+                        class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="text-gray-500 text-sm">© {{ now.year if now else '2026' }} IsmailDev. Crafted with Precision.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Services{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-6 py-20">
+    <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+        <h1 class="text-5xl md:text-6xl font-black mb-6 italic">Services</h1>
+        <p class="text-gray-400 text-lg">Solutions digitales sur-mesure pour donner vie à vos idées les plus
+            audacieuses.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+        {% set services = [
+        ('Frontend Mastery', 'fas fa-paint-brush', 'Interfaces ultra-performantes, ergonomiques et esthétiques.',
+        ['React', 'Next.js', 'Animation']),
+        ('Backend Robustness', 'fas fa-database', 'Architectures scalables et APIs sécurisées.', ['Node.js', 'Python',
+        'PostgreSQL']),
+        ('Fullstack Sprint', 'fas fa-bolt', 'Développement complet de MVP en un temps record.', ['Agile', 'Saas',
+        'MVP'])
+        ] %}
+
+        {% for title, icon, desc, tags in services %}
+        <div class="group relative glass p-10 rounded-[3rem] overflow-hidden reveal"
+            style="transition-delay: {{ loop.index0 * 100 }}ms">
+            <div
+                class="absolute -right-10 -top-10 w-40 h-40 bg-accent-500/10 blur-3xl group-hover:bg-accent-500/20 transition-all duration-700">
+            </div>
+
+            <div
+                class="w-16 h-16 rounded-2xl bg-accent-500/20 flex items-center justify-center text-accent-400 text-3xl mb-10 group-hover:scale-110 group-hover:rotate-6 transition-all">
+                <i class="{{ icon }}"></i>
+            </div>
+
+            <h2 class="text-3xl font-black mb-6 group-hover:text-accent-300 transition-colors">{{ title }}</h2>
+            <p class="text-gray-400 leading-relaxed mb-10">{{ desc }}</p>
+
+            <div class="flex flex-wrap gap-2">
+                {% for tag in tags %}
+                <span
+                    class="text-[10px] uppercase tracking-widest font-black px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-500">{{
+                    tag }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-20 reveal">
+        <div
+            class="glass p-12 rounded-[3.5rem] bg-gradient-to-r from-accent-500/10 to-transparent border-accent-500/20 flex flex-col md:flex-row items-center justify-between gap-10">
+            <div>
+                <h3 class="text-3xl font-black mb-4">Prêt à démarrer un projet ?</h3>
+                <p class="text-gray-400 font-medium">Discutons de vos besoins et créons quelque chose d'incroyable
+                    ensemble.</p>
+            </div>
+            <a href="{{ url_for('contact_page') }}"
+                class="px-10 py-5 bg-white text-obsidian font-black rounded-2xl hover:bg-accent-400 hover:text-white transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap">
+                Démarrer une collaboration
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

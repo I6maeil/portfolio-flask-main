@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block head %}
+<style>
+    @keyframes slide-down {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-slide-down {
+        animation: slide-down 0.5s ease-out;
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Auto-dismiss flash messages after 5 seconds
+    document.addEventListener('DOMContentLoaded', function () {
+        const flashMessages = document.querySelectorAll('.flash-message');
+        flashMessages.forEach(function (message) {
+            setTimeout(function () {
+                message.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                message.style.opacity = '0';
+                message.style.transform = 'translateX(100%)';
+                setTimeout(function () {
+                    message.parentElement.remove();
+                }, 500);
+            }, 5000);
+        });
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-6 py-20">
+    <div class="max-w-4xl mx-auto">
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="mb-8 space-y-4">
+            {% for category, message in messages %}
+            <div class="flash-message glass p-6 rounded-2xl border-l-4 
+                            {% if category == 'success' %}border-accent-500 bg-accent-500/10{% elif category == 'error' %}border-red-500 bg-red-500/10{% else %}border-gold bg-gold/10{% endif %} 
+                            flex items-center justify-between animate-slide-down">
+                <div class="flex items-center gap-4">
+                    <i class="fas 
+                                    {% if category == 'success' %}fa-check-circle text-accent-400{% elif category == 'error' %}fa-exclamation-circle text-red-400{% else %}fa-info-circle text-gold{% endif %} 
+                                    text-2xl"></i>
+                    <p class="font-semibold text-lg">{{ message }}</p>
+                </div>
+                <button onclick="this.parentElement.parentElement.remove()"
+                    class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <div class="grid md:grid-cols-2 gap-16 reveal">
+            <!-- Info -->
+            <div>
+                <h1 class="text-5xl md:text-6xl font-black mb-8 leading-tight">Parlons <span
+                        class="text-accent-400 italic">Projet</span></h1>
+                <p class="text-gray-400 text-lg mb-12">Je suis toujours ouvert à de nouvelles opportunités et
+                    collaborations créatives.</p>
+
+                <div class="space-y-8">
+                    <div class="flex items-center gap-6 group">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-accent-500/10 flex items-center justify-center text-accent-400 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-black uppercase tracking-widest text-gray-500">Email</div>
+                            <div class="text-lg font-bold">benismail722@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-6 group">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-black uppercase tracking-widest text-gray-500">Téléphone</div>
+                            <div class="text-lg font-bold">+212 679 565 747</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="glass p-10 rounded-[3rem] border-white/5 relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-60 h-60 bg-accent-500/5 blur-3xl"></div>
+
+                <form action="/contact" method="POST" class="relative z-10 space-y-6">
+                    <div>
+                        <input type="text" name="name" placeholder="Votre Nom" required
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-500 transition-colors placeholder:text-gray-400 font-medium text-white">
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Votre Email" required
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-500 transition-colors placeholder:text-gray-400 font-medium text-white">
+                    </div>
+                    <div>
+                        <textarea name="message" placeholder="Votre Message" rows="5" required
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent-500 transition-colors placeholder:text-gray-400 font-medium text-white"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full py-5 bg-accent-600 text-white font-black rounded-2xl hover:bg-accent-500 transition-all shadow-xl shadow-accent-500/20 active:scale-95">
+                        Envoyer le Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
