@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin - Messages</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white p-6">
+  <div class="max-w-5xl mx-auto">
+    <h1 class="text-2xl font-bold mb-4">Admin — Messages</h1>
+    <p class="mb-4"><a href="{{ url_for('index') }}" class="underline">Retour au site</a></p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="mb-4">
+      {% for cat, msg in messages %}
+      <div
+        class="p-2 rounded {{ 'bg-green-700' if cat=='success' else 'bg-yellow-700' if cat=='info' else 'bg-red-700' }}">
+        {{ msg }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <table class="w-full table-auto border-collapse">
+      <thead>
+        <tr class="text-left border-b border-white/10">
+          <th class="py-2">ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Message</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m in messages %}
+        <tr class="align-top border-b border-white/6">
+          <td class="py-3 pr-3">{{ m.id }}</td>
+          <td class="py-3 pr-3">{{ m.name }}</td>
+          <td class="py-3 pr-3">{{ m.email }}</td>
+          <td class="py-3 pr-3 whitespace-pre-wrap">{{ m.message }}</td>
+          <td class="py-3 pr-3">{{ m.created_at.strftime('%Y-%m-%d %H:%M') if m.created_at else 'N/A' }}</td>
+          <td class="py-3">
+            <form method="POST" action="{{ url_for('delete_message', id=m.id) }}"
+              onsubmit="return confirm('Supprimer ce message ?')">
+              <button type="submit"
+                class="px-3 py-1 rounded bg-red-600 hover:bg-red-700 transition-colors">Delete</button>
+            </form>
+          </td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="6" class="py-4">Pas de messages pour l'instant.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
