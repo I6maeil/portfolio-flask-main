@@ -1,0 +1,87 @@
+/* Premium Interactive Effects */
+
+/* 1. Custom Cursor */
+body {
+    cursor: none; /* Hide default cursor */
+}
+
+/* Interactive elements default cursor hide */
+a, button, input, textarea, select, .btn-premium, .hero-img-card, .nav-link {
+    cursor: none;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 99999;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.cursor-outline {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 99998;
+    transition: width 0.2s, height 0.2s, background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.cursor-hover .cursor-dot {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+}
+
+.cursor-hover .cursor-outline {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 200, 150, 0.1);
+    box-shadow: 0 0 20px rgba(0, 200, 150, 0.4);
+    border-color: rgba(0, 200, 150, 0.8);
+}
+
+/* Restore default cursor on mobile devices */
+@media (max-width: 768px) {
+    body, a, button, input, textarea, select, .btn-premium, .hero-img-card, .nav-link {
+        cursor: auto;
+    }
+    a, button, .btn-premium {
+        cursor: pointer;
+    }
+    .cursor-dot, .cursor-outline {
+        display: none !important;
+    }
+}
+
+/* 2. Typing Effect Cursor */
+.typing-cursor {
+    display: inline-block;
+    width: 4px;
+    height: 1.1em;
+    background-color: var(--accent);
+    vertical-align: text-bottom;
+    margin-left: 4px;
+    animation: blinkCursor 0.8s step-end infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* 3. Hero Particles Canvas adjustments */
+#hero-particles {
+    opacity: 0.6;
+}

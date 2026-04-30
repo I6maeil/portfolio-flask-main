@@ -23,15 +23,20 @@
             theme: {
                 extend: {
                     colors: {
-                        obsidian: '#0A0A0A', // Deep black
+                        obsidian: '#0A0A0A',
                         'obsidian-alt': '#0F0F0F',
                         'card-bg': '#141414',
                         accent: {
-                            400: '#00C896', // Emerald Green 400
-                            500: '#00C896', // Emerald Green 500
-                            600: '#00C896', // Emerald Green 600
+                            400: '#00C896',
+                            500: '#00C896',
+                            600: '#00C896',
                         },
-                        gold: '#F5A623', // Amber accent
+                        vibrant: {
+                            400: '#7C3AED', // Restore Vibrant Purple
+                            500: '#6D28D9',
+                            600: '#5B21B6',
+                        },
+                        gold: '#F5A623',
                         'text-primary': '#FFFFFF',
                         'text-secondary': '#A0A0A0',
                         'border-color': '#1E1E1E',
@@ -44,6 +49,7 @@
                         'float': 'float 6s ease-in-out infinite',
                         'shine': 'shine 3s ease-in-out infinite',
                         'blink': 'blink 1.5s ease-in-out infinite',
+                        'parallax': 'parallax 10s ease-in-out infinite',
                     },
                     keyframes: {
                         'gradient-x': {
@@ -53,6 +59,10 @@
                         'float': {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'parallax': {
+                            '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+                            '50%': { transform: 'translate(10px, -10px) scale(1.02)' },
                         },
                         'shine': {
                             '0%': { left: '-100%' },
@@ -72,6 +82,8 @@
         :root {
             --glass: rgba(10, 10, 10, 0.85);
             --glass-border: #1E1E1E;
+            --accent: #00C896;
+            --vibrant: #7C3AED;
         }
 
         body {
@@ -93,6 +105,7 @@
             opacity: 0.03;
             pointer-events: none;
             z-index: 9999;
+            filter: contrast(150%) brightness(150%);
         }
 
         .mesh-bg {
@@ -102,7 +115,9 @@
             width: 100%;
             height: 100%;
             z-index: -10;
-            background: radial-gradient(ellipse at top left, rgba(0, 200, 150, 0.15), transparent 60%);
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(0, 200, 150, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 40%);
         }
 
         .glass {
@@ -129,7 +144,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #00C896;
+            background: var(--accent);
             transition: width 0.3s ease;
         }
 
@@ -139,29 +154,35 @@
         }
 
         .nav-link.active {
-            color: #00C896;
+            color: var(--accent);
         }
 
-        /* Fade-in Animation */
-        .fade-in {
+        /* Staggered Entry Animation */
+        .fade-up {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        .fade-in.visible {
+        .fade-up.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Blinking Dot */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
+
+        /* Status Dot */
         .status-dot {
             width: 8px;
             height: 8px;
-            background-color: #00C896;
+            background-color: var(--accent);
             border-radius: 50%;
             display: inline-block;
-            box-shadow: 0 0 10px #00C896;
+            box-shadow: 0 0 12px var(--accent);
         }
 
         /* Custom Scrollbar */
@@ -182,26 +203,53 @@
             background: #F5A623;
         }
 
-        /* Selection */
-        ::selection {
-            background: #00C896;
-            color: black;
+        /* Buttons */
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        /* Section Divider */
-        .section-divider {
-            height: 1px;
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
-            background: linear-gradient(90deg, transparent, #00C896, transparent);
-            margin: 4rem 0;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: 0.5s;
         }
 
-        /* Button Hover Glow */
-        .btn-primary:hover, .btn-secondary:hover {
-            box-shadow: 0 0 20px rgba(0, 200, 150, 0.4);
+        .btn-premium:hover::before {
+            left: 100%;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(0, 200, 150, 0.4);
+        }
+
+        .btn-vibrant:hover {
+            box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Image Parallax Effect */
+        .hero-img-container {
+            perspective: 1000px;
+        }
+
+        .hero-img-card {
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+        }
+
+        .hero-img-container:hover .hero-img-card {
+            transform: rotateY(-5deg) rotateX(5deg) scale(1.02);
         }
     </style>
     
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 <body class="antialiased">
@@ -241,7 +289,7 @@
             </div>
 
             <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                class="hidden md:flex items-center gap-2 bg-[#00C896] hover:bg-[#F5A623] text-black px-5 py-2 rounded-lg font-bold transition-all btn-primary">
+                class="hidden md:flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-black px-6 py-2.5 rounded-xl font-bold transition-all btn-premium">
                 <i class="fas fa-file-download"></i> CV
             </a>
 
@@ -262,7 +310,7 @@
             <a href="/certifications" class="text-lg font-bold">Certifications</a>
             <a href="/contact" class="text-lg font-bold">Contact</a>
             <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                class="bg-[#00C896] text-black p-4 rounded-lg text-center font-bold">
+                class="bg-accent-500 text-black p-4 rounded-xl text-center font-bold btn-premium">
                 Télécharger CV
             </a>
         </div>
@@ -271,111 +319,104 @@
     <!-- Main Content -->
     <main class="pt-32 min-h-screen">
         
-<div class="container mx-auto px-6 py-20 lg:py-32 overflow-hidden">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="container mx-auto px-6 py-20 lg:py-32 relative">
+    <canvas id="hero-particles" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <!-- Text Content -->
-        <div class="fade-in">
-            <div
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-xs font-bold mb-6 tracking-wider uppercase">
+        <div class="relative z-10">
+            <div class="fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-xs font-bold mb-8 tracking-widest uppercase">
                 <span class="relative flex h-2 w-2">
-                    <span
-                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
                 </span>
                 Disponible pour nouveaux projets
             </div>
 
-            <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
-                Web <span
-                    class="bg-gradient-to-r from-accent-400 via-gold to-accent-400 bg-clip-text text-transparent">Développeur</span>
+            <h1 class="fade-up delay-100 text-5xl md:text-7xl font-black leading-tight mb-8 tracking-tight">
+                <span id="typing-text">Développeur Web Full-Stack</span><span class="typing-cursor"></span> <br/>
+                <span class="bg-gradient-to-r from-accent-400 via-vibrant-400 to-accent-400 bg-clip-text text-transparent">orienté performance</span>
             </h1>
 
-            <p class="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-                Salut, je suis <span
-                    class="text-white font-bold decoration-accent-500/50 underline-offset-4 underline">Ismail</span> —
-                architecte web full-stack spécialisé dans la création d'expériences numériques <span
-                    class="text-white">immersives</span> et <span class="text-white">performantes</span>.
+            <p class="fade-up delay-200 text-text-secondary text-lg md:text-xl leading-relaxed mb-12 max-w-xl font-light">
+                Spécialisé en <span class="text-white font-medium">React et Node.js</span>, je conçois des applications web rapides, scalables et optimisées, avec une attention particulière à la <span class="text-white font-medium">performance</span> et à l'expérience utilisateur.
             </p>
 
-            <div class="flex flex-wrap gap-5">
-                <a href="/portfolio"
-                    class="group relative px-8 py-4 rounded-lg bg-accent-500 text-black font-bold shadow-xl shadow-accent-500/20 hover:scale-105 transition-all overflow-hidden btn-primary">
-                    <span class="relative z-10 flex items-center gap-3">
-                        <i class="fas fa-folder-open"></i> Voir mon travail
-                    </span>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-r from-accent-500 to-gold opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="fade-up delay-300 flex flex-wrap gap-6 mb-16">
+                <a href="/portfolio" class="btn-premium px-10 py-5 rounded-2xl bg-accent-500 text-black font-bold shadow-2xl shadow-accent-500/30 flex items-center gap-3 group">
+                    <span>Explorer mes projets</span>
+                    <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                </a>
+                <a href="/contact" class="btn-premium btn-vibrant px-10 py-5 rounded-2xl border border-vibrant-400/30 bg-vibrant-500/5 text-vibrant-400 font-bold hover:bg-vibrant-500/10 transition-all flex items-center gap-3">
+                    <i class="fas fa-comments"></i>
+                    <span>Discutons de votre projet</span>
+                </a>
+            </div>
+
+            <!-- Proof Stats Section -->
+            <div class="fade-up delay-400 max-w-lg">
+                <div class="grid grid-cols-3 gap-8 pt-10 border-t border-white/5 mb-6">
+                    <div>
+                        <div class="text-3xl font-black text-white mb-1">+2</div>
+                        <div class="text-[10px] uppercase tracking-[0.2em] text-text-secondary font-bold">ans d’expérience</div>
                     </div>
-                </a>
-                <a href="/contact"
-                    class="px-8 py-4 rounded-lg border-2 border-accent-500 text-accent-500 font-bold hover:bg-accent-500/10 transition-all flex items-center gap-3 btn-secondary">
-                    <i class="fas fa-paper-plane"></i> Me contacter
-                </a>
-            </div>
-
-            <!-- Required layout matching the photo: Télécharger CV and social icons -->
-            <div class="mt-10 fade-in" style="transition-delay: 200ms">
-                <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                    class="inline-flex items-center gap-3 px-8 py-3 rounded-lg bg-accent-500 text-black font-bold hover:bg-gold transition-all shadow-lg active:scale-95 w-max btn-primary">
-                    <i class="fas fa-download"></i> Télécharger CV
-                </a>
-                <div class="flex items-center gap-6 mt-6 ml-2">
-                    <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank" class="text-gray-400 hover:text-[#00C896] text-2xl transition-all transform hover:scale-110">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/I6maeil" target="_blank" class="text-gray-400 hover:text-white text-2xl transition-all transform hover:scale-110">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://wa.me/212679565747" target="_blank" class="text-gray-400 hover:text-green-500 text-2xl transition-all transform hover:scale-110">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
+                    <div>
+                        <div class="text-3xl font-black text-white mb-1">15+</div>
+                        <div class="text-[10px] uppercase tracking-[0.2em] text-text-secondary font-bold">projets réalisés</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-accent-400 mb-1">95%+</div>
+                        <div class="text-[10px] uppercase tracking-[0.2em] text-accent-400 font-bold">performance (Lighthouse)</div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="mt-16 flex items-center gap-6 pt-8 border-t border-border-color fade-in" style="transition-delay: 400ms">
-                <div class="flex -space-x-3">
-                    
-                    <div
-                        class="w-10 h-10 rounded-full bg-card-bg border border-border-color flex items-center justify-center text-[10px] font-black tracking-tighter text-text-secondary">
-                        React</div>
-                    
-                    <div
-                        class="w-10 h-10 rounded-full bg-card-bg border border-border-color flex items-center justify-center text-[10px] font-black tracking-tighter text-text-secondary">
-                        Node</div>
-                    
-                    <div
-                        class="w-10 h-10 rounded-full bg-card-bg border border-border-color flex items-center justify-center text-[10px] font-black tracking-tighter text-text-secondary">
-                        Py</div>
-                    
-                    <div
-                        class="w-10 h-10 rounded-full bg-card-bg border border-border-color flex items-center justify-center text-[10px] font-black tracking-tighter text-text-secondary">
-                        Docker</div>
-                    
+                <div class="fade-up delay-500 text-[10px] text-text-secondary/50 italic font-medium uppercase tracking-widest">
+                    Applications optimisées pour performance, scalabilité et UX.
                 </div>
-                <span class="text-sm text-text-secondary font-medium tracking-wide italic">Expertise multi-stack
-                    éprouvée</span>
             </div>
         </div>
 
         <!-- Visual Content / Avatar -->
-        <div class="relative flex justify-center lg:justify-end fade-in" style="transition-delay: 600ms">
-            <!-- Animated Rings -->
-            <div
-                class="absolute inset-0 animate-spin [animation-duration:15s] rounded-full border-2 border-dashed border-accent-500/10">
-            </div>
-            <div
-                class="absolute -inset-10 animate-spin [animation-duration:25s] [animation-direction:reverse] rounded-full border border-gold/10">
-            </div>
+        <div class="hero-img-container fade-up delay-500 relative flex justify-center lg:justify-end">
+            <div class="hero-img-card relative z-10 w-full max-w-[500px] aspect-square">
+                <!-- Background Decorations -->
+                <div class="absolute -inset-4 bg-gradient-to-tr from-accent-500/20 to-vibrant-500/20 rounded-[4rem] blur-2xl opacity-50"></div>
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-accent-500/10 rounded-full blur-[100px] animate-pulse"></div>
+                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-vibrant-500/10 rounded-full blur-[100px] animate-pulse"></div>
 
-            <div class="relative z-10 w-72 h-72 md:w-[450px] md:h-[450px]">
-                <div class="absolute inset-0 bg-accent-500/20 blur-[120px] rounded-full"></div>
-                <img src="/static/images/ismail_profile.jpg" alt="Portrait d'Ismail"
-                    class="w-full h-full object-cover rounded-[3rem] border-2 border-border-color shadow-2xl relative z-20 grayscale hover:grayscale-0 transition-all duration-700">
+                <!-- Main Image -->
+                <div class="relative w-full h-full rounded-[3.5rem] overflow-hidden border border-white/10 shadow-2xl group">
+                    <img src="/static/images/ismail_profile.jpg" alt="Portrait d'Ismail"
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100">
+                    
+                    <!-- Overlay Info -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <div class="flex gap-4">
+                            <a href="https://github.com/I6maeil" class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com" class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-colors">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- Floating Info Card -->
-                <div class="absolute -left-10 bottom-10 bg-card-bg border border-border-color p-6 rounded-3xl z-30 shadow-2xl">
-                    <div class="text-gold font-black text-3xl">+2 Ans</div>
-                    <div class="text-text-secondary text-xs font-bold uppercase tracking-widest">Expérience</div>
+                <!-- Floating Tech Badges -->
+                <div class="absolute -right-8 top-1/4 glass p-4 rounded-2xl shadow-2xl animate-float">
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 text-xs font-bold">Re</div>
+                            <span class="text-xs font-bold text-white/80">React Expert</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute -left-8 bottom-1/4 glass p-4 rounded-2xl shadow-2xl animate-float [animation-delay:1s]">
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">Nd</div>
+                            <span class="text-xs font-bold text-white/80">Node.js Dev</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -418,9 +459,7 @@
 
         // Function to initialize observer
         function initObserver() {
-            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-            // Support legacy reveal class if any left
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
         }
 
         document.addEventListener('DOMContentLoaded', initObserver);
@@ -432,6 +471,9 @@
         contentObserver.observe(document.body, { childList: true, subtree: true });
     </script>
     
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <script src="/static/js/main.js"></script>
 </body>
 
 </html>
