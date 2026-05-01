@@ -10,7 +10,7 @@
     <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%2300C896"/><text x="50%25" y="50%25" font-family="sans-serif" font-size="70" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">I</text></svg>'>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -18,55 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        obsidian: '#0A0A0A', // Deep black
-                        'obsidian-alt': '#0F0F0F',
-                        'card-bg': '#141414',
-                        accent: {
-                            400: '#00C896', // Emerald Green 400
-                            500: '#00C896', // Emerald Green 500
-                            600: '#00C896', // Emerald Green 600
-                        },
-                        gold: '#F5A623', // Amber accent
-                        'text-primary': '#FFFFFF',
-                        'text-secondary': '#A0A0A0',
-                        'border-color': '#1E1E1E',
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'shine': 'shine 3s ease-in-out infinite',
-                        'blink': 'blink 1.5s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'gradient-x': {
-                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
-                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
-                        },
-                        'float': {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        'shine': {
-                            '0%': { left: '-100%' },
-                            '100%': { left: '100%' },
-                        },
-                        'blink': {
-                            '0%, 100%': { opacity: 0.4 },
-                            '50%': { opacity: 1 },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    
 
     <style>
         :root {
@@ -200,6 +152,111 @@
         .btn-primary:hover, .btn-secondary:hover {
             box-shadow: 0 0 20px rgba(0, 200, 150, 0.4);
         }
+    
+        /* Custom Colors & Utilities from Tailwind */
+        :root {
+            --bs-body-bg: #0A0A0A;
+            --bs-body-color: #FFFFFF;
+        }
+        .text-accent-400, .text-accent-500 { color: #00C896 !important; }
+        .text-gold { color: #F5A623 !important; }
+        .text-text-secondary { color: #A0A0A0 !important; }
+        .bg-card-bg { background-color: #141414 !important; }
+        .bg-accent-500 { background-color: #00C896 !important; }
+        .border-border-color { border-color: #1E1E1E !important; }
+        
+        .bg-accent-500\/10 { background-color: rgba(0, 200, 150, 0.1) !important; }
+        .bg-accent-500\/5 { background-color: rgba(0, 200, 150, 0.05) !important; }
+        .border-accent-500\/20 { border-color: rgba(0, 200, 150, 0.2) !important; }
+        .bg-accent-500\/20 { background-color: rgba(0, 200, 150, 0.2) !important; }
+        .bg-gold\/10 { background-color: rgba(245, 166, 35, 0.1) !important; }
+        .bg-gold\/5 { background-color: rgba(245, 166, 35, 0.05) !important; }
+        .border-gold\/20 { border-color: rgba(245, 166, 35, 0.2) !important; }
+        .text-gold\/20 { color: rgba(245, 166, 35, 0.2) !important; }
+        
+        .bg-gradient-to-r { background: linear-gradient(to right, var(--tw-gradient-stops)); }
+        .from-accent-400 { --tw-gradient-from: #00C896; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 200, 150, 0)); }
+        .to-gold { --tw-gradient-to: #F5A623; }
+        .via-gold { --tw-gradient-stops: var(--tw-gradient-from), #F5A623, var(--tw-gradient-to, rgba(245, 166, 35, 0)); }
+        .to-accent-400 { --tw-gradient-to: #00C896; }
+        .bg-clip-text { -webkit-background-clip: text; background-clip: text; }
+        .text-transparent { color: transparent !important; }
+
+        /* Helpers */
+        .rounded-full { border-radius: 9999px !important; }
+        .rounded-lg { border-radius: 0.5rem !important; }
+        .rounded-xl { border-radius: 0.75rem !important; }
+        .rounded-2xl { border-radius: 1rem !important; }
+        .rounded-3xl { border-radius: 1.5rem !important; }
+        .rounded-\[2\.5rem\] { border-radius: 2.5rem !important; }
+        .rounded-\[3rem\] { border-radius: 3rem !important; }
+        
+        .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important; }
+        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important; }
+        
+        .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .transition-colors { transition-property: background-color, border-color, color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .duration-700 { transition-duration: 700ms !important; }
+        .duration-1000 { transition-duration: 1000ms !important; }
+        
+        .hover\:scale-110:hover { transform: scale(1.1) !important; }
+        .hover\:scale-105:hover { transform: scale(1.05) !important; }
+        .active\:scale-95:active { transform: scale(0.95) !important; }
+        .group:hover .group-hover\:scale-110 { transform: scale(1.1) !important; }
+        .group:hover .group-hover\:opacity-100 { opacity: 1 !important; }
+        
+        .tracking-wider { letter-spacing: 0.05em !important; }
+        .tracking-widest { letter-spacing: 0.1em !important; }
+        .tracking-tighter { letter-spacing: -0.05em !important; }
+        .leading-tight { line-height: 1.25 !important; }
+        .leading-relaxed { line-height: 1.625 !important; }
+        
+        .blur-\[120px\] { filter: blur(120px) !important; }
+        .grayscale { filter: grayscale(100%) !important; }
+        .hover\:grayscale-0:hover { filter: grayscale(0%) !important; }
+        
+        .opacity-0 { opacity: 0 !important; }
+        .opacity-75 { opacity: 0.75 !important; }
+        
+        .animate-ping { animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
+        .animate-spin { animation: spin 1s linear infinite; }
+        .\\[animation-duration\:15s\\] { animation-duration: 15s !important; }
+        .\\[animation-duration\:25s\\] { animation-duration: 25s !important; }
+        .\\[animation-direction\:reverse\\] { animation-direction: reverse !important; }
+        
+        @keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        
+        .z-50 { z-index: 50 !important; }
+        .z-30 { z-index: 30 !important; }
+        .z-20 { z-index: 20 !important; }
+        .z-10 { z-index: 10 !important; }
+        .-z-10 { z-index: -10 !important; }
+        
+        .absolute { position: absolute !important; }
+        .relative { position: relative !important; }
+        .fixed { position: fixed !important; }
+        
+        .inset-0 { top: 0px; right: 0px; bottom: 0px; left: 0px; }
+        .-inset-10 { top: -2.5rem; right: -2.5rem; bottom: -2.5rem; left: -2.5rem; }
+        
+        .top-6 { top: 1.5rem !important; }
+        .left-1\/2 { left: 50% !important; }
+        .-translate-x-1\/2 { transform: translateX(-50%) !important; }
+        
+        .max-w-5xl { max-width: 64rem !important; }
+        .max-w-xl { max-width: 36rem !important; }
+        .max-w-3xl { max-width: 48rem !important; }
+        .w-\[90\%\] { width: 90% !important; }
+        
+        .object-cover { object-fit: cover !important; }
+        
+        .decoration-accent-500\/50 { text-decoration-color: rgba(0, 200, 150, 0.5) !important; }
+        .underline-offset-4 { text-underline-offset: 4px !important; }
+        .underline { text-decoration-line: underline !important; }
+    
     </style>
     
 <style>
@@ -218,7 +275,112 @@
     .animate-slide-down {
         animation: slide-down 0.5s ease-out;
     }
-</style>
+
+        /* Custom Colors & Utilities from Tailwind */
+        :root {
+            --bs-body-bg: #0A0A0A;
+            --bs-body-color: #FFFFFF;
+        }
+        .text-accent-400, .text-accent-500 { color: #00C896 !important; }
+        .text-gold { color: #F5A623 !important; }
+        .text-text-secondary { color: #A0A0A0 !important; }
+        .bg-card-bg { background-color: #141414 !important; }
+        .bg-accent-500 { background-color: #00C896 !important; }
+        .border-border-color { border-color: #1E1E1E !important; }
+        
+        .bg-accent-500\/10 { background-color: rgba(0, 200, 150, 0.1) !important; }
+        .bg-accent-500\/5 { background-color: rgba(0, 200, 150, 0.05) !important; }
+        .border-accent-500\/20 { border-color: rgba(0, 200, 150, 0.2) !important; }
+        .bg-accent-500\/20 { background-color: rgba(0, 200, 150, 0.2) !important; }
+        .bg-gold\/10 { background-color: rgba(245, 166, 35, 0.1) !important; }
+        .bg-gold\/5 { background-color: rgba(245, 166, 35, 0.05) !important; }
+        .border-gold\/20 { border-color: rgba(245, 166, 35, 0.2) !important; }
+        .text-gold\/20 { color: rgba(245, 166, 35, 0.2) !important; }
+        
+        .bg-gradient-to-r { background: linear-gradient(to right, var(--tw-gradient-stops)); }
+        .from-accent-400 { --tw-gradient-from: #00C896; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 200, 150, 0)); }
+        .to-gold { --tw-gradient-to: #F5A623; }
+        .via-gold { --tw-gradient-stops: var(--tw-gradient-from), #F5A623, var(--tw-gradient-to, rgba(245, 166, 35, 0)); }
+        .to-accent-400 { --tw-gradient-to: #00C896; }
+        .bg-clip-text { -webkit-background-clip: text; background-clip: text; }
+        .text-transparent { color: transparent !important; }
+
+        /* Helpers */
+        .rounded-full { border-radius: 9999px !important; }
+        .rounded-lg { border-radius: 0.5rem !important; }
+        .rounded-xl { border-radius: 0.75rem !important; }
+        .rounded-2xl { border-radius: 1rem !important; }
+        .rounded-3xl { border-radius: 1.5rem !important; }
+        .rounded-\[2\.5rem\] { border-radius: 2.5rem !important; }
+        .rounded-\[3rem\] { border-radius: 3rem !important; }
+        
+        .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important; }
+        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important; }
+        
+        .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .transition-colors { transition-property: background-color, border-color, color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .duration-700 { transition-duration: 700ms !important; }
+        .duration-1000 { transition-duration: 1000ms !important; }
+        
+        .hover\:scale-110:hover { transform: scale(1.1) !important; }
+        .hover\:scale-105:hover { transform: scale(1.05) !important; }
+        .active\:scale-95:active { transform: scale(0.95) !important; }
+        .group:hover .group-hover\:scale-110 { transform: scale(1.1) !important; }
+        .group:hover .group-hover\:opacity-100 { opacity: 1 !important; }
+        
+        .tracking-wider { letter-spacing: 0.05em !important; }
+        .tracking-widest { letter-spacing: 0.1em !important; }
+        .tracking-tighter { letter-spacing: -0.05em !important; }
+        .leading-tight { line-height: 1.25 !important; }
+        .leading-relaxed { line-height: 1.625 !important; }
+        
+        .blur-\[120px\] { filter: blur(120px) !important; }
+        .grayscale { filter: grayscale(100%) !important; }
+        .hover\:grayscale-0:hover { filter: grayscale(0%) !important; }
+        
+        .opacity-0 { opacity: 0 !important; }
+        .opacity-75 { opacity: 0.75 !important; }
+        
+        .animate-ping { animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
+        .animate-spin { animation: spin 1s linear infinite; }
+        .\\[animation-duration\:15s\\] { animation-duration: 15s !important; }
+        .\\[animation-duration\:25s\\] { animation-duration: 25s !important; }
+        .\\[animation-direction\:reverse\\] { animation-direction: reverse !important; }
+        
+        @keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        
+        .z-50 { z-index: 50 !important; }
+        .z-30 { z-index: 30 !important; }
+        .z-20 { z-index: 20 !important; }
+        .z-10 { z-index: 10 !important; }
+        .-z-10 { z-index: -10 !important; }
+        
+        .absolute { position: absolute !important; }
+        .relative { position: relative !important; }
+        .fixed { position: fixed !important; }
+        
+        .inset-0 { top: 0px; right: 0px; bottom: 0px; left: 0px; }
+        .-inset-10 { top: -2.5rem; right: -2.5rem; bottom: -2.5rem; left: -2.5rem; }
+        
+        .top-6 { top: 1.5rem !important; }
+        .left-1\/2 { left: 50% !important; }
+        .-translate-x-1\/2 { transform: translateX(-50%) !important; }
+        
+        .max-w-5xl { max-width: 64rem !important; }
+        .max-w-xl { max-width: 36rem !important; }
+        .max-w-3xl { max-width: 48rem !important; }
+        .w-\[90\%\] { width: 90% !important; }
+        
+        .object-cover { object-fit: cover !important; }
+        
+        .decoration-accent-500\/50 { text-decoration-color: rgba(0, 200, 150, 0.5) !important; }
+        .underline-offset-4 { text-underline-offset: 4px !important; }
+        .underline { text-decoration-line: underline !important; }
+    
+    </style>
 
 </head>
 
@@ -226,9 +388,9 @@
     <div class="mesh-bg"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl">
-        <div class="glass rounded-3xl px-8 py-4 flex items-center justify-between shadow-2xl relative overflow-hidden">
-            <a href="/" class="flex items-center gap-3 group">
+    <nav class="navbar navbar-expand-lg fixed-top z-50 mx-auto mt-4 w-[90%] max-w-5xl">
+        <div class="container-fluid glass rounded-3xl px-4 py-3 shadow-2xl relative overflow-hidden">
+            <a href="/" class="navbar-brand d-flex align-items-center gap-2 group">
                 <!-- Logo SVG -->
                 <svg width="40" height="40" viewBox="0 0 100 100" class="transition-transform group-hover:scale-110">
                     <path d="M30 20 L10 50 L30 80" stroke="#00C896" stroke-width="8" fill="none" stroke-linecap="round"
@@ -237,119 +399,100 @@
                         stroke-linejoin="round" />
                     <line x1="55" y1="25" x2="45" y2="75" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
                 </svg>
-                <span
-                    class="text-2xl font-black bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
+                <span class="fs-3 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
                     IsmailDev
                 </span>
             </a>
 
-            <div class="hidden md:flex items-center gap-8">
-                <a href="/"
-                    class="nav-link font-medium ">Accueil</a>
-                <a href="/skills"
-                    class="nav-link font-medium ">Compétences</a>
-                <a href="/services"
-                    class="nav-link font-medium ">Services</a>
-                <a href="/portfolio"
-                    class="nav-link font-medium ">Portfolio</a>
-                <a href="/certifications"
-                    class="nav-link font-medium ">Certifications</a>
-                <a href="/contact"
-                    class="nav-link font-medium active">Contact</a>
-            </div>
-
-            <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                class="hidden md:flex items-center gap-2 bg-[#00C896] hover:bg-[#F5A623] text-black px-5 py-2 rounded-lg font-bold transition-all btn-primary">
-                <i class="fas fa-file-download"></i> CV
-            </a>
-
             <!-- Mobile Toggle -->
-            <button class="md:hidden text-gray-300"
-                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                <i class="fas fa-bars text-xl"></i>
+            <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fs-4 text-white"></i>
             </button>
-        </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden absolute top-20 left-0 w-full glass rounded-2xl p-6 flex flex-col gap-4 shadow-2xl md:hidden">
-            <a href="/" class="text-lg font-bold">Accueil</a>
-            <a href="/skills" class="text-lg font-bold">Compétences</a>
-            <a href="/services" class="text-lg font-bold">Services</a>
-            <a href="/portfolio" class="text-lg font-bold">Portfolio</a>
-            <a href="/certifications" class="text-lg font-bold">Certifications</a>
-            <a href="/contact" class="text-lg font-bold">Contact</a>
-            <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                class="bg-[#00C896] text-black p-4 rounded-lg text-center font-bold">
-                Télécharger CV
-            </a>
+            <div class="collapse navbar-collapse justify-content-end gap-lg-4 mt-3 mt-lg-0" id="navbarContent">
+                <div class="navbar-nav align-items-lg-center gap-3 gap-lg-4 mb-3 mb-lg-0">
+                    <a href="/" class="nav-link fw-medium">Accueil</a>
+                    <a href="/skills" class="nav-link fw-medium">Compétences</a>
+                    <a href="/services" class="nav-link fw-medium">Services</a>
+                    <a href="/portfolio" class="nav-link fw-medium">Portfolio</a>
+                    <a href="/certifications" class="nav-link fw-medium">Certifications</a>
+                    <a href="/contact" class="nav-link fw-medium active">Contact</a>
+                </div>
+
+                <a href="/static/CV_Ismail_Oujebbad.pdf" download
+                    class="d-inline-flex align-items-center justify-content-center gap-2 bg-[#00C896] hover:bg-[#F5A623] text-black px-4 py-2 rounded-lg fw-bold transition-all btn-primary ms-lg-3 mt-3 mt-lg-0 w-100" style="max-width: 200px;">
+                    <i class="fas fa-file-download"></i> CV
+                </a>
+            </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="pt-32 min-h-screen">
+    <main class="pt-5 mt-5 vh-100">
         
-<div class="container mx-auto px-6 py-20">
+<div class="container mx-auto px-2 px-lg-4 py-5">
     <div class="max-w-4xl mx-auto">
 
         <!-- Flash Messages -->
         
         
         
-        <div class="grid md:grid-cols-2 gap-16 fade-in">
+        <div class="row g-4 fade-in">
             <!-- Info -->
-            <div>
-                <h1 class="text-5xl md:text-6xl font-black mb-8 leading-tight">Parlons <span
+            <div class="col-12 col-md-6">
+                <h1 class="display-5 display-4 fw-bolder mb-1 leading-tight">Parlons <span
                         class="text-accent-400 italic">Projet</span></h1>
-                <p class="text-text-secondary text-lg mb-12">Je suis toujours ouvert à de nouvelles opportunités et
+                <p class="text-text-secondary fs-5 mb-12">Je suis toujours ouvert à de nouvelles opportunités et
                     collaborations créatives.</p>
 
                 <div class="space-y-8">
-                    <div class="flex items-center gap-6 group">
+                    <div class="d-flex align-items-center gap-2 group">
                         <div
-                            class="w-12 h-12 rounded-2xl bg-accent-500/10 flex items-center justify-center text-accent-400 group-hover:scale-110 transition-transform">
+                            class="w-12 h-12 rounded-2xl bg-accent-500/10 d-flex align-items-center justify-content-center text-accent-400 group-hover:scale-110 transition-transform">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
-                            <div class="text-[10px] font-black uppercase tracking-widest text-text-secondary">Email</div>
-                            <div class="text-lg font-bold text-white">benismail722@gmail.com</div>
+                            <div class="text-[10px] fw-bolder uppercase tracking-widest text-text-secondary">Email</div>
+                            <div class="fs-5 fw-bold text-white">benismail722@gmail.com</div>
                         </div>
                     </div>
-                    <div class="flex items-center gap-6 group">
+                    <div class="d-flex align-items-center gap-2 group">
                         <div
-                            class="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
+                            class="w-12 h-12 rounded-2xl bg-gold/10 d-flex align-items-center justify-content-center text-gold group-hover:scale-110 transition-transform">
                             <i class="fas fa-phone"></i>
                         </div>
                         <div>
-                            <div class="text-[10px] font-black uppercase tracking-widest text-text-secondary">Téléphone</div>
-                            <div class="text-lg font-bold text-white">+212 679 565 747</div>
+                            <div class="text-[10px] fw-bolder uppercase tracking-widest text-text-secondary">Téléphone</div>
+                            <div class="fs-5 fw-bold text-white">+212 679 565 747</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Form -->
-            <div class="bg-card-bg p-10 rounded-[3rem] border border-border-color relative overflow-hidden">
+            <div class="col-12 col-md-6">
+                <div class="bg-card-bg p-4 p-md-5 rounded-[3rem] border border-border-color relative overflow-hidden h-100">
                 <div class="absolute -right-20 -top-20 w-60 h-60 bg-accent-500/5 blur-3xl"></div>
 
                 <form action="/contact" method="POST" class="relative z-10 space-y-6">
                     <div>
                         <input type="text" name="name" placeholder="Votre Nom" required
-                            class="w-full bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-6 py-4 focus:outline-none focus:border-accent-500 transition-colors placeholder:text-text-secondary font-medium text-white">
+                            class="w-100 bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-2 px-lg-4 py-2 focus:outline-none focus:border-accent-500 transition-colors placeholder:text-text-secondary fw-medium text-white">
                     </div>
                     <div>
                         <input type="email" name="email" placeholder="Votre Email" required
-                            class="w-full bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-6 py-4 focus:outline-none focus:border-accent-500 transition-colors placeholder:text-text-secondary font-medium text-white">
+                            class="w-100 bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-2 px-lg-4 py-2 focus:outline-none focus:border-accent-500 transition-colors placeholder:text-text-secondary fw-medium text-white">
                     </div>
                     <div>
                         <textarea name="message" placeholder="Votre Message" rows="5" required
-                            class="w-full bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-6 py-4 focus:outline-none focus:border-accent-500 transition-colors placeholder:text-text-secondary font-medium text-white"></textarea>
+                            class="w-100 bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-2 px-lg-4 py-2 focus:outline-none focus:border-accent-500 transition-colors placeholder:text-text-secondary fw-medium text-white"></textarea>
                     </div>
                     <button type="submit"
-                        class="w-full py-5 bg-accent-500 text-black font-black rounded-lg hover:bg-gold transition-all shadow-xl shadow-accent-500/20 active:scale-95 btn-primary">
+                        class="w-100 py-5 bg-accent-500 text-black fw-bolder rounded-lg hover:bg-gold transition-all shadow-xl shadow-accent-500/20 active:scale-95 btn-primary">
                         Envoyer le Message
                     </button>
                 </form>
+                </div>
             </div>
         </div>
     </div>
@@ -358,20 +501,20 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-[#1E1E1E]">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center gap-8 mb-8">
+    <footer class="py-5 border-t border-[#1E1E1E]">
+        <div class="container mx-auto px-2 px-lg-4 text-center">
+            <div class="d-flex justify-content-center gap-2 mb-1">
                 <a href="https://github.com/I6maeil" target="_blank"
-                    class="text-gray-400 hover:text-white text-2xl transition-all transform hover:scale-110"><i
+                    class="text-secondary hover:text-white fs-3 transition-all transform hover:scale-110"><i
                         class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
-                    class="text-gray-400 hover:text-[#00C896] text-2xl transition-all transform hover:scale-110"><i
+                    class="text-secondary hover:text-[#00C896] fs-3 transition-all transform hover:scale-110"><i
                         class="fab fa-linkedin"></i></a>
                 <a href="https://wa.me/212679565747" target="_blank"
-                    class="text-gray-400 hover:text-green-500 text-2xl transition-all transform hover:scale-110"><i
+                    class="text-secondary hover:text-green-500 fs-3 transition-all transform hover:scale-110"><i
                         class="fab fa-whatsapp"></i></a>
             </div>
-            <p class="text-gray-500 text-sm italic">© 2026 IsmailDev. Crafted with Precision.</p>
+            <p class="text-secondary small italic">© 2026 IsmailDev. Crafted with Precision.</p>
         </div>
     </footer>
 
@@ -422,6 +565,7 @@
     });
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
