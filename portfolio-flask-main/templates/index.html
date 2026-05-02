@@ -246,9 +246,9 @@
         .left-1\/2 { left: 50% !important; }
         .-translate-x-1\/2 { transform: translateX(-50%) !important; }
         
-        .max-w-5xl { max-width: 64rem !important; }
-        .max-w-xl { max-width: 36rem !important; }
-        .max-w-3xl { max-width: 48rem !important; }
+        .w-100 { max-width: 64rem !important; }
+        .w-100 { max-width: 36rem !important; }
+        .w-100 { max-width: 48rem !important; }
         .w-\[90\%\] { width: 90% !important; }
         
         .object-cover { object-fit: cover !important; }
@@ -265,7 +265,7 @@
     <div class="mesh-bg"></div>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top z-50 mx-auto mt-4 w-[90%] max-w-5xl">
+    <nav class="navbar navbar-expand-lg fixed-top z-50 mt-4 w-100 px-4">
         <div class="container-fluid glass rounded-3xl px-4 py-3 shadow-2xl relative overflow-hidden">
             <a href="/" class="navbar-brand d-flex align-items-center gap-2 group">
                 <!-- Logo SVG -->
@@ -305,9 +305,9 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="pt-5 mt-5 vh-100">
+    <main class="pt-5 mt-5 min-vh-100 w-100">
         
-<div class="container mx-auto px-3 px-lg-4 py-5 overflow-hidden">
+<div class="container-fluid px-4 py-5 overflow-hidden">
     <div class="row align-items-center gap-5 gap-lg-0">
         <!-- Text Content -->
         <div class="col-lg-6 fade-in">
@@ -326,7 +326,7 @@
                     class="bg-gradient-to-r from-accent-400 via-gold to-accent-400 bg-clip-text text-transparent">Développeur</span>
             </h1>
 
-            <p class="text-secondary fs-5 md:fs-4 leading-relaxed mb-5 max-w-xl">
+            <p class="text-secondary fs-5 md:fs-4 leading-relaxed mb-5 w-100">
                 Salut, je suis <span
                     class="text-white fw-bold decoration-accent-500/50 underline-offset-4 underline">Ismail</span> —
                 architecte web full-stack spécialisé dans la création d'expériences numériques <span
@@ -422,7 +422,7 @@
 
     <!-- Footer -->
     <footer class="py-5 border-t border-[#1E1E1E]">
-        <div class="container mx-auto px-2 px-lg-4 text-center">
+        <div class="container-fluid px-4 text-center">
             <div class="d-flex justify-content-center gap-2 mb-1">
                 <a href="https://github.com/I6maeil" target="_blank"
                     class="text-secondary hover:text-white fs-3 transition-all transform hover:scale-110"><i
