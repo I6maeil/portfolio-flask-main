@@ -377,10 +377,10 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="pt-5 mt-5 min-vh-100 w-100">
+    <main class="min-vh-100 w-100" style="padding-top: 80px;">
         
-<div class="container-fluid px-4 py-5 overflow-hidden">
-    <div class="row align-items-center gap-5 gap-lg-0">
+<div class="container-fluid px-4 py-4 overflow-hidden">
+    <div class="row align-items-center g-0">
         <!-- Text Content -->
         <div class="col-lg-6 fade-in">
             <div
@@ -393,9 +393,8 @@
                 Disponible pour nouveaux projets
             </div>
 
-            <h1 class="display-5 md:display-3 fw-bolder leading-tight mb-1">
-                Web <span
-                    class="bg-gradient-to-r from-accent-400 via-gold to-accent-400 bg-clip-text text-transparent">Développeur</span>
+            <h1 class="fw-bolder mb-3" style="font-size:2.8rem; line-height:1.2;">
+                Web <span class="bg-gradient-to-r from-accent-400 via-gold to-accent-400 bg-clip-text text-transparent">Développeur</span>
             </h1>
 
             <p class="text-secondary fs-5 md:fs-4 leading-relaxed mb-5 w-100">
@@ -466,24 +465,17 @@
         </div>
 
         <!-- Visual Content / Avatar -->
-        <div class="col-lg-6 relative d-flex justify-content-center lg:justify-content-end fade-in mt-5 mt-lg-0" style="transition-delay: 600ms">
-            <!-- Animated Rings -->
-            <div
-                class="absolute inset-0 animate-spin [animation-duration:15s] rounded-full border-2 border-dashed border-accent-500/10">
-            </div>
-            <div
-                class="absolute -inset-10 animate-spin [animation-duration:25s] [animation-direction:reverse] rounded-full border border-gold/10">
-            </div>
-
-            <div class="relative z-10 w-72 h-72 md:w-[450px] md:h-[450px]">
-                <div class="absolute inset-0 bg-accent-500/20 blur-[120px] rounded-full"></div>
+        <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end fade-in mt-4 mt-lg-0" style="transition-delay: 400ms;">
+            <div class="position-relative" style="width: min(420px, 90%);">
+                <!-- Glow effect behind image -->
+                <div style="position:absolute;inset:0;background:rgba(0,200,150,0.15);filter:blur(60px);border-radius:50%;z-index:0;"></div>
                 <img src="/static/images/ismail_profile.jpg" alt="Portrait d'Ismail"
-                    class="w-100 h-100 object-cover rounded-[3rem] border-2 border-border-color shadow-2xl relative z-20 grayscale hover:grayscale-0 transition-all duration-700">
-
+                    style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2.5rem;border:2px solid #1E1E1E;box-shadow:0 25px 50px rgba(0,0,0,0.5);position:relative;z-index:1;filter:grayscale(100%);transition:filter 0.7s ease;"
+                    onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
                 <!-- Floating Info Card -->
-                <div class="absolute -left-10 bottom-10 bg-card-bg border border-border-color p-6 rounded-3xl z-30 shadow-2xl">
-                    <div class="text-gold fw-bolder fs-2">+2 Ans</div>
-                    <div class="text-text-secondary small fw-bold uppercase tracking-widest">Expérience</div>
+                <div style="position:absolute;left:-1rem;bottom:2rem;background:#141414;border:1px solid #1E1E1E;padding:1rem 1.5rem;border-radius:1.5rem;z-index:10;box-shadow:0 20px 40px rgba(0,0,0,0.5);">
+                    <div class="text-gold fw-bolder" style="font-size:1.5rem;">+2 Ans</div>
+                    <div class="text-text-secondary fw-bold uppercase tracking-widest" style="font-size:0.7rem;">Expérience</div>
                 </div>
             </div>
         </div>
