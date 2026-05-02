@@ -246,10 +246,6 @@
         .left-1\/2 { left: 50% !important; }
         .-translate-x-1\/2 { transform: translateX(-50%) !important; }
         
-        /* Removed */
-        /* Removed */
-        /* Removed */
-        /* Removed */
         
         .object-cover { object-fit: cover !important; }
         
@@ -257,6 +253,41 @@
         .underline-offset-4 { text-underline-offset: 4px !important; }
         .underline { text-decoration-line: underline !important; }
     
+
+        /* ===== FULL WIDTH LAYOUT FIX ===== */
+        html, body {
+            width: 100%;
+            max-width: 100% !important;
+            overflow-x: hidden;
+        }
+        /* Override Bootstrap container max-widths completely */
+        .container,
+        .container-sm,
+        .container-md,
+        .container-lg,
+        .container-xl,
+        .container-xxl,
+        .container-fluid {
+            max-width: 100% !important;
+            width: 100% !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+        }
+        /* Navbar full width */
+        nav.navbar {
+            width: 100% !important;
+            max-width: 100% !important;
+            left: 0 !important;
+            right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+        /* All sections full width */
+        main, section, footer, header {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        /* ===== END FULL WIDTH LAYOUT FIX ===== */
     </style>
     
 </head>
@@ -265,7 +296,7 @@
     <div class="mesh-bg"></div>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top z-50 w-100">
+    <nav class="navbar navbar-expand-lg fixed-top z-50 w-100" style="width:100%!important;left:0;right:0;top:0;">
         <div class="container-fluid glass px-4 py-3 shadow-2xl relative overflow-hidden">
             <a href="/" class="navbar-brand d-flex align-items-center gap-2 group">
                 <!-- Logo SVG -->
