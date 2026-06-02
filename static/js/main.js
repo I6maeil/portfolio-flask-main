@@ -45,46 +45,57 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ------------------------------
-       2. Typing Effect
+       2. Typing Effect (Two-line sequential)
        ------------------------------ */
-    const typingText = document.getElementById("typing-text");
-    if (typingText) {
-        const words = [
-            "Développeur Web Full-Stack",
-            "React & Node.js Developer",
-            "Performance-Oriented Web Engineer"
-        ];
-        let wordIndex = 0;
+    const line1El = document.getElementById("typing-line1");
+    const line2El = document.getElementById("typing-line2");
+    const cursorEl = document.getElementById("typing-cursor");
+
+    if (line1El && line2El && cursorEl) {
+        const line1Text = "Développeur Web Full-Stack";
+        const line2Text = "orienté performance";
+
+        // Clear text for animation (HTML fallback was visible until now)
+        line1El.textContent = "";
+        line2El.textContent = "";
+
+        // Move cursor next to line1 initially
+        line1El.insertAdjacentElement("afterend", cursorEl);
+        // Place cursor right after line1 (before the <br>)
+        line1El.parentNode.insertBefore(cursorEl, line1El.nextSibling);
+
         let charIndex = 0;
-        let isDeleting = false;
+        let currentLine = 1;
 
-        const type = () => {
-            const currentWord = words[wordIndex];
-            
-            if (isDeleting) {
-                charIndex--;
-            } else {
-                charIndex++;
+        const typeLine = () => {
+            if (currentLine === 1) {
+                if (charIndex < line1Text.length) {
+                    line1El.textContent = line1Text.substring(0, charIndex + 1);
+                    charIndex++;
+                    setTimeout(typeLine, 80);
+                } else {
+                    // Line 1 done — move cursor to after line2
+                    line2El.insertAdjacentElement("afterend", cursorEl);
+                    charIndex = 0;
+                    currentLine = 2;
+                    setTimeout(typeLine, 400); // Pause between lines
+                }
+            } else if (currentLine === 2) {
+                if (charIndex < line2Text.length) {
+                    line2El.textContent = line2Text.substring(0, charIndex + 1);
+                    charIndex++;
+                    setTimeout(typeLine, 80);
+                } else {
+                    // All done — stop cursor blinking after a short delay
+                    setTimeout(() => {
+                        cursorEl.classList.add("typing-done");
+                    }, 1500);
+                }
             }
-
-            typingText.textContent = currentWord.substring(0, charIndex);
-
-            let typeSpeed = isDeleting ? 30 : 80;
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 2000; // Pause at the end of word
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 400; // Pause before typing new word
-            }
-
-            setTimeout(type, typeSpeed);
         };
 
         // Start typing after initial delay
-        setTimeout(type, 1000);
+        setTimeout(typeLine, 1000);
     }
 
     /* ------------------------------
