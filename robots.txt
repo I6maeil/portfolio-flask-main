@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: C:\Users\benis\OneDrive\Desktop\egiam-azrou-campus-main
+https://www.smiyak.com/sitemap.xml
+

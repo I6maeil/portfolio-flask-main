@@ -1,0 +1,842 @@
+﻿commit 18000b8f6b7f7f98171722af6ed25e34447098b0
+Author: I6smaeil <benismail722@gmail.com>
+Date:   Sat May 2 19:16:50 2026 +0100
+
+    Full screen layout fix
+
+diff --git a/portfolio-flask-main/templates/certifications.html b/portfolio-flask-main/templates/certifications.html
+index 2b8aafd..ca70dcf 100644
+--- a/portfolio-flask-main/templates/certifications.html
++++ b/portfolio-flask-main/templates/certifications.html
+@@ -246,9 +246,9 @@
+         .left-1\/2 { left: 50% !important; }
+         .-translate-x-1\/2 { transform: translateX(-50%) !important; }
+         
+-        .max-w-5xl { max-width: 64rem !important; }
+-        .max-w-xl { max-width: 36rem !important; }
+-        .max-w-3xl { max-width: 48rem !important; }
++        .w-100 { max-width: 64rem !important; }
++        .w-100 { max-width: 36rem !important; }
++        .w-100 { max-width: 48rem !important; }
+         .w-\[90\%\] { width: 90% !important; }
+         
+         .object-cover { object-fit: cover !important; }
+@@ -265,7 +265,7 @@
+     <div class="mesh-bg"></div>
+ 
+     <!-- Navigation -->
+-    <nav class="navbar navbar-expand-lg fixed-top z-50 mx-auto mt-4 w-[90%] max-w-5xl">
++    <nav class="navbar navbar-expand-lg fixed-top z-50 mt-4 w-100 px-4">
+         <div class="container-fluid glass rounded-3xl px-4 py-3 shadow-2xl relative overflow-hidden">
+             <a href="/" class="navbar-brand d-flex align-items-center gap-2 group">
+                 <!-- Logo SVG -->
+@@ -276,14 +276,14 @@
+                         stroke-linejoin="round" />
+                     <line x1="55" y1="25" x2="45" y2="75" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
+                 </svg>
+-                <span class="fs-3 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
++                <span class="fs-2 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
+                     IsmailDev
+                 </span>
+             </a>
+ 
+             <!-- Mobile Toggle -->
+             <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+-                <i class="fas fa-bars fs-4 text-white"></i>
++                <i class="fas fa-bars fs-3 text-white"></i>
+             </button>
+ 
+             <div class="collapse navbar-collapse justify-content-end gap-lg-4 mt-3 mt-lg-0" id="navbarContent">
+@@ -305,13 +305,13 @@
+     </nav>
+ 
+     <!-- Main Content -->
+-    <main class="pt-5 mt-5 vh-100">
++    <main class="pt-5 mt-5 min-vh-100 w-100">
+         
+-<div class="container mx-auto px-2 px-lg-4 py-5">
+-    <div class="max-w-3xl mb-5 fade-in">
+-        <h1 class="display-5 display-4 fw-bolder mb-1 italic tracking-tighter">Certifications <span
++<div class="w-100 px-4 py-5">
++    <div class="w-100 mb-5 fade-in">
++        <h1 class="display-3 display-2 fw-bolder mb-1 italic tracking-tighter">Certifications <span
+                 class="text-accent-400">& Formations</span></h1>
+-        <p class="text-text-secondary fs-5 leading-relaxed">
++        <p class="text-text-secondary fs-4 leading-relaxed">
+             Parcours de formation continue et validations d'expertise technique.
+         </p>
+     </div>
+@@ -321,12 +321,12 @@
+         <div class="col-12 col-md-6 col-lg-4 group bg-card-bg border border-border-color p-4 p-md-5 rounded-[2.5rem] fade-in transition-all duration-500 hover:border-accent-500/50 h-100"
+             style="transition-delay: 0ms">
+             <div
+-                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-3 mb-1 group-hover:scale-110 transition-transform">
++                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-2 mb-1 group-hover:scale-110 transition-transform">
+                 <i class="fas fa-graduation-cap"></i>
+             </div>
+             <div class="text-[10px] fw-bolder uppercase tracking-widest text-text-secondary mb-1">2024 ÔÇô 2026</div>
+             <h3
+-                class="fs-3 fw-bolder mb-1 leading-tight group-hover:text-accent-400 transition-colors">
++                class="fs-2 fw-bolder mb-1 leading-tight group-hover:text-accent-400 transition-colors">
+                 Technicien Sp├®cialis├® en d├®veloppement informatique</h3>
+             <p class="text-text-secondary small fw-medium">EGIAM Ecole de Gestion et Informatique Appliqu├®e et Marketing</p>
+         </div>
+@@ -334,12 +334,12 @@
+         <div class="col-12 col-md-6 col-lg-4 group bg-card-bg border border-border-color p-4 p-md-5 rounded-[2.5rem] fade-in transition-all duration-500 hover:border-accent-500/50 h-100"
+             style="transition-delay: 100ms">
+             <div
+-                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-3 mb-1 group-hover:scale-110 transition-transform">
++                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-2 mb-1 group-hover:scale-110 transition-transform">
+                 <i class="fas fa-desktop"></i>
+             </div>
+             <div class="text-[10px] fw-bolder uppercase tracking-widest text-text-secondary mb-1">2022 ÔÇô 2024</div>
+             <h3
+-                class="fs-3 fw-bolder mb-1 leading-tight group-hover:text-accent-400 transition-colors">
++                class="fs-2 fw-bolder mb-1 leading-tight group-hover:text-accent-400 transition-colors">
+                 Technicien en gestion informatis├®e</h3>
+             <p class="text-text-secondary small fw-medium">EGIAM Ecole de Gestion et Informatique Appliqu├®e et Marketing</p>
+         </div>
+@@ -347,12 +347,12 @@
+         <div class="col-12 col-md-6 col-lg-4 group bg-card-bg border border-border-color p-4 p-md-5 rounded-[2.5rem] fade-in transition-all duration-500 hover:border-accent-500/50 h-100"
+             style="transition-delay: 200ms">
+             <div
+-                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-3 mb-1 group-hover:scale-110 transition-transform">
++                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-2 mb-1 group-hover:scale-110 transition-transform">
+                 <i class="fas fa-bolt"></i>
+             </div>
+             <div class="text-[10px] fw-bolder uppercase tracking-widest text-text-secondary mb-1">2020 ÔÇô 2022</div>
+             <h3
+-                class="fs-3 fw-bolder mb-1 leading-tight group-hover:text-accent-400 transition-colors">
++                class="fs-2 fw-bolder mb-1 leading-tight group-hover:text-accent-400 transition-colors">
+                 Qualification ├®lectricit├® dÔÇÖentretien industrielle</h3>
+             <p class="text-text-secondary small fw-medium">INSTITUT SPECIALISE DE TECHNOLOGIE APPLIQUEE</p>
+         </div>
+@@ -360,12 +360,12 @@
+         <div class="col-12 col-md-6 col-lg-4 group bg-card-bg border border-border-color p-4 p-md-5 rounded-[2.5rem] fade-in transition-all duration-500 hover:border-accent-500/50 h-100"
+             style="transition-delay: 300ms">
+             <div
+-                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-3 mb-1 group-hover:scale-110 transition-transform">
++                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-2 mb-1 group-hover:scale-110 transition-transform">
+                 <i class="fas fa-tools"></i>
+             </div>
+             <div class="text-[10px] fw-bolder uppercase tracking-widest text-text-secondary mb-1">2019 ÔÇô 2020</div>
+             <h3
+-                class="fs-3 fw-bolder mb-1 leading-tight group-hover:text-accent-400 transition-colors">
++                class="fs-2 fw-bolder mb-1 leading-tight group-hover:text-accent-400 transition-colors">
+                 ├ëlectricit├® de B├ótiment</h3>
+             <p class="text-text-secondary small fw-medium">INSTITUT SPECIALISE DE TECHNOLOGIE APPLIQUEE</p>
+         </div>
+@@ -373,12 +373,12 @@
+         <div class="col-12 col-md-6 col-lg-4 group bg-card-bg border border-border-color p-4 p-md-5 rounded-[2.5rem] fade-in transition-all duration-500 hover:border-accent-500/50 h-100"
+             style="transition-delay: 400ms">
+             <div
+-                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-3 mb-1 group-hover:scale-110 transition-transform">
++                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-2 mb-1 group-hover:scale-110 transition-transform">
+                 <i class="fab fa-react"></i>
+             </div>
+             <div class="text-[10px] fw-bolder uppercase tracking-widest text-text-secondary mb-1">2024</div>
+             <h3
+-                class="fs-3 fw-bolder mb-1 leading-tight group-hover:text-accent-400 transition-colors">
++                class="fs-2 fw-bolder mb-1 leading-tight group-hover:text-accent-400 transition-colors">
+                 Certificat React</h3>
+             <p class="text-text-secondary small fw-medium">Platform X Mastery</p>
+         </div>
+@@ -386,12 +386,12 @@
+         <div class="col-12 col-md-6 col-lg-4 group bg-card-bg border border-border-color p-4 p-md-5 rounded-[2.5rem] fade-in transition-all duration-500 hover:border-accent-500/50 h-100"
+             style="transition-delay: 500ms">
+             <div
+-                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-3 mb-1 group-hover:scale-110 transition-transform">
++                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-2 mb-1 group-hover:scale-110 transition-transform">
+                 <i class="fab fa-aws"></i>
+             </div>
+             <div class="text-[10px] fw-bolder uppercase tracking-widest text-text-secondary mb-1">2023</div>
+             <h3
+-                class="fs-3 fw-bolder mb-1 leading-tight group-hover:text-accent-400 transition-colors">
++                class="fs-2 fw-bolder mb-1 leading-tight group-hover:text-accent-400 transition-colors">
+                 AWS Solutions Architect</h3>
+             <p class="text-text-secondary small fw-medium">AWS Training &amp; Certification</p>
+         </div>
+@@ -400,20 +400,20 @@
+ 
+     <!-- Timeline/Formation highlight -->
+     <div class="mt-20 bg-card-bg border border-border-color p-4 p-md-5 rounded-[3.5rem] fade-in">
+-        <h2 class="fs-2 fw-bolder mb-5 text-center">Parcours Acad├®mique</h2>
++        <h2 class="fs-1 fw-bolder mb-5 text-center">Parcours Acad├®mique</h2>
+         <div class="border-l-2 border-accent-500/10 ml-4 space-y-12">
+             <div class="relative pl-10">
+                 <div
+                     class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent-500 shadow-lg shadow-accent-500/50">
+                 </div>
+-                <h4 class="fs-4 fw-bold">D├®veloppement Informatique (Bac+2)</h4>
++                <h4 class="fs-3 fw-bold">D├®veloppement Informatique (Bac+2)</h4>
+                 <p class="text-text-secondary mb-1 italic">2024 ÔÇö ├ëtudes en cours</p>
+                 <p class="text-text-secondary">Sp├®cialisation dans les architectures logicielles modernes, le d├®veloppement
+                     Fullstack et la gestion de projets Agile.</p>
+             </div>
+             <div class="relative pl-10">
+                 <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gold shadow-lg shadow-gold/50"></div>
+-                <h4 class="fs-4 fw-bold">Gestion Informatis├®e</h4>
++                <h4 class="fs-3 fw-bold">Gestion Informatis├®e</h4>
+                 <p class="text-text-secondary mb-1 italic">2022 ÔÇö 2024</p>
+                 <p class="text-text-secondary">Acquisition des bases solides en programmation, bases de donn├®es et
+                     administration syst├¿me.</p>
+@@ -426,16 +426,16 @@
+ 
+     <!-- Footer -->
+     <footer class="py-5 border-t border-[#1E1E1E]">
+-        <div class="container mx-auto px-2 px-lg-4 text-center">
++        <div class="w-100 px-4 text-center">
+             <div class="d-flex justify-content-center gap-2 mb-1">
+                 <a href="https://github.com/I6maeil" target="_blank"
+-                    class="text-secondary hover:text-white fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-white fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-github"></i></a>
+                 <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
+-                    class="text-secondary hover:text-[#00C896] fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-[#00C896] fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-linkedin"></i></a>
+                 <a href="https://wa.me/212679565747" target="_blank"
+-                    class="text-secondary hover:text-green-500 fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-green-500 fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-whatsapp"></i></a>
+             </div>
+             <p class="text-secondary small italic">┬® 2026 IsmailDev. Crafted with Precision.</p>
+diff --git a/portfolio-flask-main/templates/contact.html b/portfolio-flask-main/templates/contact.html
+index 6855624..fb02163 100644
+--- a/portfolio-flask-main/templates/contact.html
++++ b/portfolio-flask-main/templates/contact.html
+@@ -246,9 +246,9 @@
+         .left-1\/2 { left: 50% !important; }
+         .-translate-x-1\/2 { transform: translateX(-50%) !important; }
+         
+-        .max-w-5xl { max-width: 64rem !important; }
+-        .max-w-xl { max-width: 36rem !important; }
+-        .max-w-3xl { max-width: 48rem !important; }
++        .w-100 { max-width: 64rem !important; }
++        .w-100 { max-width: 36rem !important; }
++        .w-100 { max-width: 48rem !important; }
+         .w-\[90\%\] { width: 90% !important; }
+         
+         .object-cover { object-fit: cover !important; }
+@@ -369,9 +369,9 @@
+         .left-1\/2 { left: 50% !important; }
+         .-translate-x-1\/2 { transform: translateX(-50%) !important; }
+         
+-        .max-w-5xl { max-width: 64rem !important; }
+-        .max-w-xl { max-width: 36rem !important; }
+-        .max-w-3xl { max-width: 48rem !important; }
++        .w-100 { max-width: 64rem !important; }
++        .w-100 { max-width: 36rem !important; }
++        .w-100 { max-width: 48rem !important; }
+         .w-\[90\%\] { width: 90% !important; }
+         
+         .object-cover { object-fit: cover !important; }
+@@ -388,7 +388,7 @@
+     <div class="mesh-bg"></div>
+ 
+     <!-- Navigation -->
+-    <nav class="navbar navbar-expand-lg fixed-top z-50 mx-auto mt-4 w-[90%] max-w-5xl">
++    <nav class="navbar navbar-expand-lg fixed-top z-50 mt-4 w-100 px-4">
+         <div class="container-fluid glass rounded-3xl px-4 py-3 shadow-2xl relative overflow-hidden">
+             <a href="/" class="navbar-brand d-flex align-items-center gap-2 group">
+                 <!-- Logo SVG -->
+@@ -399,14 +399,14 @@
+                         stroke-linejoin="round" />
+                     <line x1="55" y1="25" x2="45" y2="75" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
+                 </svg>
+-                <span class="fs-3 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
++                <span class="fs-2 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
+                     IsmailDev
+                 </span>
+             </a>
+ 
+             <!-- Mobile Toggle -->
+             <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+-                <i class="fas fa-bars fs-4 text-white"></i>
++                <i class="fas fa-bars fs-3 text-white"></i>
+             </button>
+ 
+             <div class="collapse navbar-collapse justify-content-end gap-lg-4 mt-3 mt-lg-0" id="navbarContent">
+@@ -428,9 +428,9 @@
+     </nav>
+ 
+     <!-- Main Content -->
+-    <main class="pt-5 mt-5 vh-100">
++    <main class="pt-5 mt-5 min-vh-100 w-100">
+         
+-<div class="container mx-auto px-2 px-lg-4 py-5">
++<div class="w-100 px-4 py-5">
+     <div class="max-w-4xl mx-auto">
+ 
+         <!-- Flash Messages -->
+@@ -440,9 +440,9 @@
+         <div class="row g-4 fade-in">
+             <!-- Info -->
+             <div class="col-12 col-md-6">
+-                <h1 class="display-5 display-4 fw-bolder mb-1 leading-tight">Parlons <span
++                <h1 class="display-3 display-2 fw-bolder mb-1 leading-tight">Parlons <span
+                         class="text-accent-400 italic">Projet</span></h1>
+-                <p class="text-text-secondary fs-5 mb-12">Je suis toujours ouvert ├á de nouvelles opportunit├®s et
++                <p class="text-text-secondary fs-4 mb-12">Je suis toujours ouvert ├á de nouvelles opportunit├®s et
+                     collaborations cr├®atives.</p>
+ 
+                 <div class="space-y-8">
+@@ -453,7 +453,7 @@
+                         </div>
+                         <div>
+                             <div class="text-[10px] fw-bolder uppercase tracking-widest text-text-secondary">Email</div>
+-                            <div class="fs-5 fw-bold text-white">benismail722@gmail.com</div>
++                            <div class="fs-4 fw-bold text-white">benismail722@gmail.com</div>
+                         </div>
+                     </div>
+                     <div class="d-flex align-items-center gap-2 group">
+@@ -463,7 +463,7 @@
+                         </div>
+                         <div>
+                             <div class="text-[10px] fw-bolder uppercase tracking-widest text-text-secondary">T├®l├®phone</div>
+-                            <div class="fs-5 fw-bold text-white">+212 679 565 747</div>
++                            <div class="fs-4 fw-bold text-white">+212 679 565 747</div>
+                         </div>
+                     </div>
+                 </div>
+@@ -502,16 +502,16 @@
+ 
+     <!-- Footer -->
+     <footer class="py-5 border-t border-[#1E1E1E]">
+-        <div class="container mx-auto px-2 px-lg-4 text-center">
++        <div class="w-100 px-4 text-center">
+             <div class="d-flex justify-content-center gap-2 mb-1">
+                 <a href="https://github.com/I6maeil" target="_blank"
+-                    class="text-secondary hover:text-white fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-white fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-github"></i></a>
+                 <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
+-                    class="text-secondary hover:text-[#00C896] fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-[#00C896] fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-linkedin"></i></a>
+                 <a href="https://wa.me/212679565747" target="_blank"
+-                    class="text-secondary hover:text-green-500 fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-green-500 fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-whatsapp"></i></a>
+             </div>
+             <p class="text-secondary small italic">┬® 2026 IsmailDev. Crafted with Precision.</p>
+diff --git a/portfolio-flask-main/templates/index.html b/portfolio-flask-main/templates/index.html
+index 66e01de..82ebdb1 100644
+--- a/portfolio-flask-main/templates/index.html
++++ b/portfolio-flask-main/templates/index.html
+@@ -246,9 +246,9 @@
+         .left-1\/2 { left: 50% !important; }
+         .-translate-x-1\/2 { transform: translateX(-50%) !important; }
+         
+-        .max-w-5xl { max-width: 64rem !important; }
+-        .max-w-xl { max-width: 36rem !important; }
+-        .max-w-3xl { max-width: 48rem !important; }
++        .w-100 { max-width: 64rem !important; }
++        .w-100 { max-width: 36rem !important; }
++        .w-100 { max-width: 48rem !important; }
+         .w-\[90\%\] { width: 90% !important; }
+         
+         .object-cover { object-fit: cover !important; }
+@@ -265,7 +265,7 @@
+     <div class="mesh-bg"></div>
+ 
+     <!-- Navigation -->
+-    <nav class="navbar navbar-expand-lg fixed-top z-50 mx-auto mt-4 w-[90%] max-w-5xl">
++    <nav class="navbar navbar-expand-lg fixed-top z-50 mt-4 w-100 px-4">
+         <div class="container-fluid glass rounded-3xl px-4 py-3 shadow-2xl relative overflow-hidden">
+             <a href="/" class="navbar-brand d-flex align-items-center gap-2 group">
+                 <!-- Logo SVG -->
+@@ -276,14 +276,14 @@
+                         stroke-linejoin="round" />
+                     <line x1="55" y1="25" x2="45" y2="75" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
+                 </svg>
+-                <span class="fs-3 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
++                <span class="fs-2 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
+                     IsmailDev
+                 </span>
+             </a>
+ 
+             <!-- Mobile Toggle -->
+             <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+-                <i class="fas fa-bars fs-4 text-white"></i>
++                <i class="fas fa-bars fs-3 text-white"></i>
+             </button>
+ 
+             <div class="collapse navbar-collapse justify-content-end gap-lg-4 mt-3 mt-lg-0" id="navbarContent">
+@@ -305,9 +305,9 @@
+     </nav>
+ 
+     <!-- Main Content -->
+-    <main class="pt-5 mt-5 vh-100">
++    <main class="pt-5 mt-5 min-vh-100 w-100">
+         
+-<div class="container mx-auto px-3 px-lg-4 py-5 overflow-hidden">
++<div class="w-100 px-4 py-5 overflow-hidden">
+     <div class="row align-items-center gap-5 gap-lg-0">
+         <!-- Text Content -->
+         <div class="col-lg-6 fade-in">
+@@ -321,12 +321,12 @@
+                 Disponible pour nouveaux projets
+             </div>
+ 
+-            <h1 class="display-5 md:display-3 fw-bolder leading-tight mb-1">
++            <h1 class="display-3 md:display-1 fw-bolder leading-tight mb-1">
+                 Web <span
+                     class="bg-gradient-to-r from-accent-400 via-gold to-accent-400 bg-clip-text text-transparent">D├®veloppeur</span>
+             </h1>
+ 
+-            <p class="text-secondary fs-5 md:fs-4 leading-relaxed mb-5 max-w-xl">
++            <p class="text-secondary fs-4 md:fs-3 leading-relaxed mb-5 w-100">
+                 Salut, je suis <span
+                     class="text-white fw-bold decoration-accent-500/50 underline-offset-4 underline">Ismail</span> ÔÇö
+                 architecte web full-stack sp├®cialis├® dans la cr├®ation d'exp├®riences num├®riques <span
+@@ -356,13 +356,13 @@
+                     <i class="fas fa-download"></i> T├®l├®charger CV
+                 </a>
+                 <div class="d-flex align-items-center gap-2 mt-3 ml-2">
+-                    <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank" class="text-secondary hover:text-[#00C896] fs-3 transition-all transform hover:scale-110">
++                    <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank" class="text-secondary hover:text-[#00C896] fs-2 transition-all transform hover:scale-110">
+                         <i class="fab fa-linkedin"></i>
+                     </a>
+-                    <a href="https://github.com/I6maeil" target="_blank" class="text-secondary hover:text-white fs-3 transition-all transform hover:scale-110">
++                    <a href="https://github.com/I6maeil" target="_blank" class="text-secondary hover:text-white fs-2 transition-all transform hover:scale-110">
+                         <i class="fab fa-github"></i>
+                     </a>
+-                    <a href="https://wa.me/212679565747" target="_blank" class="text-secondary hover:text-green-500 fs-3 transition-all transform hover:scale-110">
++                    <a href="https://wa.me/212679565747" target="_blank" class="text-secondary hover:text-green-500 fs-2 transition-all transform hover:scale-110">
+                         <i class="fab fa-whatsapp"></i>
+                     </a>
+                 </div>
+@@ -410,7 +410,7 @@
+ 
+                 <!-- Floating Info Card -->
+                 <div class="absolute -left-10 bottom-10 bg-card-bg border border-border-color p-6 rounded-3xl z-30 shadow-2xl">
+-                    <div class="text-gold fw-bolder fs-2">+2 Ans</div>
++                    <div class="text-gold fw-bolder fs-1">+2 Ans</div>
+                     <div class="text-text-secondary small fw-bold uppercase tracking-widest">Exp├®rience</div>
+                 </div>
+             </div>
+@@ -422,16 +422,16 @@
+ 
+     <!-- Footer -->
+     <footer class="py-5 border-t border-[#1E1E1E]">
+-        <div class="container mx-auto px-2 px-lg-4 text-center">
++        <div class="w-100 px-4 text-center">
+             <div class="d-flex justify-content-center gap-2 mb-1">
+                 <a href="https://github.com/I6maeil" target="_blank"
+-                    class="text-secondary hover:text-white fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-white fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-github"></i></a>
+                 <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
+-                    class="text-secondary hover:text-[#00C896] fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-[#00C896] fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-linkedin"></i></a>
+                 <a href="https://wa.me/212679565747" target="_blank"
+-                    class="text-secondary hover:text-green-500 fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-green-500 fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-whatsapp"></i></a>
+             </div>
+             <p class="text-secondary small italic">┬® 2026 IsmailDev. Crafted with Precision.</p>
+diff --git a/portfolio-flask-main/templates/portfolio.html b/portfolio-flask-main/templates/portfolio.html
+index 914ed92..2c564d8 100644
+--- a/portfolio-flask-main/templates/portfolio.html
++++ b/portfolio-flask-main/templates/portfolio.html
+@@ -246,9 +246,9 @@
+         .left-1\/2 { left: 50% !important; }
+         .-translate-x-1\/2 { transform: translateX(-50%) !important; }
+         
+-        .max-w-5xl { max-width: 64rem !important; }
+-        .max-w-xl { max-width: 36rem !important; }
+-        .max-w-3xl { max-width: 48rem !important; }
++        .w-100 { max-width: 64rem !important; }
++        .w-100 { max-width: 36rem !important; }
++        .w-100 { max-width: 48rem !important; }
+         .w-\[90\%\] { width: 90% !important; }
+         
+         .object-cover { object-fit: cover !important; }
+@@ -265,7 +265,7 @@
+     <div class="mesh-bg"></div>
+ 
+     <!-- Navigation -->
+-    <nav class="navbar navbar-expand-lg fixed-top z-50 mx-auto mt-4 w-[90%] max-w-5xl">
++    <nav class="navbar navbar-expand-lg fixed-top z-50 mt-4 w-100 px-4">
+         <div class="container-fluid glass rounded-3xl px-4 py-3 shadow-2xl relative overflow-hidden">
+             <a href="/" class="navbar-brand d-flex align-items-center gap-2 group">
+                 <!-- Logo SVG -->
+@@ -276,14 +276,14 @@
+                         stroke-linejoin="round" />
+                     <line x1="55" y1="25" x2="45" y2="75" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
+                 </svg>
+-                <span class="fs-3 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
++                <span class="fs-2 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
+                     IsmailDev
+                 </span>
+             </a>
+ 
+             <!-- Mobile Toggle -->
+             <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+-                <i class="fas fa-bars fs-4 text-white"></i>
++                <i class="fas fa-bars fs-3 text-white"></i>
+             </button>
+ 
+             <div class="collapse navbar-collapse justify-content-end gap-lg-4 mt-3 mt-lg-0" id="navbarContent">
+@@ -305,15 +305,15 @@
+     </nav>
+ 
+     <!-- Main Content -->
+-    <main class="pt-5 mt-5 vh-100">
++    <main class="pt-5 mt-5 min-vh-100 w-100">
+         
+-<div class="container mx-auto px-2 px-lg-4 py-5">
++<div class="w-100 px-4 py-5">
+     <!-- Header Section -->
+     <div class="d-flex d-flex-column md:d-flex-row md:align-items-end justify-content-between gap-10 mb-5 fade-in">
+         <div>
+-            <h1 class="display-4 fw-bolder mb-1 tracking-tighter">Projets <span
++            <h1 class="display-2 fw-bolder mb-1 tracking-tighter">Projets <span
+                     class="bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">Phales</span></h1>
+-            <p class="text-text-secondary fs-5 max-w-xl">Une s├®lection de mes travaux les plus r├®cents, alliant excellence
++            <p class="text-text-secondary fs-4 w-100">Une s├®lection de mes travaux les plus r├®cents, alliant excellence
+                 technique et vision cr├®ative.</p>
+         </div>
+     </div>
+@@ -338,11 +338,11 @@
+                         <span class="px-2 py-1 rounded-full bg-gold/15 border border-gold/20 text-gold small fw-bold uppercase tracking-wider">AI POWERED</span>
+                     </div>
+ 
+-                    <h2 class="display-6 lg:display-5 fw-bolder mb-1 leading-tight">
++                    <h2 class="display-4 lg:display-3 fw-bolder mb-1 leading-tight">
+                         LinguaAI ÔÇö <span class="text-[#6C63FF]">AI Language Tutor</span>
+                     </h2>
+ 
+-                    <p class="text-text-secondary fs-5 mb-1 leading-relaxed">
++                    <p class="text-text-secondary fs-4 mb-1 leading-relaxed">
+                         An AI-powered language learning mobile app for French, English, Spanish and Darija. Features real-time AI conversations, gamification with XP & streaks, interactive lessons, vocabulary cards, and speaking practice with voice analysis.
+                     </p>
+ 
+@@ -385,11 +385,11 @@
+                         <span class="px-2 py-1 rounded-full bg-gold/15 border border-gold/20 text-gold small fw-bold uppercase tracking-wider">AI POWERED</span>
+                     </div>
+ 
+-                    <h2 class="display-6 lg:display-5 fw-bolder mb-1 leading-tight">
++                    <h2 class="display-4 lg:display-3 fw-bolder mb-1 leading-tight">
+                         Souk.ma ÔÇö <span class="text-[#E8593C]">AI E-commerce</span>
+                     </h2>
+ 
+-                    <p class="text-text-secondary fs-5 mb-1 leading-relaxed">
++                    <p class="text-text-secondary fs-4 mb-1 leading-relaxed">
+                         A full-stack Moroccan e-commerce platform with an integrated AI shopping assistant. Users can browse products, get personalized recommendations, and checkout seamlessly.
+                     </p>
+ 
+@@ -408,7 +408,7 @@
+                         </a>
+                         <a href="https://github.com" target="_blank"
+                             class="w-14 h-14 rounded-lg bg-obsidian border border-border-color d-flex align-items-center justify-content-center text-white hover:bg-white/5 transition-colors">
+-                            <i class="fab fa-github fs-4"></i>
++                            <i class="fab fa-github fs-3"></i>
+                         </a>
+                     </div>
+                 </div>
+@@ -436,11 +436,11 @@
+                         <span class="px-2 py-1 rounded-full bg-gold/15 border border-gold/20 text-gold small fw-bold uppercase tracking-wider">AI POWERED</span>
+                     </div>
+ 
+-                    <h2 class="display-6 lg:display-5 fw-bolder mb-1 leading-tight">
++                    <h2 class="display-4 lg:display-3 fw-bolder mb-1 leading-tight">
+                         CVCraft ÔÇö <span class="text-accent-500">AI CV Generator</span>
+                     </h2>
+ 
+-                    <p class="text-text-secondary fs-5 mb-1 leading-relaxed">
++                    <p class="text-text-secondary fs-4 mb-1 leading-relaxed">
+                         Create professional CVs in minutes using AI. CVCraft streamlines the resume-building process with intelligent content generation and modern, ATS-friendly templates.
+                     </p>
+ 
+@@ -458,7 +458,7 @@
+                         </a>
+                         <a href="https://github.com/I6maeil" target="_blank"
+                             class="w-14 h-14 rounded-lg bg-obsidian border border-border-color d-flex align-items-center justify-content-center text-white hover:bg-white/5 transition-colors">
+-                            <i class="fab fa-github fs-4"></i>
++                            <i class="fab fa-github fs-3"></i>
+                         </a>
+                     </div>
+                 </div>
+@@ -471,16 +471,16 @@
+ 
+     <!-- Footer -->
+     <footer class="py-5 border-t border-[#1E1E1E]">
+-        <div class="container mx-auto px-2 px-lg-4 text-center">
++        <div class="w-100 px-4 text-center">
+             <div class="d-flex justify-content-center gap-2 mb-1">
+                 <a href="https://github.com/I6maeil" target="_blank"
+-                    class="text-secondary hover:text-white fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-white fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-github"></i></a>
+                 <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
+-                    class="text-secondary hover:text-[#00C896] fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-[#00C896] fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-linkedin"></i></a>
+                 <a href="https://wa.me/212679565747" target="_blank"
+-                    class="text-secondary hover:text-green-500 fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-green-500 fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-whatsapp"></i></a>
+             </div>
+             <p class="text-secondary small italic">┬® 2026 IsmailDev. Crafted with Precision.</p>
+diff --git a/portfolio-flask-main/templates/services.html b/portfolio-flask-main/templates/services.html
+index 02447a6..253c2a5 100644
+--- a/portfolio-flask-main/templates/services.html
++++ b/portfolio-flask-main/templates/services.html
+@@ -246,9 +246,9 @@
+         .left-1\/2 { left: 50% !important; }
+         .-translate-x-1\/2 { transform: translateX(-50%) !important; }
+         
+-        .max-w-5xl { max-width: 64rem !important; }
+-        .max-w-xl { max-width: 36rem !important; }
+-        .max-w-3xl { max-width: 48rem !important; }
++        .w-100 { max-width: 64rem !important; }
++        .w-100 { max-width: 36rem !important; }
++        .w-100 { max-width: 48rem !important; }
+         .w-\[90\%\] { width: 90% !important; }
+         
+         .object-cover { object-fit: cover !important; }
+@@ -265,7 +265,7 @@
+     <div class="mesh-bg"></div>
+ 
+     <!-- Navigation -->
+-    <nav class="navbar navbar-expand-lg fixed-top z-50 mx-auto mt-4 w-[90%] max-w-5xl">
++    <nav class="navbar navbar-expand-lg fixed-top z-50 mt-4 w-100 px-4">
+         <div class="container-fluid glass rounded-3xl px-4 py-3 shadow-2xl relative overflow-hidden">
+             <a href="/" class="navbar-brand d-flex align-items-center gap-2 group">
+                 <!-- Logo SVG -->
+@@ -276,14 +276,14 @@
+                         stroke-linejoin="round" />
+                     <line x1="55" y1="25" x2="45" y2="75" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
+                 </svg>
+-                <span class="fs-3 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
++                <span class="fs-2 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
+                     IsmailDev
+                 </span>
+             </a>
+ 
+             <!-- Mobile Toggle -->
+             <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+-                <i class="fas fa-bars fs-4 text-white"></i>
++                <i class="fas fa-bars fs-3 text-white"></i>
+             </button>
+ 
+             <div class="collapse navbar-collapse justify-content-end gap-lg-4 mt-3 mt-lg-0" id="navbarContent">
+@@ -305,12 +305,12 @@
+     </nav>
+ 
+     <!-- Main Content -->
+-    <main class="pt-5 mt-5 vh-100">
++    <main class="pt-5 mt-5 min-vh-100 w-100">
+         
+-<div class="container mx-auto px-2 px-lg-4 py-5">
+-    <div class="text-center max-w-3xl mx-auto mb-5 fade-in">
+-        <h1 class="display-5 display-4 fw-bolder mb-1 italic">Services</h1>
+-        <p class="text-text-secondary fs-5">Solutions digitales sur-mesure pour donner vie ├á vos id├®es les plus
++<div class="w-100 px-4 py-5">
++    <div class="text-center w-100 mx-auto mb-5 fade-in">
++        <h1 class="display-3 display-2 fw-bolder mb-1 italic">Services</h1>
++        <p class="text-text-secondary fs-4">Solutions digitales sur-mesure pour donner vie ├á vos id├®es les plus
+             audacieuses.</p>
+     </div>
+ 
+@@ -323,11 +323,11 @@
+             </div>
+ 
+             <div
+-                class="w-16 h-16 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-2 mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all">
++                class="w-16 h-16 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-1 mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all">
+                 <i class="fas fa-paint-brush"></i>
+             </div>
+ 
+-            <h2 class="fs-2 fw-bolder mb-1 group-hover:text-accent-400 transition-colors">Frontend Mastery</h2>
++            <h2 class="fs-1 fw-bolder mb-1 group-hover:text-accent-400 transition-colors">Frontend Mastery</h2>
+             <p class="text-text-secondary leading-relaxed mb-5">Interfaces ultra-performantes, ergonomiques et esth├®tiques.</p>
+ 
+             <div class="d-flex d-flex-wrap gap-2">
+@@ -351,11 +351,11 @@
+             </div>
+ 
+             <div
+-                class="w-16 h-16 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-2 mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all">
++                class="w-16 h-16 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-1 mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all">
+                 <i class="fas fa-database"></i>
+             </div>
+ 
+-            <h2 class="fs-2 fw-bolder mb-1 group-hover:text-accent-400 transition-colors">Backend Robustness</h2>
++            <h2 class="fs-1 fw-bolder mb-1 group-hover:text-accent-400 transition-colors">Backend Robustness</h2>
+             <p class="text-text-secondary leading-relaxed mb-5">Architectures scalables et APIs s├®curis├®es.</p>
+ 
+             <div class="d-flex d-flex-wrap gap-2">
+@@ -379,11 +379,11 @@
+             </div>
+ 
+             <div
+-                class="w-16 h-16 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-2 mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all">
++                class="w-16 h-16 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-1 mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all">
+                 <i class="fas fa-bolt"></i>
+             </div>
+ 
+-            <h2 class="fs-2 fw-bolder mb-1 group-hover:text-accent-400 transition-colors">Fullstack Sprint</h2>
++            <h2 class="fs-1 fw-bolder mb-1 group-hover:text-accent-400 transition-colors">Fullstack Sprint</h2>
+             <p class="text-text-secondary leading-relaxed mb-5">D├®veloppement complet de MVP en un temps record.</p>
+ 
+             <div class="d-flex d-flex-wrap gap-2">
+@@ -407,7 +407,7 @@
+         <div
+             class="bg-card-bg p-4 p-md-5 rounded-[3.5rem] bg-gradient-to-r from-accent-500/10 to-transparent border border-border-color d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
+             <div>
+-                <h3 class="fs-2 fw-bolder mb-1">Pr├¬t ├á d├®marrer un projet ?</h3>
++                <h3 class="fs-1 fw-bolder mb-1">Pr├¬t ├á d├®marrer un projet ?</h3>
+                 <p class="text-text-secondary fw-medium">Discutons de vos besoins et cr├®ons quelque chose d'incroyable
+                     ensemble.</p>
+             </div>
+@@ -423,16 +423,16 @@
+ 
+     <!-- Footer -->
+     <footer class="py-5 border-t border-[#1E1E1E]">
+-        <div class="container mx-auto px-2 px-lg-4 text-center">
++        <div class="w-100 px-4 text-center">
+             <div class="d-flex justify-content-center gap-2 mb-1">
+                 <a href="https://github.com/I6maeil" target="_blank"
+-                    class="text-secondary hover:text-white fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-white fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-github"></i></a>
+                 <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
+-                    class="text-secondary hover:text-[#00C896] fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-[#00C896] fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-linkedin"></i></a>
+                 <a href="https://wa.me/212679565747" target="_blank"
+-                    class="text-secondary hover:text-green-500 fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-green-500 fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-whatsapp"></i></a>
+             </div>
+             <p class="text-secondary small italic">┬® 2026 IsmailDev. Crafted with Precision.</p>
+diff --git a/portfolio-flask-main/templates/skills.html b/portfolio-flask-main/templates/skills.html
+index 38b8058..4855a15 100644
+--- a/portfolio-flask-main/templates/skills.html
++++ b/portfolio-flask-main/templates/skills.html
+@@ -246,9 +246,9 @@
+         .left-1\/2 { left: 50% !important; }
+         .-translate-x-1\/2 { transform: translateX(-50%) !important; }
+         
+-        .max-w-5xl { max-width: 64rem !important; }
+-        .max-w-xl { max-width: 36rem !important; }
+-        .max-w-3xl { max-width: 48rem !important; }
++        .w-100 { max-width: 64rem !important; }
++        .w-100 { max-width: 36rem !important; }
++        .w-100 { max-width: 48rem !important; }
+         .w-\[90\%\] { width: 90% !important; }
+         
+         .object-cover { object-fit: cover !important; }
+@@ -265,7 +265,7 @@
+     <div class="mesh-bg"></div>
+ 
+     <!-- Navigation -->
+-    <nav class="navbar navbar-expand-lg fixed-top z-50 mx-auto mt-4 w-[90%] max-w-5xl">
++    <nav class="navbar navbar-expand-lg fixed-top z-50 mt-4 w-100 px-4">
+         <div class="container-fluid glass rounded-3xl px-4 py-3 shadow-2xl relative overflow-hidden">
+             <a href="/" class="navbar-brand d-flex align-items-center gap-2 group">
+                 <!-- Logo SVG -->
+@@ -276,14 +276,14 @@
+                         stroke-linejoin="round" />
+                     <line x1="55" y1="25" x2="45" y2="75" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
+                 </svg>
+-                <span class="fs-3 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
++                <span class="fs-2 fw-bolder bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
+                     IsmailDev
+                 </span>
+             </a>
+ 
+             <!-- Mobile Toggle -->
+             <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+-                <i class="fas fa-bars fs-4 text-white"></i>
++                <i class="fas fa-bars fs-3 text-white"></i>
+             </button>
+ 
+             <div class="collapse navbar-collapse justify-content-end gap-lg-4 mt-3 mt-lg-0" id="navbarContent">
+@@ -305,12 +305,12 @@
+     </nav>
+ 
+     <!-- Main Content -->
+-    <main class="pt-5 mt-5 vh-100">
++    <main class="pt-5 mt-5 min-vh-100 w-100">
+         
+-<div class="container mx-auto px-2 px-lg-4 py-5">
+-    <div class="max-w-3xl mb-5 fade-in">
+-        <h1 class="display-5 display-4 fw-bolder mb-1">Expertise <span class="text-accent-400">Technique</span></h1>
+-        <p class="text-text-secondary fs-5 leading-relaxed">
++<div class="w-100 px-4 py-5">
++    <div class="w-100 mb-5 fade-in">
++        <h1 class="display-3 display-2 fw-bolder mb-1">Expertise <span class="text-accent-400">Technique</span></h1>
++        <p class="text-text-secondary fs-4 leading-relaxed">
+             Un arsenal technologique moderne pour b├ótir le web de demain. Je combine performance, s├®curit├® et design.
+         </p>
+     </div>
+@@ -322,10 +322,10 @@
+             <div class="bg-card-bg border border-border-color p-4 p-md-5 rounded-[2.5rem] h-100">
+             <div class="d-flex align-items-center gap-2 mb-5">
+                 <div
+-                    class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-3">
++                    class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 d-flex align-items-center justify-content-center text-accent-400 fs-2">
+                     <i class="fas fa-code"></i>
+                 </div>
+-                <h2 class="fs-2 fw-bolder">Frontend Development</h2>
++                <h2 class="fs-1 fw-bolder">Frontend Development</h2>
+             </div>
+ 
+             <div class="row g-4">
+@@ -382,10 +382,10 @@
+         <!-- Backend Highlight -->
+         <div class="col-12 col-md-12 col-lg-4 fade-in" style="transition-delay: 100ms">
+             <div class="bg-card-bg border border-border-color p-4 p-md-5 rounded-[2.5rem] bg-accent-500/5 h-100">
+-            <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/20 d-flex align-items-center justify-content-center text-gold fs-3 mb-1">
++            <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/20 d-flex align-items-center justify-content-center text-gold fs-2 mb-1">
+                 <i class="fas fa-server"></i>
+             </div>
+-            <h2 class="fs-2 fw-bolder mb-1">Backend</h2>
++            <h2 class="fs-1 fw-bolder mb-1">Backend</h2>
+             <ul class="space-y-4">
+                 <li class="d-flex align-items-center gap-2 text-text-secondary fw-bold">
+                     <i class="fas fa-check text-gold small"></i> Node.js / Express
+@@ -405,7 +405,7 @@
+         <!-- Tools & DevOps -->
+         <div class="col-12 col-md-12 col-lg-4 fade-in" style="transition-delay: 200ms">
+             <div class="bg-card-bg border border-border-color p-4 p-md-5 rounded-[2.5rem] h-100">
+-            <h3 class="fs-4 fw-bolder mb-1">Tools & DevOps</h3>
++            <h3 class="fs-3 fw-bolder mb-1">Tools & DevOps</h3>
+             <div class="d-flex d-flex-wrap gap-2">
+                 
+                 <span
+@@ -450,7 +450,7 @@
+         <div class="col-12 col-md-12 col-lg-8 fade-in" style="transition-delay: 300ms">
+             <div class="bg-card-bg border border-gold/20 p-4 p-md-5 rounded-[2.5rem] bg-gold/5 d-flex align-items-center justify-content-between h-100">
+             <div>
+-                <h3 class="fs-3 fw-bolder mb-1 text-gold">Apprentissage Continu</h3>
++                <h3 class="fs-2 fw-bolder mb-1 text-gold">Apprentissage Continu</h3>
+                 <p class="text-text-secondary fw-medium">Actuellement en train d'explorer : <b>Web3 & AI Integration</b></p>
+             </div>
+             <div class="hidden sm:block display-4 text-gold/20">
+@@ -464,16 +464,16 @@
+ 
+     <!-- Footer -->
+     <footer class="py-5 border-t border-[#1E1E1E]">
+-        <div class="container mx-auto px-2 px-lg-4 text-center">
++        <div class="w-100 px-4 text-center">
+             <div class="d-flex justify-content-center gap-2 mb-1">
+                 <a href="https://github.com/I6maeil" target="_blank"
+-                    class="text-secondary hover:text-white fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-white fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-github"></i></a>
+                 <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
+-                    class="text-secondary hover:text-[#00C896] fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-[#00C896] fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-linkedin"></i></a>
+                 <a href="https://wa.me/212679565747" target="_blank"
+-                    class="text-secondary hover:text-green-500 fs-3 transition-all transform hover:scale-110"><i
++                    class="text-secondary hover:text-green-500 fs-2 transition-all transform hover:scale-110"><i
+                         class="fab fa-whatsapp"></i></a>
+             </div>
+             <p class="text-secondary small italic">┬® 2026 IsmailDev. Crafted with Precision.</p>
