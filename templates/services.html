@@ -4,7 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services — Portfolio</title>
+    <title>Services & Solutions Web — IsmailDev</title>
+
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Services de développement web par Ismail Oujebbad : interfaces React, APIs Flask, intégrations de bases de données et MVP sur mesure.">
+    <meta name="keywords" content="Services web, Développement React, API Flask, MVP, Freelance Web, Ismail Oujebbad">
+    <meta name="author" content="Ismail Oujebbad">
+    <meta name="theme-color" content="#0A0A0A">
+    <link rel="canonical" href="https://ismailcodes.com/services">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ismailcodes.com/services">
+    <meta property="og:title" content="Services & Solutions Web — IsmailDev">
+    <meta property="og:description" content="Des solutions web concrètes et adaptées à vos besoins : React, Flask, APIs et déploiement.">
+    <meta property="og:image" content="https://ismailcodes.com/static/images/ismail_profile.jpg">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Services & Solutions Web — IsmailDev">
+    <meta name="twitter:description" content="Découvrez mes offres d'accompagnement en développement web front-end et back-end.">
+    <meta name="twitter:image" content="https://ismailcodes.com/static/images/ismail_profile.jpg">
 
     <!-- Favicon -->
     <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%2300C896"/><text x="50%25" y="50%25" font-family="sans-serif" font-size="70" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">I</text></svg>'>
@@ -14,255 +35,82 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Design System Stylesheet -->
+    <link rel="stylesheet" href="/static/css/style.css">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        obsidian: '#0A0A0A', // Deep black
+                        obsidian: '#0A0A0A',
                         'obsidian-alt': '#0F0F0F',
                         'card-bg': '#141414',
                         accent: {
-                            400: '#00C896', // Emerald Green 400
-                            500: '#00C896', // Emerald Green 500
-                            600: '#00C896', // Emerald Green 600
+                            400: '#00C896',
+                            500: '#00C896',
+                            600: '#00C896',
                         },
-                        gold: '#F5A623', // Amber accent
+                        gold: '#F5A623',
                         'text-primary': '#FFFFFF',
-                        'text-secondary': '#A0A0A0',
-                        'border-color': '#1E1E1E',
+                        'text-secondary': '#A3A3A3',
+                        'border-color': '#242424',
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'shine': 'shine 3s ease-in-out infinite',
-                        'blink': 'blink 1.5s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'gradient-x': {
-                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
-                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
-                        },
-                        'float': {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        'shine': {
-                            '0%': { left: '-100%' },
-                            '100%': { left: '100%' },
-                        },
-                        'blink': {
-                            '0%, 100%': { opacity: 0.4 },
-                            '50%': { opacity: 1 },
-                        }
                     }
                 }
             }
         }
     </script>
-
-    <style>
-        :root {
-            --glass: rgba(10, 10, 10, 0.85);
-            --glass-border: #1E1E1E;
-        }
-
-        body {
-            background-color: #0A0A0A;
-            color: #FFFFFF;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Noise Texture */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-            opacity: 0.03;
-            pointer-events: none;
-            z-index: 9999;
-        }
-
-        .mesh-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -10;
-            background: radial-gradient(ellipse at top left, rgba(0, 200, 150, 0.15), transparent 60%);
-        }
-
-        .glass {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-            color: #A0A0A0;
-        }
-
-        .nav-link:hover {
-            color: #FFFFFF;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #00C896;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-link.active {
-            color: #00C896;
-        }
-
-        /* Fade-in Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Blinking Dot */
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #00C896;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 10px #00C896;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0A0A0A;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #00C896;
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #F5A623;
-        }
-
-        /* Selection */
-        ::selection {
-            background: #00C896;
-            color: black;
-        }
-
-        /* Section Divider */
-        .section-divider {
-            height: 1px;
-            width: 100%;
-            background: linear-gradient(90deg, transparent, #00C896, transparent);
-            margin: 4rem 0;
-        }
-
-        /* Button Hover Glow */
-        .btn-primary:hover, .btn-secondary:hover {
-            box-shadow: 0 0 20px rgba(0, 200, 150, 0.4);
-        }
-    </style>
-    
 </head>
 
 <body class="antialiased">
     <div class="mesh-bg"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl">
-        <div class="glass rounded-3xl px-8 py-4 flex items-center justify-between shadow-2xl relative overflow-hidden">
-            <a href="/" class="flex items-center gap-3 group">
-                <!-- Logo SVG -->
-                <svg width="40" height="40" viewBox="0 0 100 100" class="transition-transform group-hover:scale-110">
-                    <path d="M30 20 L10 50 L30 80" stroke="#00C896" stroke-width="8" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M70 20 L90 50 L70 80" stroke="#00C896" stroke-width="8" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round" />
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-[1200px]">
+        <div class="glass rounded-3xl px-6 md:px-8 py-4 flex items-center justify-between shadow-2xl relative overflow-hidden">
+            <a href="/" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 rounded-xl" aria-label="Page d'accueil IsmailDev">
+                <svg width="38" height="38" viewBox="0 0 100 100" class="transition-transform group-hover:scale-110">
+                    <path d="M30 20 L10 50 L30 80" stroke="#00C896" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M70 20 L90 50 L70 80" stroke="#00C896" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
                     <line x1="55" y1="25" x2="45" y2="75" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
                 </svg>
-                <span
-                    class="text-2xl font-black bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
+                <span class="text-2xl font-black bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
                     IsmailDev
                 </span>
             </a>
 
             <div class="hidden md:flex items-center gap-8">
-                <a href="/"
-                    class="nav-link font-medium ">Accueil</a>
-                <a href="/skills"
-                    class="nav-link font-medium ">Compétences</a>
-                <a href="/services"
-                    class="nav-link font-medium active">Services</a>
-                <a href="/portfolio"
-                    class="nav-link font-medium ">Portfolio</a>
-                <a href="/certifications"
-                    class="nav-link font-medium ">Certifications</a>
-                <a href="/contact"
-                    class="nav-link font-medium ">Contact</a>
+                <a href="/" class="nav-link font-medium">Accueil</a>
+                <a href="/skills" class="nav-link font-medium">Compétences</a>
+                <a href="/services" class="nav-link font-medium active">Services</a>
+                <a href="/portfolio" class="nav-link font-medium">Portfolio</a>
+                <a href="/certifications" class="nav-link font-medium">Certifications</a>
+                <a href="/contact" class="nav-link font-medium">Contact</a>
             </div>
 
-            <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                class="hidden md:flex items-center gap-2 bg-[#00C896] hover:bg-[#F5A623] text-black px-5 py-2 rounded-lg font-bold transition-all btn-primary">
-                <i class="fas fa-file-download"></i> CV
+            <a href="/static/CV_Ismail_Oujebbad.pdf" download class="hidden md:flex items-center gap-2 btn-primary !py-2.5 !px-5 text-sm !rounded-xl">
+                <i class="fas fa-file-download text-xs"></i> CV
             </a>
 
-            <!-- Mobile Toggle -->
-            <button class="md:hidden text-gray-300"
-                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <button class="md:hidden text-gray-300 p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 rounded-lg"
+                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Ouvrir le menu">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden absolute top-20 left-0 w-full glass rounded-2xl p-6 flex flex-col gap-4 shadow-2xl md:hidden">
-            <a href="/" class="text-lg font-bold">Accueil</a>
-            <a href="/skills" class="text-lg font-bold">Compétences</a>
-            <a href="/services" class="text-lg font-bold">Services</a>
-            <a href="/portfolio" class="text-lg font-bold">Portfolio</a>
-            <a href="/certifications" class="text-lg font-bold">Certifications</a>
-            <a href="/contact" class="text-lg font-bold">Contact</a>
-            <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                class="bg-[#00C896] text-black p-4 rounded-lg text-center font-bold">
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full glass rounded-2xl p-6 flex flex-col gap-4 shadow-2xl md:hidden">
+            <a href="/" class="text-base font-bold text-white hover:text-accent-400">Accueil</a>
+            <a href="/skills" class="text-base font-bold text-white hover:text-accent-400">Compétences</a>
+            <a href="/services" class="text-base font-bold text-accent-400">Services</a>
+            <a href="/portfolio" class="text-base font-bold text-white hover:text-accent-400">Portfolio</a>
+            <a href="/certifications" class="text-base font-bold text-white hover:text-accent-400">Certifications</a>
+            <a href="/contact" class="text-base font-bold text-white hover:text-accent-400">Contact</a>
+            <a href="/static/CV_Ismail_Oujebbad.pdf" download class="btn-primary w-full text-center text-sm !rounded-xl">
                 Télécharger CV
             </a>
         </div>
@@ -270,147 +118,134 @@
 
     <!-- Main Content -->
     <main class="pt-32 min-h-screen">
-        
-<div class="container mx-auto px-6 py-20">
-    <div class="text-center max-w-3xl mx-auto mb-20 fade-in">
-        <h1 class="text-5xl md:text-6xl font-black mb-6 italic">Services</h1>
-        <p class="text-text-secondary text-lg">Solutions digitales sur-mesure pour donner vie à vos idées les plus
-            audacieuses.</p>
-    </div>
-
-    <div class="grid lg:grid-cols-3 gap-8">
-        
-
-        
-        <div class="group relative bg-card-bg border border-border-color p-10 rounded-[3rem] overflow-hidden fade-in"
-            style="transition-delay: 0ms">
-            <div
-                class="absolute -right-10 -top-10 w-40 h-40 bg-accent-500/10 blur-3xl group-hover:bg-accent-500/20 transition-all duration-700">
+        <div class="site-container py-16 lg:py-24">
+            <!-- Consistent Section Heading (No italic) -->
+            <div class="section-heading-group fade-in">
+                <h1 class="section-title">Services &amp; <span class="text-accent">Solutions</span></h1>
+                <p class="section-subtitle">
+                    Des prestations claires et pragmatiques pour accompagner vos projets web, du prototype initial au produit mis en ligne.
+                </p>
             </div>
 
-            <div
-                class="w-16 h-16 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-3xl mb-10 group-hover:scale-110 group-hover:rotate-6 transition-all">
-                <i class="fas fa-paint-brush"></i>
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Card 1: Frontend -->
+                <div class="bg-card border border-border-color p-8 md:p-10 rounded-[2.5rem] flex flex-col justify-between h-full hover:border-accent-500/40 transition-all duration-300 shadow-xl fade-in group">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-3xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-code"></i>
+                        </div>
+
+                        <h2 class="text-2xl md:text-3xl font-black text-white mb-4 group-hover:text-accent-400 transition-colors">
+                            Développement Frontend
+                        </h2>
+
+                        <p class="text-text-secondary text-base leading-relaxed mb-8">
+                            Développement d'interfaces web réactives, ergonomiques et fidèles à vos maquettes, livrées prêtes à l'emploi en 3 à 7 jours.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap gap-2 pt-6 border-t border-border-color/60">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#181818] border border-border-color text-text-secondary">React</span>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#181818] border border-border-color text-text-secondary">Tailwind CSS</span>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#181818] border border-border-color text-text-secondary">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Backend -->
+                <div class="bg-card border border-border-color p-8 md:p-10 rounded-[2.5rem] flex flex-col justify-between h-full hover:border-accent-500/40 transition-all duration-300 shadow-xl fade-in group" style="transition-delay: 100ms">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold text-3xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-server"></i>
+                        </div>
+
+                        <h2 class="text-2xl md:text-3xl font-black text-white mb-4 group-hover:text-accent-400 transition-colors">
+                            Développement Backend &amp; APIs
+                        </h2>
+
+                        <p class="text-text-secondary text-base leading-relaxed mb-8">
+                            Conception d'APIs REST sécurisées et intégration de bases de données (MySQL / MongoDB), déployées en 5 à 10 jours.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap gap-2 pt-6 border-t border-border-color/60">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#181818] border border-border-color text-text-secondary">Python / Flask</span>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#181818] border border-border-color text-text-secondary">Node.js (bases)</span>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#181818] border border-border-color text-text-secondary">MySQL / MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Fullstack Sprint / MVP (Icon changed from bolt to rocket!) -->
+                <div class="bg-card border border-border-color p-8 md:p-10 rounded-[2.5rem] flex flex-col justify-between h-full hover:border-accent-500/40 transition-all duration-300 shadow-xl fade-in group" style="transition-delay: 200ms">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-3xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+
+                        <h2 class="text-2xl md:text-3xl font-black text-white mb-4 group-hover:text-accent-400 transition-colors">
+                            Applications Web &amp; MVP
+                        </h2>
+
+                        <p class="text-text-secondary text-base leading-relaxed mb-8">
+                            Réalisation clé en main de votre site web ou prototype d'application (Full-Stack React &amp; Flask), mis en ligne et fonctionnel en 1 à 3 semaines.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap gap-2 pt-6 border-t border-border-color/60">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#181818] border border-border-color text-text-secondary">React &amp; Flask</span>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#181818] border border-border-color text-text-secondary">Déploiement</span>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-[#181818] border border-border-color text-text-secondary">MVP</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <h2 class="text-3xl font-black mb-6 group-hover:text-accent-400 transition-colors">Frontend Mastery</h2>
-            <p class="text-text-secondary leading-relaxed mb-10">Interfaces ultra-performantes, ergonomiques et esthétiques.</p>
-
-            <div class="flex flex-wrap gap-2">
-                
-                <span
-                    class="text-[10px] uppercase tracking-widest font-black px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#2A2A2A] text-text-secondary">React</span>
-                
-                <span
-                    class="text-[10px] uppercase tracking-widest font-black px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#2A2A2A] text-text-secondary">Next.js</span>
-                
-                <span
-                    class="text-[10px] uppercase tracking-widest font-black px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#2A2A2A] text-text-secondary">Animation</span>
-                
+            <!-- CTA Section -->
+            <div class="mt-16 fade-in">
+                <div class="bg-card p-10 md:p-12 rounded-[2.5rem] border border-border-color flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-black text-white mb-2">Vous avez un projet en tête ?</h3>
+                        <p class="text-text-secondary text-base">Discutons de vos besoins techniques pour définir ensemble la meilleure approche.</p>
+                    </div>
+                    <a href="/contact" class="btn-primary whitespace-nowrap">
+                        <i class="fas fa-paper-plane text-xs"></i> Démarrer une collaboration
+                    </a>
+                </div>
             </div>
         </div>
-        
-        <div class="group relative bg-card-bg border border-border-color p-10 rounded-[3rem] overflow-hidden fade-in"
-            style="transition-delay: 100ms">
-            <div
-                class="absolute -right-10 -top-10 w-40 h-40 bg-accent-500/10 blur-3xl group-hover:bg-accent-500/20 transition-all duration-700">
-            </div>
-
-            <div
-                class="w-16 h-16 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-3xl mb-10 group-hover:scale-110 group-hover:rotate-6 transition-all">
-                <i class="fas fa-database"></i>
-            </div>
-
-            <h2 class="text-3xl font-black mb-6 group-hover:text-accent-400 transition-colors">Backend Robustness</h2>
-            <p class="text-text-secondary leading-relaxed mb-10">Architectures scalables et APIs sécurisées.</p>
-
-            <div class="flex flex-wrap gap-2">
-                
-                <span
-                    class="text-[10px] uppercase tracking-widest font-black px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#2A2A2A] text-text-secondary">Node.js</span>
-                
-                <span
-                    class="text-[10px] uppercase tracking-widest font-black px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#2A2A2A] text-text-secondary">Python</span>
-                
-                <span
-                    class="text-[10px] uppercase tracking-widest font-black px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#2A2A2A] text-text-secondary">PostgreSQL</span>
-                
-            </div>
-        </div>
-        
-        <div class="group relative bg-card-bg border border-border-color p-10 rounded-[3rem] overflow-hidden fade-in"
-            style="transition-delay: 200ms">
-            <div
-                class="absolute -right-10 -top-10 w-40 h-40 bg-accent-500/10 blur-3xl group-hover:bg-accent-500/20 transition-all duration-700">
-            </div>
-
-            <div
-                class="w-16 h-16 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-3xl mb-10 group-hover:scale-110 group-hover:rotate-6 transition-all">
-                <i class="fas fa-bolt"></i>
-            </div>
-
-            <h2 class="text-3xl font-black mb-6 group-hover:text-accent-400 transition-colors">Fullstack Sprint</h2>
-            <p class="text-text-secondary leading-relaxed mb-10">Développement complet de MVP en un temps record.</p>
-
-            <div class="flex flex-wrap gap-2">
-                
-                <span
-                    class="text-[10px] uppercase tracking-widest font-black px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#2A2A2A] text-text-secondary">Agile</span>
-                
-                <span
-                    class="text-[10px] uppercase tracking-widest font-black px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#2A2A2A] text-text-secondary">Saas</span>
-                
-                <span
-                    class="text-[10px] uppercase tracking-widest font-black px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#2A2A2A] text-text-secondary">MVP</span>
-                
-            </div>
-        </div>
-        
-    </div>
-
-    <!-- CTA Section -->
-    <div class="mt-20 fade-in">
-        <div
-            class="bg-card-bg p-12 rounded-[3.5rem] bg-gradient-to-r from-accent-500/10 to-transparent border border-border-color flex flex-col md:flex-row items-center justify-between gap-10">
-            <div>
-                <h3 class="text-3xl font-black mb-4">Prêt à démarrer un projet ?</h3>
-                <p class="text-text-secondary font-medium">Discutons de vos besoins et créons quelque chose d'incroyable
-                    ensemble.</p>
-            </div>
-            <a href="/contact"
-                class="px-10 py-5 bg-accent-500 text-black font-black rounded-lg hover:bg-gold transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap btn-primary">
-                Démarrer une collaboration
-            </a>
-        </div>
-    </div>
-</div>
-
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-[#1E1E1E]">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center gap-8 mb-8">
-                <a href="https://github.com/I6maeil" target="_blank"
-                    class="text-gray-400 hover:text-white text-2xl transition-all transform hover:scale-110"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
-                    class="text-gray-400 hover:text-[#00C896] text-2xl transition-all transform hover:scale-110"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/212679565747" target="_blank"
-                    class="text-gray-400 hover:text-green-500 text-2xl transition-all transform hover:scale-110"><i
-                        class="fab fa-whatsapp"></i></a>
+    <footer class="py-12 border-t border-border-color">
+        <div class="site-container text-center">
+            <div class="flex justify-center gap-8 mb-6">
+                <a href="https://github.com/I6maeil" target="_blank" rel="noopener noreferrer"
+                   class="text-text-secondary hover:text-white text-2xl transition-all transform hover:scale-110" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank" rel="noopener noreferrer"
+                   class="text-text-secondary hover:text-accent-400 text-2xl transition-all transform hover:scale-110" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/212679565747" target="_blank" rel="noopener noreferrer"
+                   class="text-text-secondary hover:text-green-500 text-2xl transition-all transform hover:scale-110" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:benismail722@gmail.com"
+                   class="text-text-secondary hover:text-gold text-2xl transition-all transform hover:scale-110" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
-            <p class="text-gray-500 text-sm italic">© 2026 IsmailDev. Crafted with Precision.</p>
+            <p class="text-text-secondary text-sm">© 2026 IsmailDev. Conçu et développé avec soin.</p>
         </div>
     </footer>
 
     <script>
-        // Scroll fade-in animation using Intersection Observer
-        const observerOptions = {
-            threshold: 0.1
-        };
-
+        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -419,22 +254,12 @@
             });
         }, observerOptions);
 
-        // Function to initialize observer
         function initObserver() {
             document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-            // Support legacy reveal class if any left
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         }
 
         document.addEventListener('DOMContentLoaded', initObserver);
-
-        // Re-init observer if content changes (e.g. dynamic projects)
-        const contentObserver = new MutationObserver(() => {
-            initObserver();
-        });
-        contentObserver.observe(document.body, { childList: true, subtree: true });
     </script>
-    
 </body>
 
 </html>

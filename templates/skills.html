@@ -4,7 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétences — Portfolio</title>
+    <title>Compétences Techniques — IsmailDev</title>
+
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Découvrez les compétences techniques d'Ismail Oujebbad : React, Python, Flask, JavaScript, Tailwind CSS, MySQL, MongoDB et outils DevOps.">
+    <meta name="keywords" content="Compétences, React, Python, Flask, JavaScript, Tailwind CSS, Développeur Web, Ismail Oujebbad">
+    <meta name="author" content="Ismail Oujebbad">
+    <meta name="theme-color" content="#0A0A0A">
+    <link rel="canonical" href="https://ismailcodes.com/skills">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ismailcodes.com/skills">
+    <meta property="og:title" content="Compétences Techniques — IsmailDev">
+    <meta property="og:description" content="Stack technique : React, Python, Flask, JavaScript, Tailwind CSS et bases de données.">
+    <meta property="og:image" content="https://ismailcodes.com/static/images/ismail_profile.jpg">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Compétences Techniques — IsmailDev">
+    <meta name="twitter:description" content="Stack technique : React, Python, Flask, JavaScript, Tailwind CSS et bases de données.">
+    <meta name="twitter:image" content="https://ismailcodes.com/static/images/ismail_profile.jpg">
 
     <!-- Favicon -->
     <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%2300C896"/><text x="50%25" y="50%25" font-family="sans-serif" font-size="70" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">I</text></svg>'>
@@ -14,255 +35,84 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Design System Stylesheet -->
+    <link rel="stylesheet" href="/static/css/style.css">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        obsidian: '#0A0A0A', // Deep black
+                        obsidian: '#0A0A0A',
                         'obsidian-alt': '#0F0F0F',
                         'card-bg': '#141414',
                         accent: {
-                            400: '#00C896', // Emerald Green 400
-                            500: '#00C896', // Emerald Green 500
-                            600: '#00C896', // Emerald Green 600
+                            400: '#00C896',
+                            500: '#00C896',
+                            600: '#00C896',
                         },
-                        gold: '#F5A623', // Amber accent
+                        gold: '#F5A623',
                         'text-primary': '#FFFFFF',
-                        'text-secondary': '#A0A0A0',
-                        'border-color': '#1E1E1E',
+                        'text-secondary': '#A3A3A3',
+                        'border-color': '#242424',
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'shine': 'shine 3s ease-in-out infinite',
-                        'blink': 'blink 1.5s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'gradient-x': {
-                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
-                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
-                        },
-                        'float': {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        'shine': {
-                            '0%': { left: '-100%' },
-                            '100%': { left: '100%' },
-                        },
-                        'blink': {
-                            '0%, 100%': { opacity: 0.4 },
-                            '50%': { opacity: 1 },
-                        }
                     }
                 }
             }
         }
     </script>
-
-    <style>
-        :root {
-            --glass: rgba(10, 10, 10, 0.85);
-            --glass-border: #1E1E1E;
-        }
-
-        body {
-            background-color: #0A0A0A;
-            color: #FFFFFF;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Noise Texture */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-            opacity: 0.03;
-            pointer-events: none;
-            z-index: 9999;
-        }
-
-        .mesh-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -10;
-            background: radial-gradient(ellipse at top left, rgba(0, 200, 150, 0.15), transparent 60%);
-        }
-
-        .glass {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-            color: #A0A0A0;
-        }
-
-        .nav-link:hover {
-            color: #FFFFFF;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #00C896;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-link.active {
-            color: #00C896;
-        }
-
-        /* Fade-in Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Blinking Dot */
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #00C896;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 10px #00C896;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0A0A0A;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #00C896;
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #F5A623;
-        }
-
-        /* Selection */
-        ::selection {
-            background: #00C896;
-            color: black;
-        }
-
-        /* Section Divider */
-        .section-divider {
-            height: 1px;
-            width: 100%;
-            background: linear-gradient(90deg, transparent, #00C896, transparent);
-            margin: 4rem 0;
-        }
-
-        /* Button Hover Glow */
-        .btn-primary:hover, .btn-secondary:hover {
-            box-shadow: 0 0 20px rgba(0, 200, 150, 0.4);
-        }
-    </style>
-    
 </head>
 
 <body class="antialiased">
     <div class="mesh-bg"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl">
-        <div class="glass rounded-3xl px-8 py-4 flex items-center justify-between shadow-2xl relative overflow-hidden">
-            <a href="/" class="flex items-center gap-3 group">
-                <!-- Logo SVG -->
-                <svg width="40" height="40" viewBox="0 0 100 100" class="transition-transform group-hover:scale-110">
-                    <path d="M30 20 L10 50 L30 80" stroke="#00C896" stroke-width="8" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M70 20 L90 50 L70 80" stroke="#00C896" stroke-width="8" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round" />
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-[1200px]">
+        <div class="glass rounded-3xl px-6 md:px-8 py-4 flex items-center justify-between shadow-2xl relative overflow-hidden">
+            <a href="/" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 rounded-xl" aria-label="Page d'accueil IsmailDev">
+                <svg width="38" height="38" viewBox="0 0 100 100" class="transition-transform group-hover:scale-110">
+                    <path d="M30 20 L10 50 L30 80" stroke="#00C896" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M70 20 L90 50 L70 80" stroke="#00C896" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
                     <line x1="55" y1="25" x2="45" y2="75" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
                 </svg>
-                <span
-                    class="text-2xl font-black bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
+                <span class="text-2xl font-black bg-gradient-to-r from-accent-400 to-gold bg-clip-text text-transparent">
                     IsmailDev
                 </span>
             </a>
 
             <div class="hidden md:flex items-center gap-8">
-                <a href="/"
-                    class="nav-link font-medium ">Accueil</a>
-                <a href="/skills"
-                    class="nav-link font-medium active">Compétences</a>
-                <a href="/services"
-                    class="nav-link font-medium ">Services</a>
-                <a href="/portfolio"
-                    class="nav-link font-medium ">Portfolio</a>
-                <a href="/certifications"
-                    class="nav-link font-medium ">Certifications</a>
-                <a href="/contact"
-                    class="nav-link font-medium ">Contact</a>
+                <a href="/" class="nav-link font-medium">Accueil</a>
+                <a href="/skills" class="nav-link font-medium active">Compétences</a>
+                <a href="/services" class="nav-link font-medium">Services</a>
+                <a href="/portfolio" class="nav-link font-medium">Portfolio</a>
+                <a href="/certifications" class="nav-link font-medium">Certifications</a>
+                <a href="/contact" class="nav-link font-medium">Contact</a>
             </div>
 
-            <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                class="hidden md:flex items-center gap-2 bg-[#00C896] hover:bg-[#F5A623] text-black px-5 py-2 rounded-lg font-bold transition-all btn-primary">
-                <i class="fas fa-file-download"></i> CV
+            <a href="/static/CV_Ismail_Oujebbad.pdf" download class="hidden md:flex items-center gap-2 btn-primary !py-2.5 !px-5 text-sm !rounded-xl">
+                <i class="fas fa-file-download text-xs"></i> CV
             </a>
 
             <!-- Mobile Toggle -->
-            <button class="md:hidden text-gray-300"
-                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <button class="md:hidden text-gray-300 p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 rounded-lg"
+                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Ouvrir le menu">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden absolute top-20 left-0 w-full glass rounded-2xl p-6 flex flex-col gap-4 shadow-2xl md:hidden">
-            <a href="/" class="text-lg font-bold">Accueil</a>
-            <a href="/skills" class="text-lg font-bold">Compétences</a>
-            <a href="/services" class="text-lg font-bold">Services</a>
-            <a href="/portfolio" class="text-lg font-bold">Portfolio</a>
-            <a href="/certifications" class="text-lg font-bold">Certifications</a>
-            <a href="/contact" class="text-lg font-bold">Contact</a>
-            <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                class="bg-[#00C896] text-black p-4 rounded-lg text-center font-bold">
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full glass rounded-2xl p-6 flex flex-col gap-4 shadow-2xl md:hidden">
+            <a href="/" class="text-base font-bold text-white hover:text-accent-400">Accueil</a>
+            <a href="/skills" class="text-base font-bold text-accent-400">Compétences</a>
+            <a href="/services" class="text-base font-bold text-white hover:text-accent-400">Services</a>
+            <a href="/portfolio" class="text-base font-bold text-white hover:text-accent-400">Portfolio</a>
+            <a href="/certifications" class="text-base font-bold text-white hover:text-accent-400">Certifications</a>
+            <a href="/contact" class="text-base font-bold text-white hover:text-accent-400">Contact</a>
+            <a href="/static/CV_Ismail_Oujebbad.pdf" download class="btn-primary w-full text-center text-sm !rounded-xl">
                 Télécharger CV
             </a>
         </div>
@@ -270,183 +120,219 @@
 
     <!-- Main Content -->
     <main class="pt-32 min-h-screen">
-        
-<div class="container mx-auto px-6 py-20">
-    <div class="max-w-3xl mb-20 fade-in">
-        <h1 class="text-5xl md:text-6xl font-black mb-6">Expertise <span class="text-accent-400">Technique</span></h1>
-        <p class="text-text-secondary text-lg leading-relaxed">
-            Un arsenal technologique moderne pour bâtir le web de demain. Je combine performance, sécurité et design.
-        </p>
-    </div>
-
-    <!-- Bento Grid -->
-    <div class="grid md:grid-cols-3 gap-6">
-        <!-- Frontend -->
-        <div class="md:col-span-2 bg-card-bg border border-border-color p-10 rounded-[2.5rem] fade-in">
-            <div class="flex items-center gap-4 mb-10">
-                <div
-                    class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h2 class="text-3xl font-black">Frontend Development</h2>
+        <div class="site-container py-16 lg:py-24">
+            <!-- Consistent Section Heading -->
+            <div class="section-heading-group fade-in">
+                <h1 class="section-title">Compétences <span class="text-accent">Techniques</span></h1>
+                <p class="section-subtitle">
+                    Un aperçu transparent de ma boîte à outils : les technologies que j'utilise au quotidien pour concevoir des applications web robustes, interactives et évolutives.
+                </p>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-8">
-                
-                
-                <div class="group">
-                    <div class="flex justify-between mb-3">
-                        <span class="font-bold text-text-secondary">React / Next.js</span>
-                        <span class="text-accent-400 font-black">95%</span>
+            <!-- Balanced 2x2 Grid — All 4 cards have identical structure, equal heights, no empty space -->
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                <!-- Card 1: Frontend -->
+                <div class="bg-card border border-border-color p-8 md:p-10 rounded-[2.5rem] flex flex-col justify-between h-full hover:border-accent-500/40 transition-all duration-300 shadow-xl fade-in">
+                    <div>
+                        <!-- Identical Header: Icon + Title on the same row -->
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl flex-shrink-0">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-black text-white">Développement Frontend</h2>
+                        </div>
+
+                        <!-- Level Badges Layout -->
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-center justify-between p-4 rounded-2xl bg-[#181818] border border-border-color hover:border-accent-500/30 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="fab fa-react text-accent-400 text-xl"></i>
+                                    <span class="font-bold text-white text-base">React</span>
+                                </div>
+                                <span class="badge-green">Avancé</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 rounded-2xl bg-[#181818] border border-border-color hover:border-accent-500/30 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="fab fa-js-square text-gold text-xl"></i>
+                                    <span class="font-bold text-white text-base">JavaScript</span>
+                                </div>
+                                <span class="badge-green">Avancé</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 rounded-2xl bg-[#181818] border border-border-color hover:border-accent-500/30 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="fab fa-css3-alt text-accent-400 text-xl"></i>
+                                    <span class="font-bold text-white text-base">Tailwind CSS</span>
+                                </div>
+                                <span class="badge-green">Avancé</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 rounded-2xl bg-[#181818] border border-border-color hover:border-gold/30 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-layer-group text-gold text-xl"></i>
+                                    <span class="font-bold text-white text-base">Next.js</span>
+                                </div>
+                                <span class="badge-gold">En apprentissage</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="h-1.5 w-full bg-[#1A1A1A] rounded-full overflow-hidden">
-                        <div class="h-full bg-accent-500 transition-all duration-1000"
-                            style="width: 95%"></div>
+
+                    <div class="pt-6 border-t border-border-color/60 mt-8 text-xs text-text-secondary flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-accent-400"></span>
+                        <span>Composants réutilisables, hooks personnalisés et responsive mobile-first.</span>
                     </div>
                 </div>
-                
-                <div class="group">
-                    <div class="flex justify-between mb-3">
-                        <span class="font-bold text-text-secondary">TypeScript / JS</span>
-                        <span class="text-accent-400 font-black">92%</span>
+
+                <!-- Card 2: Backend -->
+                <div class="bg-card border border-border-color p-8 md:p-10 rounded-[2.5rem] flex flex-col justify-between h-full hover:border-accent-500/40 transition-all duration-300 shadow-xl fade-in" style="transition-delay: 100ms">
+                    <div>
+                        <!-- Identical Header: Icon + Title on the same row -->
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold text-2xl flex-shrink-0">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-black text-white">Développement Backend</h2>
+                        </div>
+
+                        <!-- Backend List (Python/Flask first, Node.js/Express, MySQL/MongoDB) -->
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 rounded-2xl bg-[#181818] border border-border-color hover:border-accent-500/30 transition-colors">
+                                <span class="flex items-center gap-3 text-white font-bold text-base">
+                                    <i class="fab fa-python text-accent-400 text-lg"></i> Python / Flask
+                                </span>
+                                <span class="badge-green">Intermédiaire</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 rounded-2xl bg-[#181818] border border-border-color hover:border-gold/30 transition-colors">
+                                <span class="flex items-center gap-3 text-white font-bold text-base">
+                                    <i class="fab fa-node-js text-gold text-lg"></i> Node.js / Express
+                                </span>
+                                <span class="badge-gold">Bases</span>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 rounded-2xl bg-[#181818] border border-border-color hover:border-accent-500/30 transition-colors">
+                                <span class="flex items-center gap-3 text-white font-bold text-base">
+                                    <i class="fas fa-database text-accent-400 text-lg"></i> MySQL / MongoDB
+                                </span>
+                                <span class="badge-green">Intermédiaire</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="h-1.5 w-full bg-[#1A1A1A] rounded-full overflow-hidden">
-                        <div class="h-full bg-accent-500 transition-all duration-1000"
-                            style="width: 92%"></div>
+
+                    <div class="pt-6 border-t border-border-color/60 mt-8 text-xs text-text-secondary flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-gold"></span>
+                        <span>APIs RESTful, sessions sécurisées, authentification OAuth et modélisation relationnelle.</span>
                     </div>
                 </div>
-                
-                <div class="group">
-                    <div class="flex justify-between mb-3">
-                        <span class="font-bold text-text-secondary">Tailwind CSS</span>
-                        <span class="text-accent-400 font-black">98%</span>
+
+                <!-- Card 3: Tools & DevOps -->
+                <div class="bg-card border border-border-color p-8 md:p-10 rounded-[2.5rem] flex flex-col justify-between h-full hover:border-accent-500/40 transition-all duration-300 shadow-xl fade-in" style="transition-delay: 200ms">
+                    <div>
+                        <!-- Identical Header: Icon + Title on the same row -->
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl flex-shrink-0">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-black text-white">Outils & Déploiement</h2>
+                        </div>
+
+                        <!-- Real Tools Only: Git, GitHub, Vercel, Render, Postman, Figma, Linux -->
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2.5 rounded-xl bg-[#181818] border border-border-color text-sm font-bold text-text-secondary hover:text-white hover:border-accent-500/40 transition-colors">
+                                <i class="fab fa-git-alt text-accent-400 mr-2"></i> Git
+                            </span>
+                            <span class="px-4 py-2.5 rounded-xl bg-[#181818] border border-border-color text-sm font-bold text-text-secondary hover:text-white hover:border-accent-500/40 transition-colors">
+                                <i class="fab fa-github text-white mr-2"></i> GitHub
+                            </span>
+                            <span class="px-4 py-2.5 rounded-xl bg-[#181818] border border-border-color text-sm font-bold text-text-secondary hover:text-white hover:border-accent-500/40 transition-colors">
+                                <i class="fas fa-play text-white mr-2"></i> Vercel
+                            </span>
+                            <span class="px-4 py-2.5 rounded-xl bg-[#181818] border border-border-color text-sm font-bold text-text-secondary hover:text-white hover:border-accent-500/40 transition-colors">
+                                <i class="fas fa-cloud text-accent-400 mr-2"></i> Render
+                            </span>
+                            <span class="px-4 py-2.5 rounded-xl bg-[#181818] border border-border-color text-sm font-bold text-text-secondary hover:text-white hover:border-accent-500/40 transition-colors">
+                                <i class="fas fa-paper-plane text-gold mr-2"></i> Postman
+                            </span>
+                            <span class="px-4 py-2.5 rounded-xl bg-[#181818] border border-border-color text-sm font-bold text-text-secondary hover:text-white hover:border-accent-500/40 transition-colors">
+                                <i class="fab fa-figma text-gold mr-2"></i> Figma
+                            </span>
+                            <span class="px-4 py-2.5 rounded-xl bg-[#181818] border border-border-color text-sm font-bold text-text-secondary hover:text-white hover:border-accent-500/40 transition-colors">
+                                <i class="fab fa-linux text-accent-400 mr-2"></i> Linux
+                            </span>
+                        </div>
                     </div>
-                    <div class="h-1.5 w-full bg-[#1A1A1A] rounded-full overflow-hidden">
-                        <div class="h-full bg-accent-500 transition-all duration-1000"
-                            style="width: 98%"></div>
+
+                    <div class="pt-6 border-t border-border-color/60 mt-8 text-xs text-text-secondary flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-accent-400"></span>
+                        <span>Gestion de versions en équipe, tests d'API et déploiement continu automatisé.</span>
                     </div>
                 </div>
-                
-                <div class="group">
-                    <div class="flex justify-between mb-3">
-                        <span class="font-bold text-text-secondary">UI/UX
-                Design</span>
-                        <span class="text-accent-400 font-black">85%</span>
+
+                <!-- Card 4: Continuous Learning & Exploration -->
+                <div class="bg-card border border-border-color p-8 md:p-10 rounded-[2.5rem] flex flex-col justify-between h-full hover:border-gold/40 transition-all duration-300 shadow-xl fade-in" style="transition-delay: 300ms">
+                    <div>
+                        <!-- Identical Header: Icon + Title on the same row -->
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold text-2xl flex-shrink-0">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h2 class="text-2xl md:text-3xl font-black text-white">Veille & Exploration</h2>
+                        </div>
+
+                        <p class="text-text-secondary text-base leading-relaxed mb-6">
+                            Approfondissement continu des standards modernes du web et des architectures orientées services pour créer des applications performantes.
+                        </p>
+
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2.5 rounded-xl bg-[#181818] border border-border-color text-sm font-bold text-text-secondary">
+                                <i class="fas fa-check text-gold mr-2"></i> Next.js App Router
+                            </span>
+                            <span class="px-4 py-2.5 rounded-xl bg-[#181818] border border-border-color text-sm font-bold text-text-secondary">
+                                <i class="fas fa-check text-gold mr-2"></i> Intégration d'APIs IA
+                            </span>
+                            <span class="px-4 py-2.5 rounded-xl bg-[#181818] border border-border-color text-sm font-bold text-text-secondary">
+                                <i class="fas fa-check text-gold mr-2"></i> UI Ergonomie & Accessibilité
+                            </span>
+                        </div>
                     </div>
-                    <div class="h-1.5 w-full bg-[#1A1A1A] rounded-full overflow-hidden">
-                        <div class="h-full bg-accent-500 transition-all duration-1000"
-                            style="width: 85%"></div>
+
+                    <div class="pt-6 border-t border-border-color/60 mt-8 text-xs text-text-secondary flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-gold"></span>
+                        <span>Pratique proactive sur des projets réels et prototypage rapide.</span>
                     </div>
                 </div>
-                
             </div>
         </div>
-
-        <!-- Backend Highlight -->
-        <div class="bg-card-bg border border-border-color p-10 rounded-[2.5rem] bg-accent-500/5 fade-in" style="transition-delay: 100ms">
-            <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold text-2xl mb-8">
-                <i class="fas fa-server"></i>
-            </div>
-            <h2 class="text-3xl font-black mb-6">Backend</h2>
-            <ul class="space-y-4">
-                <li class="flex items-center gap-3 text-text-secondary font-bold">
-                    <i class="fas fa-check text-gold text-xs"></i> Node.js / Express
-                </li>
-                <li class="flex items-center gap-3 text-text-secondary font-bold">
-                    <i class="fas fa-check text-gold text-xs"></i> Python / Flask
-                </li>
-                <li class="flex items-center gap-3 text-text-secondary font-bold">
-                    <i class="fas fa-check text-gold text-xs"></i> SQL / NoSQL
-                </li>
-                <li class="flex items-center gap-3 text-text-secondary font-bold">
-                    <i class="fas fa-check text-gold text-xs"></i> Robust APIs
-                </li>
-            </ul>
-        </div>
-
-        <!-- Tools & DevOps -->
-        <div class="bg-card-bg border border-border-color p-10 rounded-[2.5rem] fade-in" style="transition-delay: 200ms">
-            <h3 class="text-xl font-black mb-6">Tools & DevOps</h3>
-            <div class="flex flex-wrap gap-3">
-                
-                <span
-                    class="px-4 py-2 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] text-sm font-bold text-text-secondary hover:text-white transition-colors cursor-default">
-                    Git
-                </span>
-                
-                <span
-                    class="px-4 py-2 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] text-sm font-bold text-text-secondary hover:text-white transition-colors cursor-default">
-                    Docker
-                </span>
-                
-                <span
-                    class="px-4 py-2 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] text-sm font-bold text-text-secondary hover:text-white transition-colors cursor-default">
-                    AWS
-                </span>
-                
-                <span
-                    class="px-4 py-2 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] text-sm font-bold text-text-secondary hover:text-white transition-colors cursor-default">
-                    Vercel
-                </span>
-                
-                <span
-                    class="px-4 py-2 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] text-sm font-bold text-text-secondary hover:text-white transition-colors cursor-default">
-                    Postman
-                </span>
-                
-                <span
-                    class="px-4 py-2 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] text-sm font-bold text-text-secondary hover:text-white transition-colors cursor-default">
-                    Figma
-                </span>
-                
-                <span
-                    class="px-4 py-2 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] text-sm font-bold text-text-secondary hover:text-white transition-colors cursor-default">
-                    Linux
-                </span>
-                
-            </div>
-        </div>
-
-        <!-- Learning Card -->
-        <div class="md:col-span-2 bg-card-bg border border-gold/20 p-10 rounded-[2.5rem] bg-gold/5 flex items-center justify-between fade-in"
-            style="transition-delay: 300ms">
-            <div>
-                <h3 class="text-2xl font-black mb-2 text-gold">Apprentissage Continu</h3>
-                <p class="text-text-secondary font-medium">Actuellement en train d'explorer : <b>Web3 & AI Integration</b></p>
-            </div>
-            <div class="hidden sm:block text-6xl text-gold/20">
-                <i class="fas fa-rocket"></i>
-            </div>
-        </div>
-    </div>
-</div>
-
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-[#1E1E1E]">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center gap-8 mb-8">
-                <a href="https://github.com/I6maeil" target="_blank"
-                    class="text-gray-400 hover:text-white text-2xl transition-all transform hover:scale-110"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
-                    class="text-gray-400 hover:text-[#00C896] text-2xl transition-all transform hover:scale-110"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/212679565747" target="_blank"
-                    class="text-gray-400 hover:text-green-500 text-2xl transition-all transform hover:scale-110"><i
-                        class="fab fa-whatsapp"></i></a>
+    <footer class="py-12 border-t border-border-color">
+        <div class="site-container text-center">
+            <div class="flex justify-center gap-8 mb-6">
+                <a href="https://github.com/I6maeil" target="_blank" rel="noopener noreferrer"
+                   class="text-text-secondary hover:text-white text-2xl transition-all transform hover:scale-110" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank" rel="noopener noreferrer"
+                   class="text-text-secondary hover:text-accent-400 text-2xl transition-all transform hover:scale-110" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/212679565747" target="_blank" rel="noopener noreferrer"
+                   class="text-text-secondary hover:text-green-500 text-2xl transition-all transform hover:scale-110" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:benismail722@gmail.com"
+                   class="text-text-secondary hover:text-gold text-2xl transition-all transform hover:scale-110" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
-            <p class="text-gray-500 text-sm italic">© 2026 IsmailDev. Crafted with Precision.</p>
+            <p class="text-text-secondary text-sm">© 2026 IsmailDev. Conçu et développé avec soin.</p>
         </div>
     </footer>
 
     <script>
-        // Scroll fade-in animation using Intersection Observer
-        const observerOptions = {
-            threshold: 0.1
-        };
-
+        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -455,22 +341,12 @@
             });
         }, observerOptions);
 
-        // Function to initialize observer
         function initObserver() {
             document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-            // Support legacy reveal class if any left
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         }
 
         document.addEventListener('DOMContentLoaded', initObserver);
-
-        // Re-init observer if content changes (e.g. dynamic projects)
-        const contentObserver = new MutationObserver(() => {
-            initObserver();
-        });
-        contentObserver.observe(document.body, { childList: true, subtree: true });
     </script>
-    
 </body>
 
 </html>

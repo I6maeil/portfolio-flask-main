@@ -4,10 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications — Portfolio</title>
+    <title>Certifications &amp; Formations — Ismail Oujebbad | Développeur Web</title>
+    <meta name="description"
+        content="Découvrez les certifications et le parcours académique d'Ismail Oujebbad en développement informatique, technologies web et cloud.">
+    <meta name="author" content="Ismail Oujebbad">
+    <link rel="canonical" href="https://ismailcodes.com/certifications">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ismailcodes.com/certifications">
+    <meta property="og:title" content="Certifications &amp; Formations — Ismail Oujebbad">
+    <meta property="og:description"
+        content="Diplômes, formations certifiantes et compétences validées en développement informatique, React et Cloud.">
+    <meta property="og:image" content="https://ismailcodes.com/static/profile.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ismailcodes.com/certifications">
+    <meta name="twitter:title" content="Certifications &amp; Formations — Ismail Oujebbad">
+    <meta name="twitter:description"
+        content="Diplômes, formations certifiantes et compétences validées en développement informatique, React et Cloud.">
+    <meta name="twitter:image" content="https://ismailcodes.com/static/profile.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%2300C896"/><text x="50%25" y="50%25" font-family="sans-serif" font-size="70" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">I</text></svg>'>
+    <link rel="icon"
+        href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%2300C896"/><text x="50%25" y="50%25" font-family="sans-serif" font-size="70" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">I</text></svg>'>
+
+    <!-- Global Design System -->
+    <link rel="stylesheet" href="/static/css/style.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +39,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <script>
@@ -23,185 +47,26 @@
             theme: {
                 extend: {
                     colors: {
-                        obsidian: '#0A0A0A', // Deep black
+                        obsidian: '#0A0A0A',
                         'obsidian-alt': '#0F0F0F',
                         'card-bg': '#141414',
                         accent: {
-                            400: '#00C896', // Emerald Green 400
-                            500: '#00C896', // Emerald Green 500
-                            600: '#00C896', // Emerald Green 600
+                            400: '#00C896',
+                            500: '#00C896',
+                            600: '#00C896',
                         },
-                        gold: '#F5A623', // Amber accent
+                        gold: '#F5A623',
                         'text-primary': '#FFFFFF',
                         'text-secondary': '#A0A0A0',
                         'border-color': '#1E1E1E',
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'shine': 'shine 3s ease-in-out infinite',
-                        'blink': 'blink 1.5s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'gradient-x': {
-                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
-                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
-                        },
-                        'float': {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        'shine': {
-                            '0%': { left: '-100%' },
-                            '100%': { left: '100%' },
-                        },
-                        'blink': {
-                            '0%, 100%': { opacity: 0.4 },
-                            '50%': { opacity: 1 },
-                        }
                     }
                 }
             }
         }
     </script>
-
-    <style>
-        :root {
-            --glass: rgba(10, 10, 10, 0.85);
-            --glass-border: #1E1E1E;
-        }
-
-        body {
-            background-color: #0A0A0A;
-            color: #FFFFFF;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Noise Texture */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-            opacity: 0.03;
-            pointer-events: none;
-            z-index: 9999;
-        }
-
-        .mesh-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -10;
-            background: radial-gradient(ellipse at top left, rgba(0, 200, 150, 0.15), transparent 60%);
-        }
-
-        .glass {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-            color: #A0A0A0;
-        }
-
-        .nav-link:hover {
-            color: #FFFFFF;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #00C896;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-link.active {
-            color: #00C896;
-        }
-
-        /* Fade-in Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Blinking Dot */
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #00C896;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 10px #00C896;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0A0A0A;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #00C896;
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #F5A623;
-        }
-
-        /* Selection */
-        ::selection {
-            background: #00C896;
-            color: black;
-        }
-
-        /* Section Divider */
-        .section-divider {
-            height: 1px;
-            width: 100%;
-            background: linear-gradient(90deg, transparent, #00C896, transparent);
-            margin: 4rem 0;
-        }
-
-        /* Button Hover Glow */
-        .btn-primary:hover, .btn-secondary:hover {
-            box-shadow: 0 0 20px rgba(0, 200, 150, 0.4);
-        }
-    </style>
-    
 </head>
 
 <body class="antialiased">
@@ -210,8 +75,7 @@
     <!-- Navigation -->
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl">
         <div class="glass rounded-3xl px-8 py-4 flex items-center justify-between shadow-2xl relative overflow-hidden">
-            <a href="/" class="flex items-center gap-3 group">
-                <!-- Logo SVG -->
+            <a href="/" class="flex items-center gap-3 group" aria-label="IsmailDev Accueil">
                 <svg width="40" height="40" viewBox="0 0 100 100" class="transition-transform group-hover:scale-110">
                     <path d="M30 20 L10 50 L30 80" stroke="#00C896" stroke-width="8" fill="none" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -226,27 +90,21 @@
             </a>
 
             <div class="hidden md:flex items-center gap-8">
-                <a href="/"
-                    class="nav-link font-medium ">Accueil</a>
-                <a href="/skills"
-                    class="nav-link font-medium ">Compétences</a>
-                <a href="/services"
-                    class="nav-link font-medium ">Services</a>
-                <a href="/portfolio"
-                    class="nav-link font-medium ">Portfolio</a>
-                <a href="/certifications"
-                    class="nav-link font-medium active">Certifications</a>
-                <a href="/contact"
-                    class="nav-link font-medium ">Contact</a>
+                <a href="/" class="nav-link font-medium">Accueil</a>
+                <a href="/skills" class="nav-link font-medium">Compétences</a>
+                <a href="/services" class="nav-link font-medium">Services</a>
+                <a href="/portfolio" class="nav-link font-medium">Portfolio</a>
+                <a href="/certifications" class="nav-link font-medium active">Certifications</a>
+                <a href="/contact" class="nav-link font-medium">Contact</a>
             </div>
 
             <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                class="hidden md:flex items-center gap-2 bg-[#00C896] hover:bg-[#F5A623] text-black px-5 py-2 rounded-lg font-bold transition-all btn-primary">
+                class="hidden md:flex items-center gap-2 bg-[#00C896] hover:bg-[#F5A623] text-black px-5 py-2.5 rounded-xl font-bold transition-all btn-primary">
                 <i class="fas fa-file-download"></i> CV
             </a>
 
             <!-- Mobile Toggle -->
-            <button class="md:hidden text-gray-300"
+            <button class="md:hidden text-gray-300 p-2" aria-label="Menu Mobile"
                 onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                 <i class="fas fa-bars text-xl"></i>
             </button>
@@ -255,161 +113,232 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden absolute top-20 left-0 w-full glass rounded-2xl p-6 flex flex-col gap-4 shadow-2xl md:hidden">
-            <a href="/" class="text-lg font-bold">Accueil</a>
-            <a href="/skills" class="text-lg font-bold">Compétences</a>
-            <a href="/services" class="text-lg font-bold">Services</a>
-            <a href="/portfolio" class="text-lg font-bold">Portfolio</a>
-            <a href="/certifications" class="text-lg font-bold">Certifications</a>
-            <a href="/contact" class="text-lg font-bold">Contact</a>
+            <a href="/" class="text-lg font-bold hover:text-accent-400 py-1">Accueil</a>
+            <a href="/skills" class="text-lg font-bold hover:text-accent-400 py-1">Compétences</a>
+            <a href="/services" class="text-lg font-bold hover:text-accent-400 py-1">Services</a>
+            <a href="/portfolio" class="text-lg font-bold hover:text-accent-400 py-1">Portfolio</a>
+            <a href="/certifications" class="text-lg font-bold text-accent-400 py-1">Certifications</a>
+            <a href="/contact" class="text-lg font-bold hover:text-accent-400 py-1">Contact</a>
             <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                class="bg-[#00C896] text-black p-4 rounded-lg text-center font-bold">
-                Télécharger CV
+                class="bg-[#00C896] text-black p-4 rounded-xl text-center font-bold btn-primary mt-2">
+                <i class="fas fa-file-download mr-2"></i> Télécharger CV
             </a>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="pt-32 min-h-screen">
-        
-<div class="container mx-auto px-6 py-20">
-    <div class="max-w-3xl mb-20 fade-in">
-        <h1 class="text-5xl md:text-6xl font-black mb-6 italic tracking-tighter">Certifications <span
-                class="text-accent-400">& Formations</span></h1>
-        <p class="text-text-secondary text-lg leading-relaxed">
-            Parcours de formation continue et validations d'expertise technique.
-        </p>
-    </div>
+        <div class="site-container py-16 lg:py-24">
+            <!-- Header -->
+            <div class="max-w-3xl mb-16 fade-in">
+                <h1 class="section-title">Certifications &amp; <span class="text-accent">Formations</span></h1>
+                <p class="section-subtitle">
+                    Parcours académique, formations continues et validations d'expertise technique.
+                </p>
+            </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-
-        
-        <div class="group bg-card-bg border border-border-color p-10 rounded-[2.5rem] fade-in transition-all duration-500 hover:border-accent-500/50"
-            style="transition-delay: 0ms">
-            <div
-                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl mb-8 group-hover:scale-110 transition-transform">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="text-[10px] font-black uppercase tracking-widest text-text-secondary mb-2">2024 – 2026</div>
-            <h3
-                class="text-2xl font-black mb-4 leading-tight group-hover:text-accent-400 transition-colors">
-                Technicien Spécialisé en développement informatique</h3>
-            <p class="text-text-secondary text-sm font-medium">EGIAM Ecole de Gestion et Informatique Appliquée et Marketing</p>
-        </div>
-        
-        <div class="group bg-card-bg border border-border-color p-10 rounded-[2.5rem] fade-in transition-all duration-500 hover:border-accent-500/50"
-            style="transition-delay: 100ms">
-            <div
-                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl mb-8 group-hover:scale-110 transition-transform">
-                <i class="fas fa-desktop"></i>
-            </div>
-            <div class="text-[10px] font-black uppercase tracking-widest text-text-secondary mb-2">2022 – 2024</div>
-            <h3
-                class="text-2xl font-black mb-4 leading-tight group-hover:text-accent-400 transition-colors">
-                Technicien en gestion informatisée</h3>
-            <p class="text-text-secondary text-sm font-medium">EGIAM Ecole de Gestion et Informatique Appliquée et Marketing</p>
-        </div>
-        
-        <div class="group bg-card-bg border border-border-color p-10 rounded-[2.5rem] fade-in transition-all duration-500 hover:border-accent-500/50"
-            style="transition-delay: 200ms">
-            <div
-                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl mb-8 group-hover:scale-110 transition-transform">
-                <i class="fas fa-bolt"></i>
-            </div>
-            <div class="text-[10px] font-black uppercase tracking-widest text-text-secondary mb-2">2020 – 2022</div>
-            <h3
-                class="text-2xl font-black mb-4 leading-tight group-hover:text-accent-400 transition-colors">
-                Qualification électricité d’entretien industrielle</h3>
-            <p class="text-text-secondary text-sm font-medium">INSTITUT SPECIALISE DE TECHNOLOGIE APPLIQUEE</p>
-        </div>
-        
-        <div class="group bg-card-bg border border-border-color p-10 rounded-[2.5rem] fade-in transition-all duration-500 hover:border-accent-500/50"
-            style="transition-delay: 300ms">
-            <div
-                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl mb-8 group-hover:scale-110 transition-transform">
-                <i class="fas fa-tools"></i>
-            </div>
-            <div class="text-[10px] font-black uppercase tracking-widest text-text-secondary mb-2">2019 – 2020</div>
-            <h3
-                class="text-2xl font-black mb-4 leading-tight group-hover:text-accent-400 transition-colors">
-                Électricité de Bâtiment</h3>
-            <p class="text-text-secondary text-sm font-medium">INSTITUT SPECIALISE DE TECHNOLOGIE APPLIQUEE</p>
-        </div>
-        
-        <div class="group bg-card-bg border border-border-color p-10 rounded-[2.5rem] fade-in transition-all duration-500 hover:border-accent-500/50"
-            style="transition-delay: 400ms">
-            <div
-                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl mb-8 group-hover:scale-110 transition-transform">
-                <i class="fab fa-react"></i>
-            </div>
-            <div class="text-[10px] font-black uppercase tracking-widest text-text-secondary mb-2">2024</div>
-            <h3
-                class="text-2xl font-black mb-4 leading-tight group-hover:text-accent-400 transition-colors">
-                Certificat React</h3>
-            <p class="text-text-secondary text-sm font-medium">Platform X Mastery</p>
-        </div>
-        
-        <div class="group bg-card-bg border border-border-color p-10 rounded-[2.5rem] fade-in transition-all duration-500 hover:border-accent-500/50"
-            style="transition-delay: 500ms">
-            <div
-                class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl mb-8 group-hover:scale-110 transition-transform">
-                <i class="fab fa-aws"></i>
-            </div>
-            <div class="text-[10px] font-black uppercase tracking-widest text-text-secondary mb-2">2023</div>
-            <h3
-                class="text-2xl font-black mb-4 leading-tight group-hover:text-accent-400 transition-colors">
-                AWS Solutions Architect</h3>
-            <p class="text-text-secondary text-sm font-medium">AWS Training &amp; Certification</p>
-        </div>
-        
-    </div>
-
-    <!-- Timeline/Formation highlight -->
-    <div class="mt-20 bg-card-bg border border-border-color p-12 rounded-[3.5rem] fade-in">
-        <h2 class="text-3xl font-black mb-10 text-center">Parcours Académique</h2>
-        <div class="border-l-2 border-accent-500/10 ml-4 space-y-12">
-            <div class="relative pl-10">
-                <div
-                    class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent-500 shadow-lg shadow-accent-500/50">
+            <!-- Certifications Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Développeur Informatique -->
+                <div class="group bg-card-bg border border-border-color p-8 md:p-10 rounded-[2rem] fade-in transition-all duration-300 hover:border-accent-500/50 flex flex-col justify-between"
+                    style="transition-delay: 0ms">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="text-[11px] font-black uppercase tracking-widest text-accent-400 mb-2">2024 – En cours</div>
+                        <h3 class="text-xl font-bold mb-3 leading-snug group-hover:text-accent-400 transition-colors text-white">
+                            Technicien Spécialisé en Développement Informatique
+                        </h3>
+                        <p class="text-text-secondary text-sm font-medium leading-relaxed">
+                            EGIAM — École de Gestion, Informatique Appliquée et Marketing.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 mt-6">
+                        <span class="inline-flex items-center gap-2 text-xs font-bold text-accent-400">
+                            <i class="fas fa-circle-notch fa-spin text-[10px]"></i> Formation en cours
+                        </span>
+                    </div>
                 </div>
-                <h4 class="text-xl font-bold">Développement Informatique (Bac+2)</h4>
-                <p class="text-text-secondary mb-2 italic">2024 — Études en cours</p>
-                <p class="text-text-secondary">Spécialisation dans les architectures logicielles modernes, le développement
-                    Fullstack et la gestion de projets Agile.</p>
+
+                <!-- Card 2: Gestion Informatisée -->
+                <div class="group bg-card-bg border border-border-color p-8 md:p-10 rounded-[2rem] fade-in transition-all duration-300 hover:border-accent-500/50 flex flex-col justify-between"
+                    style="transition-delay: 100ms">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="text-[11px] font-black uppercase tracking-widest text-text-secondary mb-2">2022 – 2024</div>
+                        <h3 class="text-xl font-bold mb-3 leading-snug group-hover:text-accent-400 transition-colors text-white">
+                            Technicien en Gestion Informatisée
+                        </h3>
+                        <p class="text-text-secondary text-sm font-medium leading-relaxed">
+                            EGIAM — École de Gestion, Informatique Appliquée et Marketing.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 mt-6">
+                        <a href="/static/CV_Ismail_Oujebbad.pdf" target="_blank"
+                            class="inline-flex items-center gap-2 text-xs font-bold text-accent-400 hover:text-white transition-colors">
+                            <span>Voir sur le CV</span> <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Électricité d'entretien industrielle (Plug icon, differentiated) -->
+                <div class="group bg-card-bg border border-border-color p-8 md:p-10 rounded-[2rem] fade-in transition-all duration-300 hover:border-accent-500/50 flex flex-col justify-between"
+                    style="transition-delay: 200ms">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <div class="text-[11px] font-black uppercase tracking-widest text-text-secondary mb-2">2020 – 2022</div>
+                        <h3 class="text-xl font-bold mb-3 leading-snug group-hover:text-accent-400 transition-colors text-white">
+                            Qualification Électricité d'Entretien Industrielle
+                        </h3>
+                        <p class="text-text-secondary text-sm font-medium leading-relaxed">
+                            Institut Spécialisé de Technologie Appliquée (ISTA).
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 mt-6">
+                        <a href="/static/CV_Ismail_Oujebbad.pdf" target="_blank"
+                            class="inline-flex items-center gap-2 text-xs font-bold text-accent-400 hover:text-white transition-colors">
+                            <span>Voir sur le CV</span> <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Électricité de Bâtiment (Lightbulb icon) -->
+                <div class="group bg-card-bg border border-border-color p-8 md:p-10 rounded-[2rem] fade-in transition-all duration-300 hover:border-accent-500/50 flex flex-col justify-between"
+                    style="transition-delay: 300ms">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="text-[11px] font-black uppercase tracking-widest text-text-secondary mb-2">2019 – 2020</div>
+                        <h3 class="text-xl font-bold mb-3 leading-snug group-hover:text-accent-400 transition-colors text-white">
+                            Électricité de Bâtiment
+                        </h3>
+                        <p class="text-text-secondary text-sm font-medium leading-relaxed">
+                            Institut Spécialisé de Technologie Appliquée (ISTA).
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 mt-6">
+                        <a href="/static/CV_Ismail_Oujebbad.pdf" target="_blank"
+                            class="inline-flex items-center gap-2 text-xs font-bold text-accent-400 hover:text-white transition-colors">
+                            <span>Voir sur le CV</span> <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Certificat React -->
+                <div class="group bg-card-bg border border-border-color p-8 md:p-10 rounded-[2rem] fade-in transition-all duration-300 hover:border-accent-500/50 flex flex-col justify-between"
+                    style="transition-delay: 400ms">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="text-[11px] font-black uppercase tracking-widest text-text-secondary mb-2">2024</div>
+                        <h3 class="text-xl font-bold mb-3 leading-snug group-hover:text-accent-400 transition-colors text-white">
+                            Certificat React
+                        </h3>
+                        <p class="text-text-secondary text-sm font-medium leading-relaxed">
+                            Formation Approfondie React &amp; Écosystème Frontend.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 mt-6">
+                        <a href="/static/CV_Ismail_Oujebbad.pdf" target="_blank"
+                            class="inline-flex items-center gap-2 text-xs font-bold text-accent-400 hover:text-white transition-colors">
+                            <span>Voir le certificat</span> <i class="fas fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 6: AWS Cloud (Gold accent) -->
+                <div class="group bg-card-bg border border-border-color p-8 md:p-10 rounded-[2rem] fade-in transition-all duration-300 hover:border-gold/50 flex flex-col justify-between"
+                    style="transition-delay: 500ms">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <div class="text-[11px] font-black uppercase tracking-widest text-gold mb-2">2024 – En cours</div>
+                        <h3 class="text-xl font-bold mb-3 leading-snug group-hover:text-gold transition-colors text-white">
+                            Formation AWS Cloud (en cours)
+                        </h3>
+                        <p class="text-text-secondary text-sm font-medium leading-relaxed">
+                            AWS Training &amp; Cloud Foundations.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 mt-6">
+                        <span class="inline-flex items-center gap-2 text-xs font-bold text-gold">
+                            <i class="fas fa-clock text-[10px]"></i> En cours d'acquisition
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class="relative pl-10">
-                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gold shadow-lg shadow-gold/50"></div>
-                <h4 class="text-xl font-bold">Gestion Informatisée</h4>
-                <p class="text-text-secondary mb-2 italic">2022 — 2024</p>
-                <p class="text-text-secondary">Acquisition des bases solides en programmation, bases de données et
-                    administration système.</p>
+
+            <!-- Academic Timeline -->
+            <div class="mt-20 bg-card-bg border border-border-color p-8 md:p-12 rounded-[2.5rem] fade-in">
+                <h2 class="text-2xl md:text-3xl font-black mb-10 text-center text-white">Parcours Académique</h2>
+                <div class="border-l-2 border-accent-500/20 ml-4 md:ml-8 space-y-12">
+                    <div class="relative pl-8 md:pl-10">
+                        <div
+                            class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-accent-500 shadow-lg shadow-accent-500/50">
+                        </div>
+                        <div class="text-xs font-bold text-accent-400 uppercase tracking-wider mb-1">2024 – En cours</div>
+                        <h3 class="text-lg md:text-xl font-bold text-white mb-2">Développement Informatique (Bac+2)</h3>
+                        <p class="text-text-secondary text-sm md:text-base leading-relaxed">
+                            Spécialisation dans les architectures logicielles modernes, le développement Fullstack (React &amp; Flask) et la gestion de projets Agile.
+                        </p>
+                    </div>
+                    <div class="relative pl-8 md:pl-10">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-gold shadow-lg shadow-gold/50"></div>
+                        <div class="text-xs font-bold text-gold uppercase tracking-wider mb-1">2022 — 2024</div>
+                        <h3 class="text-lg md:text-xl font-bold text-white mb-2">Gestion Informatisée</h3>
+                        <p class="text-text-secondary text-sm md:text-base leading-relaxed">
+                            Acquisition des bases solides en programmation, bases de données relationnelles et administration système.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
     </main>
 
     <!-- Footer -->
     <footer class="py-12 border-t border-[#1E1E1E]">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center gap-8 mb-8">
-                <a href="https://github.com/I6maeil" target="_blank"
-                    class="text-gray-400 hover:text-white text-2xl transition-all transform hover:scale-110"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
-                    class="text-gray-400 hover:text-[#00C896] text-2xl transition-all transform hover:scale-110"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/212679565747" target="_blank"
-                    class="text-gray-400 hover:text-green-500 text-2xl transition-all transform hover:scale-110"><i
-                        class="fab fa-whatsapp"></i></a>
+        <div class="site-container text-center">
+            <div class="flex justify-center gap-8 mb-6">
+                <a href="https://github.com/I6maeil" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub de Ismail"
+                    class="text-gray-400 hover:text-white text-2xl transition-all transform hover:scale-110">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn de Ismail"
+                    class="text-gray-400 hover:text-accent-400 text-2xl transition-all transform hover:scale-110">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:benismail722@gmail.com"
+                    aria-label="Envoyer un email à Ismail"
+                    class="text-gray-400 hover:text-accent-400 text-2xl transition-all transform hover:scale-110">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/212679565747" target="_blank" rel="noopener noreferrer"
+                    aria-label="WhatsApp de Ismail"
+                    class="text-gray-400 hover:text-accent-400 text-2xl transition-all transform hover:scale-110">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
-            <p class="text-gray-500 text-sm italic">© 2026 IsmailDev. Crafted with Precision.</p>
+            <p class="text-gray-500 text-sm">© 2026 IsmailDev. Conçu et développé avec soin.</p>
         </div>
     </footer>
 
     <script>
-        // Scroll fade-in animation using Intersection Observer
         const observerOptions = {
             threshold: 0.1
         };
@@ -422,22 +351,12 @@
             });
         }, observerOptions);
 
-        // Function to initialize observer
         function initObserver() {
             document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-            // Support legacy reveal class if any left
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         }
 
         document.addEventListener('DOMContentLoaded', initObserver);
-
-        // Re-init observer if content changes (e.g. dynamic projects)
-        const contentObserver = new MutationObserver(() => {
-            initObserver();
-        });
-        contentObserver.observe(document.body, { childList: true, subtree: true });
     </script>
-    
 </body>
 
 </html>

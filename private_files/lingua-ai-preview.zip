@@ -1,0 +1,2 @@
+This is a protected asset for LinguaAI.
+Only authenticated users via Google OAuth can download this file through /api/project/lingua-ai/download.

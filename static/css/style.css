@@ -1,78 +1,320 @@
-/* Premium Interactive Effects */
+/* ==========================================================================
+   DESIGN SYSTEM — IsmailDev Portfolio
+   Strictly primary green (#00C896) + single secondary accent gold (#F5A623)
+   ========================================================================== */
 
-/* 1. Custom Cursor */
+:root {
+    /* --- Colors --- */
+    --color-primary: #00C896;
+    --color-primary-hover: #00b386;
+    --color-primary-light: rgba(0, 200, 150, 0.1);
+    --color-primary-border: rgba(0, 200, 150, 0.25);
+    --color-primary-glow: rgba(0, 200, 150, 0.35);
+
+    --color-secondary: #F5A623;
+    --color-secondary-hover: #e09315;
+    --color-secondary-light: rgba(245, 166, 35, 0.1);
+    --color-secondary-border: rgba(245, 166, 35, 0.25);
+
+    --bg-main: #0A0A0A;
+    --bg-surface: #0F0F0F;
+    --bg-card: #141414;
+    --bg-card-alt: #181818;
+    --bg-input: #161616;
+
+    --border-color: #242424;
+    --border-color-hover: #383838;
+
+    /* WCAG AA compliant text contrast */
+    --text-primary: #FFFFFF;
+    --text-secondary: #A3A3A3;
+    --text-muted: #737373;
+
+    /* Glass effect */
+    --glass: rgba(10, 10, 10, 0.88);
+    --glass-border: #1E1E1E;
+
+    /* --- Spacings --- */
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1.25rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4.5rem;
+
+    /* --- Radius --- */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-2xl: 2.5rem;
+
+    /* --- Typography --- */
+    --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-size-base: 1rem;       /* 16px */
+    --font-size-sm: 0.875rem;     /* 14px */
+    --font-size-lg: 1.125rem;     /* 18px */
+    --font-size-xl: 1.35rem;      /* 21.6px */
+    --font-size-h2: clamp(1.85rem, 3.5vw, 2.35rem);
+    --font-size-h1: clamp(2.35rem, 5vw, 3.5rem);
+    --line-height-body: 1.65;
+    --line-height-heading: 1.2;
+
+    /* --- Container --- */
+    --container-max-width: 1200px;
+}
+
+/* Base resets & typography */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+}
+
 body {
-    cursor: none; /* Hide default cursor */
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-body);
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Interactive elements default cursor hide */
-a, button, input, textarea, select, .btn-premium, .hero-img-card, .nav-link {
-    cursor: none;
-}
-
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--accent);
-    border-radius: 50%;
+/* Background noise texture */
+body::before {
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.025;
     pointer-events: none;
-    z-index: 99999;
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    z-index: 9999;
 }
 
-.cursor-outline {
-    width: 32px;
-    height: 32px;
-    border: 2px solid var(--accent);
-    border-radius: 50%;
+/* Mesh glow restricted strictly to green & gold */
+.mesh-bg {
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(0, 200, 150, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(245, 166, 35, 0.06) 0%, transparent 45%);
     pointer-events: none;
-    z-index: 99998;
-    transition: width 0.2s, height 0.2s, background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
-.cursor-hover .cursor-dot {
+/* Unified Container for ALL sections */
+.site-container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Section Headings System (Consistent across all pages) */
+.section-heading-group {
+    margin-bottom: 3.5rem;
+}
+
+.section-title {
+    font-size: var(--font-size-h1);
+    font-weight: 900;
+    line-height: var(--line-height-heading);
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+    font-style: normal !important;
+    margin-bottom: 0.85rem;
+}
+
+.section-title .text-accent {
+    color: var(--color-primary);
+}
+
+.section-title .text-gold {
+    color: var(--color-secondary);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-body);
+    color: var(--text-secondary);
+    max-width: 44rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Glassmorphism */
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    transition: color 0.25s ease;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
     width: 0;
-    height: 0;
-    background-color: transparent;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.25s ease;
 }
 
-.cursor-hover .cursor-outline {
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 200, 150, 0.1);
-    box-shadow: 0 0 20px rgba(0, 200, 150, 0.4);
-    border-color: rgba(0, 200, 150, 0.8);
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
 }
 
-/* Restore default cursor on mobile devices */
-@media (max-width: 768px) {
-    body, a, button, input, textarea, select, .btn-premium, .hero-img-card, .nav-link {
-        cursor: auto;
-    }
-    a, button, .btn-premium {
-        cursor: pointer;
-    }
-    .cursor-dot, .cursor-outline {
-        display: none !important;
-    }
+.nav-link.active {
+    color: var(--color-primary);
+    font-weight: 600;
 }
 
-/* 2. Typing Effect Cursor */
+/* Reusable Button System */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #000000;
+    font-weight: 700;
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 10px 25px -8px var(--color-primary-glow);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -6px rgba(245, 166, 35, 0.4);
+}
+
+.btn-secondary {
+    background-color: #161616;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-weight: 700;
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-primary);
+    color: var(--text-primary);
+    background-color: rgba(0, 200, 150, 0.05);
+    transform: translateY(-2px);
+}
+
+/* Badge System (Green & Gold only) */
+.badge-green {
+    background-color: var(--color-primary-light);
+    border: 1px solid var(--color-primary-border);
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.badge-gold {
+    background-color: var(--color-secondary-light);
+    border: 1px solid var(--color-secondary-border);
+    color: var(--color-secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Accessible focus visible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--color-primary) !important;
+    outline-offset: 3px !important;
+}
+
+/* Fade-up animations */
+.fade-up, .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-up.visible, .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+}
+
+::selection {
+    background: var(--color-primary);
+    color: #000000;
+}
+
+/* Typing cursor */
 .typing-cursor {
     display: inline-block;
-    width: 4px;
-    height: 1.1em;
-    background-color: var(--accent);
+    width: 3px;
+    height: 1.05em;
+    background-color: var(--color-primary);
     vertical-align: text-bottom;
-    margin-left: 4px;
+    margin-left: 3px;
     animation: blinkCursor 0.8s step-end infinite;
 }
 
@@ -87,7 +329,18 @@ a, button, input, textarea, select, .btn-premium, .hero-img-card, .nav-link {
     50% { opacity: 0; }
 }
 
-/* 3. Hero Particles Canvas adjustments */
-#hero-particles {
-    opacity: 0.6;
+/* Accessibility: respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .fade-up, .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }

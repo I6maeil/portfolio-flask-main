@@ -4,10 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — Portfolio</title>
+    <title>Contact — Ismail Oujebbad | Développeur Web</title>
+    <meta name="description"
+        content="Contactez Ismail Oujebbad pour vos projets de développement web (React, Flask, APIs). Disponible pour des missions et collaborations.">
+    <meta name="author" content="Ismail Oujebbad">
+    <link rel="canonical" href="https://ismailcodes.com/contact">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ismailcodes.com/contact">
+    <meta property="og:title" content="Contact — Ismail Oujebbad | Développeur Web">
+    <meta property="og:description"
+        content="Discutons de vos projets d'applications web, interfaces React et backends Flask. Réponse rapide garantie.">
+    <meta property="og:image" content="https://ismailcodes.com/static/profile.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ismailcodes.com/contact">
+    <meta name="twitter:title" content="Contact — Ismail Oujebbad | Développeur Web">
+    <meta name="twitter:description"
+        content="Discutons de vos projets d'applications web, interfaces React et backends Flask. Réponse rapide garantie.">
+    <meta name="twitter:image" content="https://ismailcodes.com/static/profile.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%2300C896"/><text x="50%25" y="50%25" font-family="sans-serif" font-size="70" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">I</text></svg>'>
+    <link rel="icon"
+        href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%2300C896"/><text x="50%25" y="50%25" font-family="sans-serif" font-size="70" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">I</text></svg>'>
+
+    <!-- Global Design System -->
+    <link rel="stylesheet" href="/static/css/style.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +39,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <script>
@@ -23,203 +47,26 @@
             theme: {
                 extend: {
                     colors: {
-                        obsidian: '#0A0A0A', // Deep black
+                        obsidian: '#0A0A0A',
                         'obsidian-alt': '#0F0F0F',
                         'card-bg': '#141414',
                         accent: {
-                            400: '#00C896', // Emerald Green 400
-                            500: '#00C896', // Emerald Green 500
-                            600: '#00C896', // Emerald Green 600
+                            400: '#00C896',
+                            500: '#00C896',
+                            600: '#00C896',
                         },
-                        gold: '#F5A623', // Amber accent
+                        gold: '#F5A623',
                         'text-primary': '#FFFFFF',
                         'text-secondary': '#A0A0A0',
                         'border-color': '#1E1E1E',
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'shine': 'shine 3s ease-in-out infinite',
-                        'blink': 'blink 1.5s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'gradient-x': {
-                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
-                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
-                        },
-                        'float': {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        'shine': {
-                            '0%': { left: '-100%' },
-                            '100%': { left: '100%' },
-                        },
-                        'blink': {
-                            '0%, 100%': { opacity: 0.4 },
-                            '50%': { opacity: 1 },
-                        }
                     }
                 }
             }
         }
     </script>
-
-    <style>
-        :root {
-            --glass: rgba(10, 10, 10, 0.85);
-            --glass-border: #1E1E1E;
-        }
-
-        body {
-            background-color: #0A0A0A;
-            color: #FFFFFF;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Noise Texture */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-            opacity: 0.03;
-            pointer-events: none;
-            z-index: 9999;
-        }
-
-        .mesh-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -10;
-            background: radial-gradient(ellipse at top left, rgba(0, 200, 150, 0.15), transparent 60%);
-        }
-
-        .glass {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-            color: #A0A0A0;
-        }
-
-        .nav-link:hover {
-            color: #FFFFFF;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #00C896;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-link.active {
-            color: #00C896;
-        }
-
-        /* Fade-in Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Blinking Dot */
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #00C896;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 10px #00C896;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0A0A0A;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #00C896;
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #F5A623;
-        }
-
-        /* Selection */
-        ::selection {
-            background: #00C896;
-            color: black;
-        }
-
-        /* Section Divider */
-        .section-divider {
-            height: 1px;
-            width: 100%;
-            background: linear-gradient(90deg, transparent, #00C896, transparent);
-            margin: 4rem 0;
-        }
-
-        /* Button Hover Glow */
-        .btn-primary:hover, .btn-secondary:hover {
-            box-shadow: 0 0 20px rgba(0, 200, 150, 0.4);
-        }
-    </style>
-    
-<style>
-    @keyframes slide-down {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .animate-slide-down {
-        animation: slide-down 0.5s ease-out;
-    }
-</style>
-
 </head>
 
 <body class="antialiased">
@@ -228,8 +75,7 @@
     <!-- Navigation -->
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl">
         <div class="glass rounded-3xl px-8 py-4 flex items-center justify-between shadow-2xl relative overflow-hidden">
-            <a href="/" class="flex items-center gap-3 group">
-                <!-- Logo SVG -->
+            <a href="/" class="flex items-center gap-3 group" aria-label="IsmailDev Accueil">
                 <svg width="40" height="40" viewBox="0 0 100 100" class="transition-transform group-hover:scale-110">
                     <path d="M30 20 L10 50 L30 80" stroke="#00C896" stroke-width="8" fill="none" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -244,27 +90,21 @@
             </a>
 
             <div class="hidden md:flex items-center gap-8">
-                <a href="/"
-                    class="nav-link font-medium ">Accueil</a>
-                <a href="/skills"
-                    class="nav-link font-medium ">Compétences</a>
-                <a href="/services"
-                    class="nav-link font-medium ">Services</a>
-                <a href="/portfolio"
-                    class="nav-link font-medium ">Portfolio</a>
-                <a href="/certifications"
-                    class="nav-link font-medium ">Certifications</a>
-                <a href="/contact"
-                    class="nav-link font-medium active">Contact</a>
+                <a href="/" class="nav-link font-medium">Accueil</a>
+                <a href="/skills" class="nav-link font-medium">Compétences</a>
+                <a href="/services" class="nav-link font-medium">Services</a>
+                <a href="/portfolio" class="nav-link font-medium">Portfolio</a>
+                <a href="/certifications" class="nav-link font-medium">Certifications</a>
+                <a href="/contact" class="nav-link font-medium active">Contact</a>
             </div>
 
             <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                class="hidden md:flex items-center gap-2 bg-[#00C896] hover:bg-[#F5A623] text-black px-5 py-2 rounded-lg font-bold transition-all btn-primary">
+                class="hidden md:flex items-center gap-2 bg-[#00C896] hover:bg-[#F5A623] text-black px-5 py-2.5 rounded-xl font-bold transition-all btn-primary">
                 <i class="fas fa-file-download"></i> CV
             </a>
 
             <!-- Mobile Toggle -->
-            <button class="md:hidden text-gray-300"
+            <button class="md:hidden text-gray-300 p-2" aria-label="Menu Mobile"
                 onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                 <i class="fas fa-bars text-xl"></i>
             </button>
@@ -273,110 +113,185 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden absolute top-20 left-0 w-full glass rounded-2xl p-6 flex flex-col gap-4 shadow-2xl md:hidden">
-            <a href="/" class="text-lg font-bold">Accueil</a>
-            <a href="/skills" class="text-lg font-bold">Compétences</a>
-            <a href="/services" class="text-lg font-bold">Services</a>
-            <a href="/portfolio" class="text-lg font-bold">Portfolio</a>
-            <a href="/certifications" class="text-lg font-bold">Certifications</a>
-            <a href="/contact" class="text-lg font-bold">Contact</a>
+            <a href="/" class="text-lg font-bold hover:text-accent-400 py-1">Accueil</a>
+            <a href="/skills" class="text-lg font-bold hover:text-accent-400 py-1">Compétences</a>
+            <a href="/services" class="text-lg font-bold hover:text-accent-400 py-1">Services</a>
+            <a href="/portfolio" class="text-lg font-bold hover:text-accent-400 py-1">Portfolio</a>
+            <a href="/certifications" class="text-lg font-bold hover:text-accent-400 py-1">Certifications</a>
+            <a href="/contact" class="text-lg font-bold text-accent-400 py-1">Contact</a>
             <a href="/static/CV_Ismail_Oujebbad.pdf" download
-                class="bg-[#00C896] text-black p-4 rounded-lg text-center font-bold">
-                Télécharger CV
+                class="bg-[#00C896] text-black p-4 rounded-xl text-center font-bold btn-primary mt-2">
+                <i class="fas fa-file-download mr-2"></i> Télécharger CV
             </a>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="pt-32 min-h-screen">
-        
-<div class="container mx-auto px-6 py-20">
-    <div class="max-w-4xl mx-auto">
+        <div class="site-container py-16 lg:py-24">
+            <!-- Header -->
+            <div class="max-w-3xl mb-16 fade-in">
+                <h1 class="section-title">Parlons <span class="text-accent">Projet</span></h1>
+                <p class="section-subtitle">
+                    Vous avez une idée d'application web, un besoin en développement frontend ou backend ? Contactez-moi pour en discuter.
+                </p>
+            </div>
 
-        <!-- Flash Messages -->
-        
-        
-        
-        <div class="grid md:grid-cols-2 gap-16 fade-in">
-            <!-- Info -->
-            <div>
-                <h1 class="text-5xl md:text-6xl font-black mb-8 leading-tight">Parlons <span
-                        class="text-accent-400 italic">Projet</span></h1>
-                <p class="text-text-secondary text-lg mb-12">Je suis toujours ouvert à de nouvelles opportunités et
-                    collaborations créatives.</p>
+            <!-- Flash Messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                <div class="max-w-4xl mx-auto mb-10 space-y-3">
+                  {% for category, message in messages %}
+                    <div class="flash-message p-4 rounded-xl text-sm font-semibold flex items-center justify-between {% if category == 'success' %}bg-[#00C896]/10 border border-[#00C896]/30 text-[#00C896]{% elif category == 'error' %}bg-red-500/10 border border-red-500/30 text-red-400{% else %}bg-[#F5A623]/10 border border-[#F5A623]/30 text-[#F5A623]{% endif %}">
+                      <span>{{ message }}</span>
+                      <button type="button" onclick="this.parentElement.remove()" class="text-white/60 hover:text-white ml-4 text-lg">&times;</button>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
 
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start fade-in">
+                <!-- Info Column -->
                 <div class="space-y-8">
-                    <div class="flex items-center gap-6 group">
-                        <div
-                            class="w-12 h-12 rounded-2xl bg-accent-500/10 flex items-center justify-center text-accent-400 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-envelope"></i>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Prêt à collaborer ?</h2>
+                        <p class="text-text-secondary leading-relaxed">
+                            Que ce soit pour la création d'un MVP, le refonte d'une interface React réactive ou la mise en place d'une API Flask robuste, je réponds généralement sous 24 heures.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Email Card -->
+                        <div class="flex items-center gap-5 p-4 rounded-2xl bg-card-bg border border-border-color transition-colors hover:border-accent-400/40">
+                            <div class="w-12 h-12 rounded-xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 text-xl flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <div class="text-[11px] font-black uppercase tracking-widest text-text-secondary">Email direct</div>
+                                <a href="mailto:benismail722@gmail.com" class="text-base sm:text-lg font-bold text-white hover:text-accent-400 transition-colors truncate block">
+                                    benismail722@gmail.com
+                                </a>
+                            </div>
                         </div>
-                        <div>
-                            <div class="text-[10px] font-black uppercase tracking-widest text-text-secondary">Email</div>
-                            <div class="text-lg font-bold text-white">benismail722@gmail.com</div>
+
+                        <!-- Phone Card -->
+                        <div class="flex items-center gap-5 p-4 rounded-2xl bg-card-bg border border-border-color transition-colors hover:border-gold/40">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold text-xl flex-shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-black uppercase tracking-widest text-text-secondary">Téléphone &amp; WhatsApp</div>
+                                <a href="tel:+212679565747" class="text-base sm:text-lg font-bold text-white hover:text-gold transition-colors block">
+                                    +212 679 565 747
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Location Card -->
+                        <div class="flex items-center gap-5 p-4 rounded-2xl bg-card-bg border border-border-color">
+                            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-text-secondary text-xl flex-shrink-0">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-black uppercase tracking-widest text-text-secondary">Localisation</div>
+                                <div class="text-base sm:text-lg font-bold text-white">
+                                    Azrou / Ifrane, Maroc (Disponible en Remote)
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-center gap-6 group">
-                        <div
-                            class="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <div class="text-[10px] font-black uppercase tracking-widest text-text-secondary">Téléphone</div>
-                            <div class="text-lg font-bold text-white">+212 679 565 747</div>
+
+                    <!-- Social Channels -->
+                    <div class="pt-4">
+                        <div class="text-xs font-bold uppercase tracking-widest text-text-secondary mb-4">Profils professionnels</div>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://github.com/I6maeil" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-card-bg border border-border-color hover:border-accent-400/50 text-white font-semibold text-sm transition-all hover:bg-white/5">
+                                <i class="fab fa-github text-base text-accent-400"></i>
+                                <span>GitHub (@I6maeil)</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-card-bg border border-border-color hover:border-accent-400/50 text-white font-semibold text-sm transition-all hover:bg-white/5">
+                                <i class="fab fa-linkedin text-base text-accent-400"></i>
+                                <span>LinkedIn (Ismail Oujebbad)</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Form -->
-            <div class="bg-card-bg p-10 rounded-[3rem] border border-border-color relative overflow-hidden">
-                <div class="absolute -right-20 -top-20 w-60 h-60 bg-accent-500/5 blur-3xl"></div>
+                <!-- Form Column -->
+                <div class="bg-card-bg p-8 sm:p-10 rounded-[2.5rem] border border-border-color relative overflow-hidden shadow-2xl">
+                    <div class="absolute -right-20 -top-20 w-60 h-60 bg-accent-500/5 blur-3xl pointer-events-none"></div>
 
-                <form action="/contact" method="POST" class="relative z-10 space-y-6">
-                    <div>
-                        <input type="text" name="name" placeholder="Votre Nom" required
-                            class="w-full bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-6 py-4 focus:outline-none focus:border-accent-500 transition-colors placeholder:text-text-secondary font-medium text-white">
-                    </div>
-                    <div>
-                        <input type="email" name="email" placeholder="Votre Email" required
-                            class="w-full bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-6 py-4 focus:outline-none focus:border-accent-500 transition-colors placeholder:text-text-secondary font-medium text-white">
-                    </div>
-                    <div>
-                        <textarea name="message" placeholder="Votre Message" rows="5" required
-                            class="w-full bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-6 py-4 focus:outline-none focus:border-accent-500 transition-colors placeholder:text-text-secondary font-medium text-white"></textarea>
-                    </div>
-                    <button type="submit"
-                        class="w-full py-5 bg-accent-500 text-black font-black rounded-lg hover:bg-gold transition-all shadow-xl shadow-accent-500/20 active:scale-95 btn-primary">
-                        Envoyer le Message
-                    </button>
-                </form>
+                    <h2 class="text-2xl font-bold text-white mb-6">Envoyez-moi un message</h2>
+
+                    <form action="/contact" method="POST" class="relative z-10 space-y-5">
+                        <div>
+                            <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-text-secondary mb-2">
+                                Votre Nom
+                            </label>
+                            <input type="text" id="contact-name" name="name" placeholder="Ex: Alex Martin" required
+                                class="w-full bg-[#181818] border border-[#2A2A2A] rounded-xl px-5 py-3.5 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition-all placeholder:text-[#666666] font-medium text-white text-base">
+                        </div>
+
+                        <div>
+                            <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-text-secondary mb-2">
+                                Votre Adresse Email
+                            </label>
+                            <input type="email" id="contact-email" name="email" placeholder="Ex: alex@exemple.com" required
+                                class="w-full bg-[#181818] border border-[#2A2A2A] rounded-xl px-5 py-3.5 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition-all placeholder:text-[#666666] font-medium text-white text-base">
+                        </div>
+
+                        <div>
+                            <label for="contact-message" class="block text-xs font-bold uppercase tracking-wider text-text-secondary mb-2">
+                                Votre Message
+                            </label>
+                            <textarea id="contact-message" name="message" placeholder="Décrivez succinctement votre besoin ou votre projet..." rows="5" required
+                                class="w-full bg-[#181818] border border-[#2A2A2A] rounded-xl px-5 py-3.5 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400 transition-all placeholder:text-[#666666] font-medium text-white text-base resize-none"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-4 bg-accent-500 text-black font-bold text-base rounded-xl hover:bg-gold transition-all shadow-xl shadow-accent-500/20 active:scale-95 btn-primary cursor-pointer flex items-center justify-center gap-2">
+                            <span>Envoyer le Message</span>
+                            <i class="fas fa-paper-plane text-sm"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
     </main>
 
     <!-- Footer -->
     <footer class="py-12 border-t border-[#1E1E1E]">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center gap-8 mb-8">
-                <a href="https://github.com/I6maeil" target="_blank"
-                    class="text-gray-400 hover:text-white text-2xl transition-all transform hover:scale-110"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank"
-                    class="text-gray-400 hover:text-[#00C896] text-2xl transition-all transform hover:scale-110"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/212679565747" target="_blank"
-                    class="text-gray-400 hover:text-green-500 text-2xl transition-all transform hover:scale-110"><i
-                        class="fab fa-whatsapp"></i></a>
+        <div class="site-container text-center">
+            <div class="flex justify-center gap-8 mb-6">
+                <a href="https://github.com/I6maeil" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub de Ismail"
+                    class="text-gray-400 hover:text-white text-2xl transition-all transform hover:scale-110">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ismail-oujebbad-2ba1a82ab/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn de Ismail"
+                    class="text-gray-400 hover:text-accent-400 text-2xl transition-all transform hover:scale-110">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:benismail722@gmail.com"
+                    aria-label="Envoyer un email à Ismail"
+                    class="text-gray-400 hover:text-accent-400 text-2xl transition-all transform hover:scale-110">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/212679565747" target="_blank" rel="noopener noreferrer"
+                    aria-label="WhatsApp de Ismail"
+                    class="text-gray-400 hover:text-accent-400 text-2xl transition-all transform hover:scale-110">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
-            <p class="text-gray-500 text-sm italic">© 2026 IsmailDev. Crafted with Precision.</p>
+            <p class="text-gray-500 text-sm">© 2026 IsmailDev. Conçu et développé avec soin.</p>
         </div>
     </footer>
 
     <script>
-        // Scroll fade-in animation using Intersection Observer
         const observerOptions = {
             threshold: 0.1
         };
@@ -389,39 +304,27 @@
             });
         }, observerOptions);
 
-        // Function to initialize observer
         function initObserver() {
             document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-            // Support legacy reveal class if any left
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         }
 
         document.addEventListener('DOMContentLoaded', initObserver);
 
-        // Re-init observer if content changes (e.g. dynamic projects)
-        const contentObserver = new MutationObserver(() => {
-            initObserver();
-        });
-        contentObserver.observe(document.body, { childList: true, subtree: true });
-    </script>
-    
-<script>
-    // Auto-dismiss flash messages after 5 seconds
-    document.addEventListener('DOMContentLoaded', function () {
-        const flashMessages = document.querySelectorAll('.flash-message');
-        flashMessages.forEach(function (message) {
-            setTimeout(function () {
-                message.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                message.style.opacity = '0';
-                message.style.transform = 'translateX(100%)';
+        // Auto-dismiss flash messages after 5 seconds
+        document.addEventListener('DOMContentLoaded', function () {
+            const flashMessages = document.querySelectorAll('.flash-message');
+            flashMessages.forEach(function (message) {
                 setTimeout(function () {
-                    message.parentElement.remove();
-                }, 500);
-            }, 5000);
+                    message.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    message.style.opacity = '0';
+                    message.style.transform = 'translateX(100%)';
+                    setTimeout(function () {
+                        message.remove();
+                    }, 500);
+                }, 5000);
+            });
         });
-    });
-</script>
-
+    </script>
 </body>
 
 </html>

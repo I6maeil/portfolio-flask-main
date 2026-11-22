@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const cursorEl = document.getElementById("typing-cursor");
 
     if (line1El && line2El && cursorEl) {
-        const line1Text = "Développeur Web Full-Stack";
-        const line2Text = "orienté performance";
+        const line1Text = "Développeur Web";
+        const line2Text = "Front-End (React) | Flask";
 
         // Clear text for animation (HTML fallback was visible until now)
         line1El.textContent = "";
