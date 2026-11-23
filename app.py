@@ -113,7 +113,7 @@ with app.app_context():
 def inject_now():
     return {'now': datetime.utcnow()}
 
-resend.api_key = os.environ.get("RESEND_API_KEY", "re_8xTSLLTa_GdAMy3h3727BisZd1VV3sZ1u")
+resend.api_key = os.environ.get("RESEND_API_KEY")
 
 def send_email(name, email, message_text):
     resend.Emails.send({
